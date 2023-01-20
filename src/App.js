@@ -1,25 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect} from "react";
+import ReactDOM from "react-dom/client";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+ function App() {
+    let message = "How are you?";
+    if (Math.random() > 0.5) {
+        message = "I'm fine";
+    }
+
+    const m1 = [
+        {id: 1, name: "John"},
+        {id: 2, name: "Mary"},
+        {id: 3, name: "Peter"}
+
+    ];
+
+
+    let dates = new Date().toLocaleTimeString()
+    useEffect(() => {
+            setInterval(() => {
+                dates = new Date().toLocaleTimeString()
+            }, 1000)
+        }
+    );
+    return <>
+        <div className="">
+            <div>
+                {message}
+                {m1.map((item, index) => {
+                        return <div key={index}>{item.name}</div>
+                    }
+                )}
+
+                <h1>{
+                    dates
+
+                }</h1>
+            </div>
+            <input autoFocus={true} type={`number`} style={{width: "500px"}} min={12} max={25}/>
+            <br/>
+            <br/>
+
+            <textarea autoFocus={true} style={{width: "500px"}} maxLength={244} minLength={10}/>
+            <br/>
+            <br/>
+            <input spellCheck title={`jdsahf jhdshf`} type={`text`} />
+        </div>
+    </>;
 }
-
-export default App;
+export  default App;
