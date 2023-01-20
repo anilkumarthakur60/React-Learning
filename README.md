@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Getting Started with Udemy react course
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Course Link [Udemy](https://plieger.udemy.com/course/react-redux/learn/lecture/34693562#overview).
 
 ## Available Scripts
 
