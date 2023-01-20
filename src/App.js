@@ -1,5 +1,6 @@
 import React, {useEffect} from "react";
 import ReactDOM from "react-dom/client";
+import App1, {message1}  from "./App1";
 
 
  function App() {
@@ -45,6 +46,8 @@ import ReactDOM from "react-dom/client";
             <br/>
             <br/>
             <input spellCheck title={`jdsahf jhdshf`} type={`text`} />
+            {message1}
+            {App1}
         </div>
     </>;
 }
