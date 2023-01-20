@@ -1,6 +1,9 @@
 # Getting Started with Udemy react course
 
 Course Link [Udemy](https://plieger.udemy.com/course/react-redux/learn/lecture/34693562#overview).
+# vercel link
+
+Course Link [oepn Vercel](https://jsx-notes.vercel.app/).
 
 ## Available Scripts
 
