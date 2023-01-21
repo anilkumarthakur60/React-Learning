@@ -54,8 +54,6 @@ import App1, {message1}  from "./App1";
             <div className="">App1.js Component</div>
             <App1/>
             <hr style={{border:"10px solid red"}}/>
-
-
         </div>
     </>;
 }

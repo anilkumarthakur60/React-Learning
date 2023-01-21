@@ -1,9 +1,10 @@
 import React from "react";
 
 import ProfileCard from "./ProfileCard";
-import  a1 from "./Assets/images/a3.png";
-import  a2 from "./Assets/images/a3.png";
-import  a3 from "./Assets/images/a3.png";
+import a1 from "./Assets/images/a3.png";
+import a2 from "./Assets/images/a3.png";
+import a3 from "./Assets/images/a3.png";
+
 export default function App1() {
     const profiles = [
         {
@@ -11,7 +12,9 @@ export default function App1() {
             url: a1,
             handle: "octocat",
             color: "black",
-            bgColor: "bg-danger"
+            bgColor: "bg-danger",
+            link: "https://www.google.com",
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci  laborum libero magnam maiores maxime"
 
         },
         {
@@ -19,14 +22,18 @@ export default function App1() {
             url: a2,
             handle: "octocat",
             color: "blue",
-            bgColor: "bg-info"
+            bgColor: "bg-info",
+            link: "https://www.google.com",
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci  laborum libero magnam maiores maxime"
         },
         {
             title: "Profile 3",
-            url:a3,
+            url: a3,
             handle: "octocat",
             color: "white",
-            bgColor: "bg-secondary"
+            bgColor: "bg-secondary",
+            link: "https://www.google.com",
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci  laborum libero magnam maiores maxime"
 
         },
         {
@@ -34,7 +41,10 @@ export default function App1() {
             url: a1,
             handle: "octocat",
             color: "black",
-            bgColor: "bg-danger"
+            bgColor: "bg-danger",
+            link: "https://www.google.com",
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci  laborum libero magnam maiores maxime"
+
 
         },
         {
@@ -42,7 +52,10 @@ export default function App1() {
             url: a1,
             handle: "octocat",
             color: "black",
-            bgColor: "bg-danger"
+            bgColor: "bg-danger",
+            link: "https://www.google.com",
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci  laborum libero magnam maiores maxime"
+
 
         },
         {
@@ -50,14 +63,20 @@ export default function App1() {
             url: a2,
             handle: "octocat",
             color: "blue",
-            bgColor: "bg-info"
+            bgColor: "bg-info",
+            link: "https://www.google.com",
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci  laborum libero magnam maiores maxime"
+
         },
         {
             title: "Profile 3",
-            url:a3,
+            url: a3,
             handle: "octocat",
             color: "white",
-            bgColor: "bg-secondary"
+            bgColor: "bg-secondary",
+            link: "https://www.google.com",
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci  laborum libero magnam maiores maxime"
+
 
         },
         {
@@ -65,20 +84,22 @@ export default function App1() {
             url: a1,
             handle: "octocat",
             color: "black",
-            bgColor: "bg-danger"
+            bgColor: "bg-danger",
+            link: "https://www.google.com",
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci  laborum libero magnam maiores maxime"
+
 
         },
 
     ]
     return <>
         <div className="container">
-            <div className={`row bg-danger-subtle`} style={{backgroundColor:'#f8d7da'}}>
+            <div className={`row bg-danger-subtle px-3 py-4`} style={{backgroundColor: '#f8d7da'}}>
 
                 {profiles.map((profile, index) =>
                     <>
-
-                        <div className= {` col-sm-6 col-md-4 col-ld-3 col-12  rounded rounded-lg `}  key={index}>
-                            <ProfileCard profile={profile} bgColor={profile.bgColor} color={profile.color} handle={profile.handle} title={profile.title} url={profile.url}/>
+                        <div className={` col-sm-6 col-md-3 col-ld-3 col-12 mb-4  rounded rounded-lg `} key={index}>
+                            <ProfileCard profile={profile}/>
                         </div>
                     </>
                 )}

@@ -1,15 +1,31 @@
 import React from 'react';
+interface ProfileProps {
+    title?: string;
+    url?: string;
+    handle?: string;
+    color?: string;
+    bgColor?: string;
+    link?: string;
+    description?: string;
 
-function ProfileCard({title,url,color,handle,bgColor}) {
-    // const {title,url,color,handle}= props;
+}
+
+function ProfileCard({profile}) {
+    console.clear();
+    console.log(profile);
     return (
-        <div className={`  rounded-3 mb-3 mt-3 shadow shadow-lg ${bgColor}`}>
-            <h6 className="pt-2 ps-2" style={{color: color}}>
-                {title}
-            </h6>
-            <img className="p-2" src={url} alt={handle} title={handle} style={{width: "100px"}}/>
-            {/*<pre>{JSON.stringify(props, null, 2)}</pre>*/}
-        </div>
+        <>
+            <div className={`card p-3 py-3 ${profile.bgColor}`}>
+                <img className="card-img-top img-fluid" src={profile.url} alt={profile.handle}/>
+                <div className="card-body">
+                    <h5 className="card-title">{profile.title}</h5>
+                    <p className="card-text">{profile?.description}</p>
+                    <a href={profile.link} className="btn btn-primary" target={`_blank`}>Go</a>
+                </div>
+            </div>
+
+
+        </>
     );
 }
 
