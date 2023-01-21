@@ -4,10 +4,7 @@ import ProfileCard from "./ProfileCard";
 import  a1 from "./Assets/images/a3.png";
 import  a2 from "./Assets/images/a3.png";
 import  a3 from "./Assets/images/a3.png";
-
 export default function App1() {
-    console.clear();
-console.debug('---------data logging--------',a1,a2,a3);
     const profiles = [
         {
             title: "Profile 1",
