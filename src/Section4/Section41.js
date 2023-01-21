@@ -41,7 +41,7 @@ function Section41() {
     })
 
     return (
-        <div className="border-1 border-danger">
+        <div className={``} style={{backgroundColor: '#f8d7da'}} >
 
 
             {state ? <h1>True</h1> : <h1>False</h1>}
