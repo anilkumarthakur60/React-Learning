@@ -2,7 +2,18 @@ import React, {useState} from "react";
 import AnimalShow from "./AnimalShow";
 
 function getRandomAnimals() {
-    const animals = ["cat", "dog", "lion", "tiger", "cow", "goat", "sheep", "horse", "elephant", "monkey", "fox", "rabbit", "deer", "bear", "wolf", "pig", "chicken", "duck", "goose", "turkey", "parrot", "crow", "peacock", "sparrow", "fish", "shark", "whale", "dolphin", "crocodile", "snake", "lizard", "frog", "turtle", "ant", "bee", "butterfly", "dragonfly"];
+    const animals = [
+
+        "bird",
+        "cat",
+        "cow",
+        "dog",
+        "gator",
+        "heart",
+        "horse",
+
+
+    ];
     return animals[Math.floor(Math.random() * animals.length)];
 }
 
@@ -35,13 +46,14 @@ function Section41() {
     function arrayData() {
         return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     }
+
     const [s1, s2] = arrayData();
-    const renderAnimals=  animal.map((item, index) => {
-            return <AnimalShow key={index} type={item}/>
+    const renderAnimals = animal.map((item, index) => {
+        return <AnimalShow key={index} type={item}/>
     })
 
     return (
-        <div className={``} style={{backgroundColor: '#f8d7da'}} >
+        <div className={``} style={{backgroundColor: '#f8d7da'}}>
 
 
             {state ? <h1>True</h1> : <h1>False</h1>}
@@ -82,16 +94,13 @@ function Section41() {
                     }}
             >Result={countData}
             </button>
-            <hr style={{border:"10px solid green"}}/>
+            <hr style={{border: "10px solid green"}}/>
             <button type="button" className="btn btn-md btn-success m-2  " onClick={handleClicks}>
                 Add Animal
             </button>
-            <div className="d-flex overflow-auto">
+            <div className="row">
                 {renderAnimals}
             </div>
-
-
-
 
 
         </div>

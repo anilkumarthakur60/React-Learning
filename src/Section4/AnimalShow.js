@@ -1,10 +1,47 @@
-import React from "react";
+import React, {useState} from "react";
+
+import bird from "../Assets/images/Svg/bird.svg";
+import cat from "../Assets/images/Svg/cat.svg";
+import cow from "../Assets/images/Svg/cow.svg";
+import dog from "../Assets/images/Svg/dog.svg";
+import gator from "../Assets/images/Svg/gator.svg";
+import heart from "../Assets/images/Svg/heart.svg";
+import horse from "../Assets/images/Svg/horse.svg";
+
+
+const svgMap = {
+    bird: bird,
+    cat: cat,
+    cow: cow,
+    dog: dog,
+    gator: gator,
+    heart: heart,
+    horse: horse,
+};
+
+
+const svgMaps = {
+    bird,
+    cat,
+    cow,
+    dog,
+    gator,
+    heart,
+    horse,
+};
 
 function AnimalShow({type}) {
+    const [clicks, setClicks] = useState(0);
+    const handleClick = () => {
+        setClicks(clicks + 1);
+    }
 
-    return (
-            <h6 className="mx-1">{type}</h6>
-    );
+
+    return <div className="col-2" onClick={handleClick}>
+
+        <img className="img-fluid" src={svgMap[type]} alt={type}/>
+        <img className="img-fluid" src={heart} alt={type} style={{width:10+10*clicks+'px'}}/>
+    </div>;
 }
 
 export default AnimalShow;
