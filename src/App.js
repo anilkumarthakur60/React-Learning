@@ -1,9 +1,9 @@
-import React, {useEffect} from "react";
-import ReactDOM from "react-dom/client";
-import App1, {message1}  from "./App1";
+import React from "react";
 
+import AnimalShow from "./AnimalShow";
+import App1, {message11} from "./App1";
 
- function App() {
+function App() {
     let message = "How are you?";
     if (Math.random() > 0.5) {
         message = "I'm fine";
@@ -18,16 +18,10 @@ import App1, {message1}  from "./App1";
 
 
     let dates = new Date().toLocaleTimeString()
-    useEffect(() => {
-            setInterval(() => {
-                dates = new Date().toLocaleTimeString()
-            }, 1000)
-        }
-    );
     return <>
-        <div className="">
+        <div className="container">
             <hr style={{border:"10px solid red"}}/>
-            <div className="">App.js file</div>
+            <div className="">Section 2 Practice</div>
             <div>
                 {message}
                 {m1.map((item, index) => {
@@ -48,13 +42,16 @@ import App1, {message1}  from "./App1";
             <br/>
             <br/>
             <input spellCheck title={`jdsahf jhdshf`} type={`text`} />
-            {message1}
+            {message11}
 
             <hr style={{border:"10px solid red"}}/>
-            <div className="">App1.js Component</div>
+            <div className="">Section 3 Practice</div>
             <App1/>
             <hr style={{border:"10px solid red"}}/>
+            <div className="">Section 4 Practice</div>
+            <AnimalShow/>
         </div>
     </>;
 }
-export  default App;
+
+export default App;
