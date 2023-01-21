@@ -7,6 +7,7 @@ import dog from "../Assets/images/Svg/dog.svg";
 import gator from "../Assets/images/Svg/gator.svg";
 import heart from "../Assets/images/Svg/heart.svg";
 import horse from "../Assets/images/Svg/horse.svg";
+import './animalShow.css'
 
 
 const svgMap = {
@@ -40,6 +41,7 @@ function AnimalShow({type}) {
     return <div className="col-2" onClick={handleClick}>
 
         <img className="img-fluid" src={svgMap[type]} alt={type}/>
+        {10+10*clicks+'px'}
         <img className="img-fluid" src={heart} alt={type} style={{width:10+10*clicks+'px'}}/>
     </div>;
 }
