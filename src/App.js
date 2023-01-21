@@ -1,7 +1,6 @@
 import React from "react";
-
-import AnimalShow from "./Section4/AnimalShow";
 import App1, {message11} from "./App1";
+import Section41 from "./Section4/Section41";
 
 function App() {
     let message = "How are you?";
@@ -20,11 +19,11 @@ function App() {
     let dates = new Date().toLocaleTimeString()
     return <>
         <div className="container">
-            <hr style={{border:"10px solid red"}}/>
+            <hr style={{border: "10px solid red"}}/>
             <div className="">Section 4 Practice</div>
-            <AnimalShow/>
+                <Section41/>
 
-            <hr style={{border:"10px solid red"}}/>
+            <hr style={{border: "10px solid red"}}/>
             <div className="">Section 2 Practice</div>
             <div>
                 {message}
@@ -45,10 +44,10 @@ function App() {
             <textarea autoFocus={true} style={{width: "500px"}} maxLength={244} minLength={10}/>
             <br/>
             <br/>
-            <input spellCheck title={`jdsahf jhdshf`} type={`text`} />
+            <input spellCheck title={`jdsahf jhdshf`} type={`text`}/>
             {message11}
 
-            <hr style={{border:"10px solid red"}}/>
+            <hr style={{border: "10px solid red"}}/>
             <div className="">Section 3 Practice</div>
             <App1/>
 
