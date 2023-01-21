@@ -1,18 +1,6 @@
 import React from 'react';
-interface ProfileProps {
-    title?: string;
-    url?: string;
-    handle?: string;
-    color?: string;
-    bgColor?: string;
-    link?: string;
-    description?: string;
-
-}
-
+import ReactDOM  from "react-dom/client";
 function ProfileCard({profile}) {
-    console.clear();
-    console.log(profile);
     return (
         <>
             <div className={`card p-3 py-3 ${profile.bgColor}`}>

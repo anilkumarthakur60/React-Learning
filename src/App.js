@@ -21,6 +21,10 @@ function App() {
     return <>
         <div className="container">
             <hr style={{border:"10px solid red"}}/>
+            <div className="">Section 4 Practice</div>
+            <AnimalShow/>
+
+            <hr style={{border:"10px solid red"}}/>
             <div className="">Section 2 Practice</div>
             <div>
                 {message}
@@ -47,9 +51,7 @@ function App() {
             <hr style={{border:"10px solid red"}}/>
             <div className="">Section 3 Practice</div>
             <App1/>
-            <hr style={{border:"10px solid red"}}/>
-            <div className="">Section 4 Practice</div>
-            <AnimalShow/>
+
         </div>
     </>;
 }
