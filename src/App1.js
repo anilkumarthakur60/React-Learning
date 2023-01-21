@@ -1,15 +1,48 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+
+import ProfileCard from "./ProfileCard";
 
 export default function App1() {
+
+    const profiles = [
+        {
+            title: "Profile 1",
+            url: "https://avatars.githubusercontent.com/u/1?v=4",
+            handle: "octocat",
+            color: "red"
+
+        },
+        {
+            title: "Profile 2",
+            url: "https://avatars.githubusercontent.com/u/2?v=4",
+            handle: "octocat",
+            color: "blue"
+        },
+        {
+            title: "Profile 3",
+            url: "https://avatars.githubusercontent.com/u/3?v=4",
+            handle: "octocat",
+            color: "green"
+
+        }
+    ]
     return <>
-        <div className="">
-            <div>
-                <h1>App1 heading tag</h1>
+        <div className="container">
+            <div className={`row mt-5`}>
+
+                {profiles.map((profile, index) =>
+                    <>
+                        <div className="col-4">
+                            <ProfileCard color={profile.color} title={profile.title} url={profile.url}/>
+
+                        </div>
+                    </>
+                )}
+
             </div>
         </div>
     </>;
 }
-const  message1 = "How are you?";
+const message1 = "How are you?";
 export {message1}
-export  const  message11 = 'I am fine';
+export const message11 = 'I am fine';

@@ -26,6 +26,8 @@ import App1, {message1}  from "./App1";
     );
     return <>
         <div className="">
+            <hr style={{border:"10px solid red"}}/>
+            <div className="">App.js file</div>
             <div>
                 {message}
                 {m1.map((item, index) => {
@@ -47,7 +49,13 @@ import App1, {message1}  from "./App1";
             <br/>
             <input spellCheck title={`jdsahf jhdshf`} type={`text`} />
             {message1}
-            {App1}
+
+            <hr style={{border:"10px solid red"}}/>
+            <div className="">App1.js Component</div>
+            <App1/>
+            <hr style={{border:"10px solid red"}}/>
+
+
         </div>
     </>;
 }
