@@ -1,17 +1,25 @@
-import React,{useState} from "react";
+import React, {useState} from "react";
 
+function getRandomAnimals() {
+    const animals = ["cat", "dog", "lion", "tiger", "cow", "goat", "sheep", "horse", "elephant", "monkey", "fox", "rabbit", "deer", "bear", "wolf", "pig", "chicken", "duck", "goose", "turkey", "parrot", "crow", "peacock", "sparrow", "fish", "shark", "whale", "dolphin", "crocodile", "snake", "lizard", "frog", "turtle", "ant", "bee", "butterfly", "dragonfly"];
+    return animals[Math.floor(Math.random() * animals.length)];
+}
 
 function AnimalShow() {
 
-
-    //
     const [state, setState] = useState(false);
     const [countData, setCountData] = useState(0);
-    console.debug(useState(50))
+
+    const [animal, setAnimal] = useState([]);
+
+
     const handleClick = () => {
         setState(!state);
         console.log("Button Clicked");
-        console.log(s1,s2)
+        console.log(s1, s2)
+    }
+    const handleClicks = () => {
+        setAnimal([...animal, getRandomAnimals()]);
     }
     const handleCopy = () => {
         console.log("Text Copied");
@@ -23,13 +31,28 @@ function AnimalShow() {
         console.log("Text paste");
     }
 
-    function  arrayData(){
-        return [1,2,3,4,5,6,7,8,9,10];
+    function arrayData() {
+        return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     }
-    const [s1,s2]=arrayData();
+
+    const [s1, s2] = arrayData();
 
     return (
         <div>
+            <button type="button" className="btn btn-md btn-danger mx-2  " onClick={handleClicks}>
+
+                Set Animal
+            </button>
+
+            <ul>
+
+            {animal.map((item, index) => {
+                return <li key={index}>{item}</li>
+
+            })}
+
+            </ul>
+
 
             {state ? <h1>True</h1> : <h1>False</h1>}
             <h1 onCopy={handleCopy} onCut={handleCut}
