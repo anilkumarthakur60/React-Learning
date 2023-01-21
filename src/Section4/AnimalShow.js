@@ -46,10 +46,10 @@ function AnimalShow() {
 
             <ul>
 
-            {animal.map((item, index) => {
-                return <li key={index}>{item}</li>
+                {animal.map((item, index) => {
+                    return <li key={index}>{item}</li>
 
-            })}
+                })}
 
             </ul>
 
