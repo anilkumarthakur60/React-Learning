@@ -1,6 +1,6 @@
 import React from "react";
 
-import AnimalShow from "./AnimalShow";
+import AnimalShow from "./Section4/AnimalShow";
 import App1, {message11} from "./App1";
 
 function App() {
