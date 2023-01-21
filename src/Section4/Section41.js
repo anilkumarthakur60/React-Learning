@@ -44,16 +44,6 @@ function Section41() {
         <div className="border-1 border-danger">
 
 
-            {/*<ul>*/}
-
-            {/*    {animal.map((item, index) => {*/}
-            {/*        return <li key={index}>{item}</li>*/}
-
-            {/*    })}*/}
-
-            {/*</ul>*/}
-
-
             {state ? <h1>True</h1> : <h1>False</h1>}
             <h1 onCopy={handleCopy} onCut={handleCut}
                 onMouseOver={(e) => {
