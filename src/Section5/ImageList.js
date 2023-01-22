@@ -4,10 +4,8 @@ import ImageShow from "./ImageShow";
 function ImageList() {
 
     return (
-        <div className={``} style={{backgroundColor: '#f8d7da'}}>
-            <div className="row">
+        <div className={`mt-2`} style={{backgroundColor: '#f8d7da'}}>
                <ImageShow />
-            </div>
         </div>
     );
 }
