@@ -1,6 +1,7 @@
 import React from "react";
 import App1, {message11} from "./App1";
 import Section41 from "./Section4/Section41";
+import Section5 from "./Section5/Section5";
 
 function App() {
     let message = "How are you?";
@@ -20,8 +21,12 @@ function App() {
     return <>
         <div className="container">
             <hr style={{border: "10px solid red"}}/>
+            <div className="">Section 5 Practice</div>
+                <Section5/>
+
+            <hr style={{border: "10px solid red"}}/>
             <div className="">Section 4 Practice</div>
-                <Section41/>
+            <Section41/>
 
             <hr style={{border: "10px solid red"}}/>
             <div className="">Section 2 Practice</div>
