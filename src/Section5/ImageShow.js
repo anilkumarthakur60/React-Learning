@@ -1,11 +1,15 @@
 import React from "react";
 
 import ReactDOM from "react-dom/client";
+import heart from "../Assets/images/Svg/heart.svg";
+import  liuyt from "../Assets/images/a1.png";
 function ImageShow() {
 
     return (
-        <div className={``} style={{backgroundColor: '#f8d7da'}}>
-
+        <div>
+            <div className="col-2" >
+                <img src={liuyt} className="img-fluid"  alt={`jsdg`}/>
+            </div>;
         </div>
     );
 }
