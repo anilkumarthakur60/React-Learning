@@ -3,20 +3,11 @@ import ImageShow from "./ImageShow";
 
 function ImageList({images}) {
 
-
-    const [page, setPage] = useState(1);
-    // function  handleChange(event) {
-    //     increasePage(event.target.value);
-    //     console.log(increasePage(event.target.value))
-    // }
-
-
-
-    const imageOnly = images.map((image, index) => {
+    const imageOnly = images.map((image) => {
         return <>
-            <div className="col-3 p-3 ">
-                <div className="card h-100 ">
-                    <ImageShow key={index} image={image}/>
+            <div className="col-3 p-3 shadow">
+                <div className="card h-100 bg-light ">
+                    <ImageShow key={image.id} image={image}/>
                 </div>
             </div>
         </>
@@ -27,10 +18,8 @@ function ImageList({images}) {
                 <div className="row  d-flex flex-wrap bg-white">
                     {imageOnly}
                 </div>
-
             </div>
         </>
-
     );
 }
 
