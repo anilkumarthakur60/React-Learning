@@ -1,18 +1,26 @@
 import React, {useState} from "react";
 
-function SearchBar({handleClick}) {
+function SearchBar({handleClick,increasePage}) {
 
     const [state, setState] = useState('');
+    const [page, setPage] = useState(1);
+
+    const handlePageChange = (event) => {
+        setPage(event.target.value);
+        increasePage(page);
+        // setState(event.target.value)
+        // handleClick(state)
+    }
 
     const  handleFormSubmit = (event) => {
         event.preventDefault();
-        // handleClick(state);
+        handleClick(state);
     }
 
     const handleChangeEvent = (event) => {
-        // setState(event.target.value.replace(/[^a-zA-Z ]/g, ""));
-        setState(event.target.value)
-        handleClick(state)
+        setState(event.target.value.replace(/[^a-zA-Z ]/g, ""));
+        // setState(event.target.value)
+        // handleClick(state)
     }
     const submitButton = () => {
         handleClick(state)
@@ -22,6 +30,13 @@ function SearchBar({handleClick}) {
             <div className="">
                 <form onSubmit={handleFormSubmit}>
                     <div className="input-group mb-3">
+                        <input
+                            type="number"
+                            value={page}
+                            name="search"
+                            className="form-control"
+                            onChange={handlePageChange} placeholder="Recipient's username"
+                            aria-label="Recipient's username" aria-describedby="button-addon2"/>
                         <input
                             type="text"
                             value={state}

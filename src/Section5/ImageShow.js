@@ -7,10 +7,9 @@ function ImageShow({image}) {
 
     return (
         <div>
-            <div className="col-2" >
-                {image}
-                <img src="as" className="img-fluid"  alt={`jsdg`}/>
-            </div>;
+            <div className=" " >
+                <img src={image?.links?.download} className="img-fluid"  alt={image?.description}/>
+            </div>
         </div>
     );
 }
