@@ -46,6 +46,7 @@ function SearchBar({handleClick,increasePage}) {
                             aria-label="Recipient's username" aria-describedby="button-addon2"/>
                         <button
                             className="btn btn-outline-secondary"
+                            onMouseEnter={submitButton}
                             onClick={submitButton} type="button"
                                 id="button-addon2">Button
                         </button>

@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import ImageShow from "./ImageShow";
+
 function ImageList({images}) {
 
     // function  handleChange(event) {
@@ -9,22 +10,32 @@ function ImageList({images}) {
     // }
 
 
+    const imageOnly = images.map((image) => {
+        return <>
+            <div className="col-sm-3 my-3 px-3">
+                <div className="card h-100 shadow-lg">
+                    <ImageShow  key={image.id} image={image}/>
+                </div>
+            </div>
+        </>
+    });
 
-    console.log('---------images logging--------',images)
+
+    console.log('---------images logging--------', images)
 
     return (
-        <div className={`mt-2`} style={{backgroundColor: '#f8d7da'}}>
+        <>
 
-            {/*<input type="number"  onChange={handleChange}  />*/}
-            <h6>Total Image{images.length}  </h6>
-            <div className="row">   {images.map((image) => {
+            <div className="container my-5">
 
-                    return (
-                        <ImageShow clasName={`col-2`} key={image.id} image={image}/>
-                    );
-                })}
+                <div className="row  d-flex flex-wrap bg-white">
+                  {imageOnly}
+                </div>
+
             </div>
-        </div>
+        </>
+
     );
 }
+
 export default ImageList;
