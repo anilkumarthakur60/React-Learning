@@ -1,41 +1,60 @@
 import React, {useState} from "react";
 
-function BookCreate() {
-    const [title, setTitle] = useState('')
-    const [author, setAuthor] = useState('')
+function BookCreate({bookData}) {
+    const [book,setBook]=useState({
+        title:'',
+        author:''
+    })
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        // const result = await createBook({
-        //     title: title,
-        //
-        // })
+        bookData(book)
+    }
+    const  handleChages=(e) => {
+        setBook({
+            ...book,
+            [e.target.id]:e.target.value
+        })
+
     }
     return (
         <>
-            <form onSubmit={handleSubmit}>
-                <div className="row">
-                    <div className="col-6">
+
+            <form onSubmit={handleSubmit} className={`mt-4`}>
+                <div className="row card p-2 ">
+                    <div className="col-6 mt-3">
                         <label htmlFor="title" className="form-label">Title</label>
-                        <input type="text" className="form-control" id="title" value={title}
-                               onChange={(e) => setTitle(e.target.value)}/>
+                        <input
+                            type="text"
+                            className="form-control"
+                            id="title"
+                            required={true}
+                            value={book?.title}
+                            onChange={(e) => {handleChages(e)}}
+                        />
                     </div>
                     <div className="col-6">
-                        <label htmlFor="author" className="form-label">Author</label>
-                        <input type="text" className="form-control" id="author" value={author}
-                               onChange={(e) => setAuthor(e.target.value)}/>
+                        <label
+                            htmlFor="author" className="form-label">Author</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            id="author"
+                            value={book?.author}
+
+                            required={true}
+                            onChange={(e) => {handleChages(e)}}
+
+                        />
                     </div>
                     <div className="col-12 d-flex">
-
-                    <button type="submit" className="btn btn-primary me-auto my-3">Submit</button>
+                        <button type="submit"  className="btn btn-primary me-auto my-3">Submit</button>
                     </div>
                 </div>
             </form>
 
         </>
     )
-
-
 }
 
 export default BookCreate
