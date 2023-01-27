@@ -29,14 +29,6 @@ J
 src/App.js,1/e/1e43fa63aecd2127be034b3fb9d4caa172275714
 ;
 src/App1.js,3/6/36e813de9c44fa87533e16f8ae2af6973e89e799
-I
-src/Section5/ImageShow.js,1/b/1b7987f55401c74a6c6ab74e2207eb4e92e3ea7e
-H
-src/Section5/Section5.js,8/9/8956b968284023fc16051b4f77cd9b4da7b52060
-I
-src/Section5/ImageList.js,4/7/47e2e3328b802ba9453b32f523648a3a01095163
 :
 
 src/api.js,8/c/8c37372e0f85ef2d908f9d02c49f6a0d04b1f091
-I
-src/Section5/SearchBar.js,4/f/4f829e572fb0934afe53224520f6f53f3443d1c4

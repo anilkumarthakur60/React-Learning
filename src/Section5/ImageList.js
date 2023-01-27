@@ -1,35 +1,31 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+import React, {useState} from "react";
 import ImageShow from "./ImageShow";
 
 function ImageList({images}) {
 
+
+    const [page, setPage] = useState(1);
     // function  handleChange(event) {
     //     increasePage(event.target.value);
     //     console.log(increasePage(event.target.value))
     // }
 
 
-    const imageOnly = images.map((image) => {
+
+    const imageOnly = images.map((image, index) => {
         return <>
-            <div className="col-sm-3 my-3 px-3">
-                <div className="card h-100 shadow-lg">
-                    <ImageShow  key={image.id} image={image}/>
+            <div className="col-3 p-3 ">
+                <div className="card h-100 ">
+                    <ImageShow key={index} image={image}/>
                 </div>
             </div>
         </>
     });
-
-
-    console.log('---------images logging--------', images)
-
     return (
         <>
-
-            <div className="container my-5">
-
+            <div className="container ">
                 <div className="row  d-flex flex-wrap bg-white">
-                  {imageOnly}
+                    {imageOnly}
                 </div>
 
             </div>

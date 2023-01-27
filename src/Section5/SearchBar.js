@@ -2,7 +2,7 @@ import React, {useState} from "react";
 
 function SearchBar({handleClick,increasePage}) {
 
-    const [state, setState] = useState('');
+    const [state, setState] = useState('Nepal');
     const [page, setPage] = useState(1);
 
     const handlePageChange = (event) => {
