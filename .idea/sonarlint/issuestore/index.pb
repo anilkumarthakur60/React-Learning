@@ -24,9 +24,6 @@ I
 src/Section4/Section41.js,4/5/455aef1d8771021bf454f13744df6f1abf622f85
 J
 src/Section4/AnimalShow.js,6/4/64b51160a9fc81a756a43230f2a64e945468b538
-:
-
-src/App.js,1/e/1e43fa63aecd2127be034b3fb9d4caa172275714
 ;
 src/App1.js,3/6/36e813de9c44fa87533e16f8ae2af6973e89e799
 :

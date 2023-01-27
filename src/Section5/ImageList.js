@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import ImageShow from "./ImageShow";
 
+import ReactDOM from "react-dom/client";
 function ImageList({images}) {
 
     const imageOnly = images.map((image) => {

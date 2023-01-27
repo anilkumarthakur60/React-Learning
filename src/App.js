@@ -2,6 +2,7 @@ import React from "react";
 import App1, {message11} from "./App1";
 import Section41 from "./Section4/Section41";
 import Section5 from "./Section5/Section5";
+import Section6 from "./FormHandleSection6/Section6";
 
 function App() {
     let message = "How are you?";
@@ -20,6 +21,10 @@ function App() {
     let dates = new Date().toLocaleTimeString()
     return <>
         <div className="container">
+            <hr style={{border: "10px solid green"}}/>
+            <div className="">Section 6 Practice Form Handeling</div>
+            <Section6/>
+
             <hr style={{border: "10px solid red"}}/>
             <div className="">Section 5 Practice</div>
                 <Section5/>

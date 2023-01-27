@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import ReactDOM from "react-dom/client";
 import SearchBar from "./SearchBar";
 import {searchImages} from "../api";
 import ImageList from "./ImageList";

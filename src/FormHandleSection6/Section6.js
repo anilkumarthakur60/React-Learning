@@ -1,81 +1,18 @@
-import React, {useState} from "react";
-import SearchBar from "./SearchBar";
-import {searchImages} from "../api";
-import ImageList from "./ImageList";
+import React,{useState} from "react";
+import ReactDOM from "react-dom/client";
 
-function Section6() {
 
-    const [data, setData] = useState([]);
-    const [termSearch, setTermSearch] = useState('Nepal');
-    const [page, setPage] = useState(1);
-    const handleSubmit = async (term) => {
-        setTermSearch(term)
-        const result = await searchImages({
-            termSearch: termSearch,
-            page: page
-
-        });
-        setData(result);
-    }
-
-    const handlePageValue = async (page) => {
-        setPage(page)
-        const result = await searchImages({
-            termSearch: termSearch,
-            page: page
-
-        });
-        setData(result);
-    }
-    const increasePageSize = async () => {
-        setPage(page + 1);
-        const result = await searchImages({
-            termSearch: termSearch,
-            page: page
-
-        });
-        setData(result);
-    }
-    const decreasePageSize =async () => {
-        if (page > 1) {
-            setPage(page - 1);
-            console.log(page)
-            const result = await searchImages({
-                termSearch: termSearch,
-                page: page
-
-            });
-            setData(result);
-        } else {
-            setPage(1)
-            const result = await searchImages({
-                termSearch: termSearch,
-                page: page
-
-            });
-            setData(result);
-        }
-    }
+function  Section6() {
     return (
-        <div className={`px-4`} style={{backgroundColor: 'rgb(222 222 255)'}}>
-            <SearchBar className="my-2"
-                       handleClick={handleSubmit}
-                       increasePage={handlePageValue}
-            />
-            <ImageList images={data}/>
-            <div className="row row-cols-12 ">
-                <div className="d-flex">
-                    <button type="button" onClick={decreasePageSize}
-                            className={`btn btn-sm btn-success ms-auto`} >Previous
-                    </button>
-                    <button type="button" onClick={increasePageSize}
-                            className={`btn btn-sm btn-danger me-auto`}>Next
-                    </button>
-
+        <>
+            <div className="container">
+                <div className="row">
+                    <div className="col-12">
+                        <h1>Section 6</h1>
+                    </div>
                 </div>
             </div>
-
-        </div>
+        </>
     );
 }
 
