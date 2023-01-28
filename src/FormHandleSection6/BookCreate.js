@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function BookCreate({bookData}) {
+function    BookCreate({onCreateBook}) {
     const [book,setBook]=useState({
         title:'',
         author:''
@@ -8,18 +8,19 @@ function BookCreate({bookData}) {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        bookData(book)
+        onCreateBook(book)
     }
-    const  handleChages=(e) => {
+    const  handleChanges=(e) =>  {
         setBook({
             ...book,
             [e.target.id]:e.target.value
         })
 
     }
+
+
     return (
         <>
-
             <form onSubmit={handleSubmit} className={`mt-4`}>
                 <div className="row card p-2 ">
                     <div className="col-6 mt-3">
@@ -30,7 +31,7 @@ function BookCreate({bookData}) {
                             id="title"
                             required={true}
                             value={book?.title}
-                            onChange={(e) => {handleChages(e)}}
+                            onChange={(e) => {handleChanges(e)}}
                         />
                     </div>
                     <div className="col-6">
@@ -41,10 +42,8 @@ function BookCreate({bookData}) {
                             className="form-control"
                             id="author"
                             value={book?.author}
-
                             required={true}
-                            onChange={(e) => {handleChages(e)}}
-
+                            onChange={(e) => {handleChanges(e)}}
                         />
                     </div>
                     <div className="col-12 d-flex">

@@ -9,10 +9,11 @@ function  Section6() {
 
     const [bookData, setBookData] = useState({});
 
-    const handleSubmit = (data) => {
+    const handleBookCreate = (data) => {
         setBookData(data)
-        setList([...list, data])
+        setList([ data,...list])
     };
+
     return (
         <>
             <div className="container">
@@ -21,7 +22,7 @@ function  Section6() {
                         <h1>Section 6</h1>
                         <BookList list={list}  />
                         <hr/>
-                        <BookCreate bookData={handleSubmit} oncl/>
+                        <BookCreate onCreateBook={handleBookCreate} oncl/>
                     </div>
                 </div>
             </div>

@@ -6,9 +6,9 @@ import ImageShow from "../Section5/ImageShow";
 function BookList({list}) {
 
 
-    const  booklist = list?.map((book,index) => {
+    const  booklets = list?.map((book,index) => {
         return (
-            <div className="col-3  shadow">
+            <div className="col-3  mt-4">
                 <div className="card h-100 bg-light px-3 ">
                     <BookShow book={book} key={index} />
                 </div>
@@ -20,7 +20,7 @@ function BookList({list}) {
     return (
         <div className="container ">
             <div className="row  d-flex flex-wrap bg-white">
-                {booklist}
+                {booklets}
             </div>
         </div>
     )
