@@ -109,6 +109,20 @@ function Section6() {
 
 
     }
+    const  editBookByIndex = (editList,ekey) => {
+        console.log(editList,ekey)
+        const newList = list.map((book,index) => {
+            if (index === ekey) {
+                return {
+                    ...book,
+                    title:editList.title,
+                    author:editList.author
+                };
+            }
+            return book;
+        });
+        setList(newList);
+    }
 
 
     return (
@@ -174,7 +188,7 @@ function Section6() {
 
                     <div className="col-12">
                         <h1>Section 6</h1>
-                        <BookList list={list} onDelete={removeBookById} />
+                        <BookList list={list} onDelete={removeBookById} onEdit={editBookByIndex} />
                         <hr/>
                         <BookCreate onCreateBook={handleBookCreate} oncl/>
                     </div>

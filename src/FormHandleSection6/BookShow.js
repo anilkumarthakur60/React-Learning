@@ -1,8 +1,34 @@
-import React from "react";
+import React, {useState} from "react";
 
-function BookShow({book,itemKey,onDelete}) {
+function BookShow({book,itemKey,onDelete,onEdit}) {
+
+
+    const [enableEdit,setEnableEdit] = useState(false)
     const handleDelete = () => {
-        onDelete(itemKey)
+        setEnableEdit(true)
+        // onDelete(itemKey)
+    }
+
+
+
+    const [editBook,setEditBook] = useState({
+        title:book.title,
+        author:book.author
+    })
+    const handleEdit = () => {
+        onEdit(editBook,itemKey)
+    }
+    const  handleChanges=(e) =>  {
+     const editedData=   {
+            ...editBook,
+            [e.target.id]:e.target.value
+        }
+
+        setEditBook(editedData)
+
+        onEdit(editedData,itemKey)
+
+
     }
 
     return (
@@ -13,26 +39,27 @@ function BookShow({book,itemKey,onDelete}) {
                         <i className="bi bi-trash"></i>
 
                     </button>
+                    <button type={`button`} onClick={handleEdit} className={`btn btn-sm ms-1  btn-info`}>
+                        <i className="bi bi-pencil-square"></i>
+                    </button>
 
                 </div>
                 <div className="col-12">
                     <label htmlFor="title" className="form-label">Title</label>
                     <input type="text" className="form-control" id="title"
-                           onChange={(e) => {
-                               book.title = e.target.value
-                           }
-                           }
+                           disabled={enableEdit}
+
+                           onChange={handleChanges}
                            value={book.title}
                     />
                 </div>
                 <div className="col-12">
                     <label htmlFor="author" className="form-label">Author</label>
                     <input type="text" className="form-control"
-                           onChange={(e) => {
-                               book.author = e.target.value
-                           }
-                           }
-                           id="author" value={book.author}
+                           id={`author`}
+                          disabled={enableEdit?true:false}
+                           onChange={handleChanges}
+                           value={book.author}
 
                     />
                 </div>
