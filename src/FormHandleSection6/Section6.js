@@ -64,12 +64,11 @@ function Section6() {
                     'Your book has been added.',
                     'success'
                 )
-            }else if (result.isDenied) {
+            } else if (result.isDenied) {
                 Swal.fire(
                     'Cancelled',
                     'Your book is safe :)',
                     'error'
-
                 )
             }
         }).catch((error) => {
@@ -88,7 +87,6 @@ function Section6() {
     }
 
 
-
     const removeColor = () => {
         const {color, ...rest} = fruit;
     }
@@ -102,27 +100,28 @@ function Section6() {
 
     const removeBookById = (deleteList) => {
         console.log(deleteList)
-        const newList = list.filter((book,index) => {
-            return index!==deleteList;
+        const newList = list.filter((book, index) => {
+            return index !== deleteList;
         })
         setList(newList);
 
 
     }
-    const  editBookByIndex = (editList,ekey) => {
-        console.log(editList,ekey)
-        const newList = list.map((book,index) => {
+    const editBookByIndex = (editList, ekey) => {
+        const newList = list.map((book, index) => {
             if (index === ekey) {
                 return {
                     ...book,
-                    title:editList.title,
-                    author:editList.author
+                    title: editList.title,
+                    author: editList.author
                 };
             }
             return book;
         });
         setList(newList);
     }
+
+
 
 
     return (
@@ -164,31 +163,31 @@ function Section6() {
                             e.preventDefault();
                             addBooks()
                         }
-                    }></form>
-                    <input id="name"
-                           value={book.name}
-                           onChange={(e) => {
-                               handleChanges(e)
-                           }
-                           }
-                    />
-                    <button className={`btn btn-primary`}
+                    }>
+                        <input id="name"
+                               value={book.name}
+                               onChange={(e) => {
+                                   handleChanges(e)
+                               }
+                               }
+                        />
+                        <button className={`btn btn-primary`}
 
-                            onClick={
-                                () => {
-                                    addBooks()
-                                }}>
-                        Add Book
-                    </button>
+                                onClick={
+                                    () => {
+                                        addBooks()
+                                    }}>
+                            Add Book
+                        </button>
 
-
+                    </form>
                 </div>
                 <div className="row">
 
 
                     <div className="col-12">
                         <h1>Section 6</h1>
-                        <BookList list={list} onDelete={removeBookById} onEdit={editBookByIndex} />
+                        <BookList list={list} onDelete={removeBookById} onEdit={editBookByIndex}/>
                         <hr/>
                         <BookCreate onCreateBook={handleBookCreate} oncl/>
                     </div>

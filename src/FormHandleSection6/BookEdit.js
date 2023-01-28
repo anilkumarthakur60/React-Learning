@@ -1,15 +1,24 @@
 import React, {useState} from "react";
 
-function BookEdit() {
-    const [title, setTitle] = useState('')
-    const [author, setAuthor] = useState('')
+function BookEdit({onEdit,book,itemKey}) {
+    const [editBook, setEditBook] = useState({
+        title: book.title,
+        author: book.author
+    })
+
+
+    const handleChanges = (e) => {
+        const editedData = {
+            ...editBook,
+            [e.target.id]: e.target.value
+        }
+        setEditBook(editedData)
+    }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        // const result = await createBook({
-        //     title: title,
-        //
-        // })
+          onEdit(editBook, itemKey)
+
     }
     return (
         <>
@@ -17,13 +26,13 @@ function BookEdit() {
                 <div className="row">
                     <div className="col-6">
                         <label htmlFor="title" className="form-label">Title</label>
-                        <input type="text" className="form-control" id="title" value={title}
-                               onChange={(e) => setTitle(e.target.value)}/>
+                        <input type="text" className="form-control" id="title" value={editBook.title}
+                               onChange={handleChanges}/>
                     </div>
                     <div className="col-6">
                         <label htmlFor="author" className="form-label">Author</label>
-                        <input type="text" className="form-control" id="author" value={author}
-                               onChange={(e) => setAuthor(e.target.value)}/>
+                        <input type="text" className="form-control" id="author" value={editBook.author}
+                               onChange={handleChanges}/>
                     </div>
                     <div className="col-12 d-flex">
 

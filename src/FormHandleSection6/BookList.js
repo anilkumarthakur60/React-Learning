@@ -1,26 +1,21 @@
-import React, {useState} from "react";
+import React from "react";
 import BookShow from "./BookShow";
-import ImageShow from "../Section5/ImageShow";
 
 
-function BookList({list,onDelete,onEdit}) {
+function BookList({list, onDelete, onEdit}) {
 
 
-    const  booklets = list?.map((book,index) => {
+
+    const bookShowList = list.map((book, index) => {
         return (
-            <div className="col-3  mt-4">
-                <div className="card h-100 bg-light px-3 ">
-                    <BookShow book={book}  onDelete={onDelete} onEdit={onEdit} itemKey={index} key={index} />
-                </div>
-            </div>
-
+            <BookShow book={book} itemKey={index} key={index} onDelete={onDelete} onEdit={onEdit}/>
         )
+    })
 
-    });
     return (
         <div className="container ">
             <div className="row  d-flex flex-wrap bg-white">
-                {booklets}
+                {bookShowList}
             </div>
         </div>
     )
