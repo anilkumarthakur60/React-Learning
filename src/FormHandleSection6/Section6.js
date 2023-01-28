@@ -79,11 +79,7 @@ function Section6() {
 
         })
 
-        const newBook = {
-            id: books.length + 1,
-            name: book.name
-        };
-        setBooks([...books, newBook]);
+
     }
 
 
