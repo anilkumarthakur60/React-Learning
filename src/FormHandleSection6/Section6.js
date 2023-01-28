@@ -43,41 +43,48 @@ function Section6() {
         setBook(newBook)
     }
     const addBooks = () => {
+        //
+        // const newBook = {
+        //     id: books.length + 1,
+        //     name: book.name
+        // };
 
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, add it!'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                const newBook = {
-                    id: books.length + 1,
-                    name: book.name
-                };
-                setBooks([...books, newBook]);
-                Swal.fire(
-                    'Added!',
-                    'Your book has been added.',
-                    'success'
-                )
-            } else if (result.isDenied) {
-                Swal.fire(
-                    'Cancelled',
-                    'Your book is safe :)',
-                    'error'
-                )
-            }
-        }).catch((error) => {
-            console.log(error);
-
-        }).finally(() => {
-            console.log("Finally");
-
-        })
+        const addList = [...books, book];
+        setBooks(addList);
+        // Swal.fire({
+        //     title: 'Are you sure?',
+        //     text: "You won't be able to revert this!",
+        //     icon: 'warning',
+        //     showCancelButton: true,
+        //     confirmButtonColor: '#3085d6',
+        //     cancelButtonColor: '#d33',
+        //     confirmButtonText: 'Yes, add it!'
+        // }).then((result) => {
+        //     if (result.isConfirmed) {
+        //         const newBook = {
+        //             id: books.length + 1,
+        //             name: book.name
+        //         };
+        //         setBooks([...books, newBook]);
+        //         Swal.fire(
+        //             'Added!',
+        //             'Your book has been added.',
+        //             'success'
+        //         )
+        //     } else if (result.isDenied) {
+        //         Swal.fire(
+        //             'Cancelled',
+        //             'Your book is safe :)',
+        //             'error'
+        //         )
+        //     }
+        // }).catch((error) => {
+        //     console.log(error);
+        //
+        // }).finally(() => {
+        //     console.log("Finally");
+        //
+        // })
 
 
     }
@@ -101,8 +108,15 @@ function Section6() {
             return index !== deleteList;
         })
         setList(newList);
+    }
+    const removeBookByIds = (deleteList) => {
 
-
+        console.log(deleteList)
+        const newList = books.filter((book) => {
+            return book.id!== deleteList;
+        })
+        console.log(newList)
+        setBooks(newList);
     }
     const editBookByIndex = (editList, key) => {
         const newList = list.map((book, index) => {
@@ -139,7 +153,7 @@ function Section6() {
                                                 <i className="bi bi-pencil"></i>
                                             </button>
                                             <button className="btn btn-sm btn-danger " onClick={() => {
-                                                removeBookById(book.id)
+                                                removeBookByIds(book.id)
 
                                             }}>
 
@@ -158,7 +172,7 @@ function Section6() {
                     <form onSubmit={
                         (e) => {
                             e.preventDefault();
-                            addBooks()
+
                         }
                     }>
                         <input id="name"
