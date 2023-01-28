@@ -8,8 +8,6 @@
 :
 
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
-<
-src/index.js,f/9/f900edc44cb929c2267a16100a32851f6d5b477d
 B
 src/ProfileCard.js,6/a/6afe34dbc4fb4d080bfb84fc87a9c3670f8bef48
 O

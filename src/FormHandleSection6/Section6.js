@@ -7,10 +7,19 @@ function Section6() {
     const [list, setList] = useState([]);
 
 
+
+
+
     const handleBookCreate = (data) => {
         const addList = [...list, data];
         setList(addList);
     };
+
+
+    const removeBookById = (id) => {
+        const newList = list.filter((book) => book.id !== id);
+        setList(newList);
+    }
 
     return (
         <>
