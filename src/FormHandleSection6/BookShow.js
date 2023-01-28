@@ -1,8 +1,8 @@
 import React from "react";
 
-function BookShow({book,key,itemKey}) {
+function BookShow({book,itemKey,onDelete}) {
     const handleDelete = () => {
-        console.log("Delete",book,itemKey);
+        onDelete(itemKey)
     }
 
     return (

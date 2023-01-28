@@ -3,14 +3,14 @@ import BookShow from "./BookShow";
 import ImageShow from "../Section5/ImageShow";
 
 
-function BookList({list}) {
+function BookList({list,onDelete}) {
 
 
     const  booklets = list?.map((book,index) => {
         return (
             <div className="col-3  mt-4">
                 <div className="card h-100 bg-light px-3 ">
-                    <BookShow book={book} itemKey={index} key={index} />
+                    <BookShow book={book}  onDelete={onDelete} itemKey={index} key={index} />
                 </div>
             </div>
 

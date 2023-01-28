@@ -7455,7 +7455,7 @@ react-app-polyfill@^3.0.0:
 
 react-bootstrap-icons@^1.10.2:
   version "1.10.2"
-  resolved "https://registry.yarnpkg.com/react-bootstrap-icons/-/react-bootstrap-icons-1.10.2.tgz#e8e765f5cf9672f1a6b3e9146f441db92bb104cc"
+  resolved "https://registry.npmjs.org/react-bootstrap-icons/-/react-bootstrap-icons-1.10.2.tgz"
   integrity sha512-PC72g6uARdSxZH+ViBbul3FRWKuIhiJajahwt1h0daPBDw789KqpA+x3hrJpSUyQMF0PQ9LfWxu1a0O67bqPeg==
   dependencies:
     prop-types "^15.7.2"
@@ -8398,6 +8398,16 @@ svgo@^2.7.0:
     csso "^4.2.0"
     picocolors "^1.0.0"
     stable "^0.1.8"
+
+sweetalert2-react-content@^5.0.7:
+  version "5.0.7"
+  resolved "https://registry.npmjs.org/sweetalert2-react-content/-/sweetalert2-react-content-5.0.7.tgz"
+  integrity sha512-8Fk82Mpk45lFXpJWKIFF/lq8k/dJKDDQGFcuqVosaL/qRdViyAs5+u37LoTGfnOIvf+rfQB3PAXcp1XLLn+0ew==
+
+sweetalert2@^11.7.1:
+  version "11.7.1"
+  resolved "https://registry.npmjs.org/sweetalert2/-/sweetalert2-11.7.1.tgz"
+  integrity sha512-+1bnkbqBl64FnZmi3g4SzAi4F3pL3S2jF1YQvrysv4GbgizfeFqGkJopxR3FnV/eJm6w2SQ2oAmCxSIBjgP/ag==
 
 symbol-tree@^3.2.4:
   version "3.2.4"

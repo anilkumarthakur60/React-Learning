@@ -1,11 +1,17 @@
 import React, {useState} from "react";
 import BookCreate from "./BookCreate.js";
 import BookList from "./BookList";
+import Swal from "sweetalert2";
 
 
 function Section6() {
     const [list, setList] = useState([]);
 
+    const [fruit, setFruit] = useState(
+        {
+            name: "Apple",
+            color: "Red1"
+        });
 
     const [books, setBooks] = useState([
         {id: 1, name: "John"},
@@ -13,11 +19,15 @@ function Section6() {
         {id: 3, name: "Peter"}
     ]);
 
+    const [book, setBook] = useState({
+        id: '',
+        title: '',
+    })
+
 
     const updateBookById = (id, title) => {
         const newList = books.map((book) => {
             if (book.id === id) {
-                // return {...book, title:title};
                 return {...book, title};
             }
             return book;
@@ -25,27 +35,62 @@ function Section6() {
         setBooks(newList);
     }
 
-    const [book,setBook]=useState({
-        id:'',
-        title:'',
-    })
     const handleChanges = (e) => {
-        console.log(e.target.id, e.target.value)
-       const newBook= {
-            id:books.length+1,
-            name:e.target.value
+        const newBook = {
+            id: books.length + 1,
+            name: e.target.value
         }
-        console.log(newBook)
         setBook(newBook)
     }
     const addBooks = () => {
+
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, add it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                const newBook = {
+                    id: books.length + 1,
+                    name: book.name
+                };
+                setBooks([...books, newBook]);
+                Swal.fire(
+                    'Added!',
+                    'Your book has been added.',
+                    'success'
+                )
+            }else if (result.isDenied) {
+                Swal.fire(
+                    'Cancelled',
+                    'Your book is safe :)',
+                    'error'
+
+                )
+            }
+        }).catch((error) => {
+            console.log(error);
+
+        }).finally(() => {
+            console.log("Finally");
+
+        })
+
         const newBook = {
             id: books.length + 1,
             name: book.name
-
         };
         setBooks([...books, newBook]);
+    }
 
+
+
+    const removeColor = () => {
+        const {color, ...rest} = fruit;
     }
 
 
@@ -55,13 +100,15 @@ function Section6() {
     };
 
 
-    const removeBookById = (id) => {
-        const newList = list.filter((book) => {
-            return book.id !== id;
-        });
+    const removeBookById = (deleteList) => {
+        console.log(deleteList)
+        const newList = list.filter((book,index) => {
+            return index!==deleteList;
+        })
         setList(newList);
-    }
 
+
+    }
 
 
     return (
@@ -127,7 +174,7 @@ function Section6() {
 
                     <div className="col-12">
                         <h1>Section 6</h1>
-                        <BookList list={list}/>
+                        <BookList list={list} onDelete={removeBookById} />
                         <hr/>
                         <BookCreate onCreateBook={handleBookCreate} oncl/>
                     </div>
