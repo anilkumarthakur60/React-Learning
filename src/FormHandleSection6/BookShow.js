@@ -5,7 +5,7 @@ function BookShow({book, itemKey,  onDelete, onEdit}) {
 
     const [enableEdit, setEnableEdit] = useState(true)
     const handleDelete = () => {
-        // onDelete(itemKey)
+        onDelete(itemKey)
     }
 
 
@@ -62,7 +62,7 @@ function BookShow({book, itemKey,  onDelete, onEdit}) {
                             />
                         </div>
                         {
-                            enableEdit?  <BookEdit book={editBook} onEdit={onEdit} itemKey={itemKey} /> : null
+                            enableEdit?  <BookEdit book={book} onEdit={onEdit} itemKey={itemKey} /> : null
                         }
                     </div>
                 </div>

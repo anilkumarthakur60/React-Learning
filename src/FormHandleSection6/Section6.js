@@ -99,6 +99,7 @@ function Section6() {
 
 
     const removeBookById = (deleteList) => {
+
         console.log(deleteList)
         const newList = list.filter((book, index) => {
             return index !== deleteList;
@@ -108,9 +109,6 @@ function Section6() {
 
     }
     const editBookByIndex = (editList, key) => {
-
-
-        console.log(editList, key)
         const newList = list.map((book, index) => {
             if (index === key) {
                 return {
