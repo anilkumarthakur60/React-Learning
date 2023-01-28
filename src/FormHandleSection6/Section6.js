@@ -1,17 +1,15 @@
-import React,{useState} from "react";
-import ReactDOM from "react-dom/client";
+import React, {useState} from "react";
 import BookCreate from "./BookCreate.js";
 import BookList from "./BookList";
 
 
-function  Section6() {
+function Section6() {
     const [list, setList] = useState([]);
 
-    const [bookData, setBookData] = useState({});
 
     const handleBookCreate = (data) => {
-        setBookData(data)
-        setList([ data,...list])
+        const addList = [...list, data];
+        setList(addList);
     };
 
     return (
@@ -20,7 +18,7 @@ function  Section6() {
                 <div className="row">
                     <div className="col-12">
                         <h1>Section 6</h1>
-                        <BookList list={list}  />
+                        <BookList list={list}/>
                         <hr/>
                         <BookCreate onCreateBook={handleBookCreate} oncl/>
                     </div>
