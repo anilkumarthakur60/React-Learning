@@ -10,7 +10,7 @@ function BookList({list}) {
         return (
             <div className="col-3  mt-4">
                 <div className="card h-100 bg-light px-3 ">
-                    <BookShow book={book} key={index} />
+                    <BookShow book={book} itemKey={index} key={index} />
                 </div>
             </div>
 
