@@ -15,7 +15,7 @@ function BookEdit({onEdit,book,itemKey}) {
         setEditBook(editedData)
     }
 
-    const handleSubmit = async (e) => {
+    const handleSubmit =  (e) => {
         e.preventDefault()
           onEdit(editBook, itemKey)
 

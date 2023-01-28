@@ -62,7 +62,7 @@ function BookShow({book, itemKey,  onDelete, onEdit}) {
                             />
                         </div>
                         {
-                            enableEdit?  <BookEdit book={editBook} onEdit={onEdit} /> : null
+                            enableEdit?  <BookEdit book={editBook} onEdit={onEdit} itemKey={itemKey} /> : null
                         }
                     </div>
                 </div>

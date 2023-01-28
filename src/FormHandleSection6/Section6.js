@@ -107,9 +107,12 @@ function Section6() {
 
 
     }
-    const editBookByIndex = (editList, ekey) => {
+    const editBookByIndex = (editList, key) => {
+
+
+        console.log(editList, key)
         const newList = list.map((book, index) => {
-            if (index === ekey) {
+            if (index === key) {
                 return {
                     ...book,
                     title: editList.title,
