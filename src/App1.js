@@ -15,7 +15,7 @@ export default function App1() {
             color: "black",
             bgColor: "bg-danger",
             link: "https://www.google.com",
-            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci  laborum libero magnam maiores maxime"
+            description: "Lorem ipsum dolor sit amet, cnam maiores maxime"
 
         },
         {
@@ -27,7 +27,7 @@ export default function App1() {
             color: "blue",
             bgColor: "bg-info",
             link: "https://www.google.com",
-            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci  laborum libero magnam maiores maxime"
+            description: "Lorem ipsum dolor sit amet,borum libero magnam maiores maxime"
         },
         {
 
@@ -38,7 +38,7 @@ export default function App1() {
             color: "white",
             bgColor: "bg-secondary",
             link: "https://www.google.com",
-            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci  laborum libero magnam maiores maxime"
+            description: "Lorem ipsum dolor sit amet, consecteturiores maxime"
 
         },
         {
@@ -49,7 +49,7 @@ export default function App1() {
             color: "black",
             bgColor: "bg-danger",
             link: "https://www.google.com",
-            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci  laborum libero magnam maiores maxime"
+            description: "Lorem ipsum dolor sit amet, consectetur adi"
 
 
         },
@@ -61,7 +61,7 @@ export default function App1() {
 
                 {profiles.map((profile, index) =>
 
-                        <div className={` col-sm-6 col-md-3 col-ld-3 col-12 mb-4  rounded rounded-lg `} key={profile.id}>
+                        <div className={` col-sm-6 col-md-2 col-ld-3 col-12   rounded rounded-lg `} key={profile.id}>
                             <ProfileCard profile={profile}/>
                         </div>
                 )}

@@ -27,8 +27,7 @@ function Section41() {
 
     const handleClick = () => {
         setState(!state);
-        console.log("Button Clicked");
-        console.log(s1, s2)
+        console.log(s1, s3)
     }
     const handleClicks = () => {
         setAnimal([...animal, getRandomAnimals()]);
@@ -47,7 +46,7 @@ function Section41() {
         return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     }
 
-    const [s1, s2] = arrayData();
+    const [s1, s3] = arrayData();
     const renderAnimals = animal.map((item, index) => {
         return <AnimalShow key={index} type={item}/>
     })
@@ -56,13 +55,13 @@ function Section41() {
         <div className={``} style={{backgroundColor: '#f8d7da'}}>
 
 
-            {state ? <h1>True</h1> : <h1>False</h1>}
-            <h1 onCopy={handleCopy} onCut={handleCut}
+            {state ? <h6>True</h6> : <h6>False</h6>}
+            <h6 onCopy={handleCopy} onCut={handleCut}
                 onMouseOver={(e) => {
                     console.log('hover logging');
                 }}
 
-            >Animal Show</h1>
+            >Animal Show</h6>
             <input
                 onPaste={handlePaste}
 

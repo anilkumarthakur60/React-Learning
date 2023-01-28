@@ -2,7 +2,7 @@ import React from "react";
 import App1, {message11} from "./App1";
 import Section41 from "./Section4/Section41";
 import Section5 from "./Section5/Section5";
-import Section6 from "./FormHandleSection6/Section6";
+import Section6 from "./Section7apiRequst/Section6";
 
 function App() {
     let message = "How are you?";
@@ -22,44 +22,30 @@ function App() {
     return <>
         <div className="container">
             <hr style={{border: "10px solid green"}}/>
-            <div className="">Section 6 Practice Form Handeling</div>
-            <Section6/>
-
-            <hr style={{border: "10px solid red"}}/>
-            <div className="">Section 5 Practice</div>
-                <Section5/>
-
-            <hr style={{border: "10px solid red"}}/>
-            <div className="">Section 4 Practice</div>
-            <Section41/>
-
-            <hr style={{border: "10px solid red"}}/>
-            <div className="">Section 2 Practice</div>
-            <div>
-                {message}
-                {m1.map((item, index) => {
-                        return <div key={index}>{item.name}</div>
-                    }
-                )}
-
-                <h1>{
-                    dates
-
-                }</h1>
+            <div className="">
+                Section 6 Practice Form Handling
+                <Section6/>
             </div>
-            <input autoFocus={true} type={`number`} style={{width: "500px"}} min={12} max={25}/>
-            <br/>
-            <br/>
-
-            <textarea autoFocus={true} style={{width: "500px"}} maxLength={244} minLength={10}/>
-            <br/>
-            <br/>
-            <input spellCheck title={`jdsahf jhdshf`} type={`text`}/>
-            {message11}
 
             <hr style={{border: "10px solid red"}}/>
-            <div className="">Section 3 Practice</div>
-            <App1/>
+            <div className="">Section 5 Practice
+                <Section5/>
+            </div>
+
+            <hr style={{border: "10px solid red"}}/>
+            <div className="">Section 4 Practice
+                <p>{message11}</p>
+                <Section41/>
+            </div>
+
+
+            <hr style={{border: "10px solid red"}}/>
+            <div className="row ">
+                <h6>Section 3 Practice</h6>
+                <p>{message11}</p>
+                {/*<App1/>*/}
+            </div>
+
 
         </div>
     </>;
