@@ -6,7 +6,7 @@ function ImageList({images}) {
 
     const imageOnly = images.map((image) => {
         return <>
-            <div className="col-3 p-3 shadow">
+            <div className="col-12 col-md-3 col-sm-6 p-3 shadow">
                 <div className="card h-100 bg-light ">
                     <ImageShow key={image.id} image={image}/>
                 </div>

@@ -24,8 +24,6 @@ K
 I
 src/Section5/SearchBar.js,4/f/4f829e572fb0934afe53224520f6f53f3443d1c4
 I
-src/Section5/ImageList.js,4/7/47e2e3328b802ba9453b32f523648a3a01095163
-I
 src/Section5/ImageShow.js,1/b/1b7987f55401c74a6c6ab74e2207eb4e92e3ea7e
 <
 src/index.js,f/9/f900edc44cb929c2267a16100a32851f6d5b477d
