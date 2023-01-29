@@ -1,17 +1,16 @@
 import React, {useState} from "react";
 import Section7BookEdit from "./Section7BookEdit";
 
-function Section7BookShow({book, itemKey,  onDelete, onEdit}) {
+function Section7BookShow({book,  onDelete, onEdit}) {
 
     const [enableEdit, setEnableEdit] = useState(true)
     const handleDelete = () => {
-        onDelete(itemKey)
+        onDelete(book.id)
     }
 
 
     const [editBook, setEditBook] = useState({
-        title: book.title,
-        author: book.author
+        name: book.name,
     })
     const handleEdit = () => {
         setEnableEdit(!enableEdit)
@@ -22,8 +21,9 @@ function Section7BookShow({book, itemKey,  onDelete, onEdit}) {
             ...editBook,
             [e.target.id]: e.target.value
         }
+        console.log(editedData)
         setEditBook(editedData)
-        onEdit(editedData, itemKey)
+        onEdit(editedData, book.id)
     }
 
 
@@ -40,29 +40,21 @@ function Section7BookShow({book, itemKey,  onDelete, onEdit}) {
                                             <i className="bi bi-trash"></i>
                                         </button>
                                         <button type={`button`} onClick={handleEdit} className={`btn btn-sm ms-2  ${enableEdit?'btn-info':'btn-primary'}`}>
-                                            <i className={`bi bi-${enableEdit?'x-circle':'pencil'}`}></i>
+                                            <i className={`bi bi-${enableEdit?'pencil':'x-circle'}`}></i>
                                         </button>
 
                         </div>
                         <div className="col-12">
-                            <label htmlFor="title" className="form-label">Title</label>
-                            <input type="text" className="form-control" id="title"
+                            <label htmlFor="name" className="form-label">Title</label>
+                            <input type="text" className="form-control" id="name"
                                    disabled={enableEdit}
                                    onChange={handleChanges}
-                                   value={book.title}
+                                   value={book.name}
                             />
                         </div>
-                        <div className="col-12">
-                            <label htmlFor="author" className="form-label">Author</label>
-                            <input type="text" className="form-control"
-                                   id={`author`}
-                                   disabled={enableEdit}
-                                   onChange={handleChanges}
-                                   value={book.author}
-                            />
-                        </div>
+
                         {
-                            enableEdit?  <Section7BookEdit book={book} onEdit={onEdit} itemKey={itemKey} /> : null
+                            enableEdit?  <Section7BookEdit book={book} onEdit={onEdit} /> : null
                         }
                     </div>
                 </div>

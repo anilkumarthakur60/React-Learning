@@ -8,7 +8,7 @@ function Section7BookList({list, onDelete, onEdit}) {
 
     const bookShowList = list.map((book, index) => {
         return (
-            <Section7BookShow book={book} itemKey={index} key={index} onDelete={onDelete} onEdit={onEdit}/>
+            <Section7BookShow book={book} key={book.id} onDelete={onDelete} onEdit={onEdit}/>
         )
     })
 
