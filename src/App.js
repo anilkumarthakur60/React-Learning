@@ -29,6 +29,11 @@ function App() {
         <div className="container">
             <hr style={{border: "10px solid green"}}/>
             <div className="">
+               Section 8 Communiation using the context
+                <Section7ApiRelated></Section7ApiRelated>
+            </div>
+            <hr style={{border: "10px solid green"}}/>
+            <div className="">
                 Section 6 Practice Form Handling
 
                 <Section7ApiRelated></Section7ApiRelated>
