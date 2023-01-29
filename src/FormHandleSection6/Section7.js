@@ -4,6 +4,8 @@ import {axiosInstance} from "../api_instance";
 
 function  Section7() {
 
+
+    console.log(process.env)
    const callApi=()=>{
        const data= axiosInstance.get("/posts").then((res)=>{
            console.log(res.data)

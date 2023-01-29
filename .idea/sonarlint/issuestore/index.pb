@@ -18,8 +18,6 @@ I
 src/Section5/SearchBar.js,4/f/4f829e572fb0934afe53224520f6f53f3443d1c4
 I
 src/Section5/ImageShow.js,1/b/1b7987f55401c74a6c6ab74e2207eb4e92e3ea7e
-<
-src/index.js,f/9/f900edc44cb929c2267a16100a32851f6d5b477d
 S
 #.idea/sonarlint/issuestore/index.pb,9/f/9fe84ebb15faf917b7def6236dba604453cc61e0
 ;
@@ -54,9 +52,5 @@ src/api.js,8/c/8c37372e0f85ef2d908f9d02c49f6a0d04b1f091
 :
 
 src/App.js,1/e/1e43fa63aecd2127be034b3fb9d4caa172275714
-R
-"src/FormHandleSection6/Section7.js,8/6/8671bb764511c162c0f210f962d845afea6f4dc2
 C
 src/api_instance.js,c/a/cab788c7a5e9db95ade3cc453b6cb42ffdcf4a74
-4
-.env,3/c/3c84dcdc6bbe3d7817c49dcdc327b926fea1808a
