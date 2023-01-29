@@ -5,6 +5,7 @@ import Section5 from "./Section5/Section5";
 import Section6 from "./Section7apiRequst/Section6";
 import {axiosInstance} from "./api_instance";
 import Section7ApiRelated from "./FormHandleSection6/Section7ApiRelated";
+import Section8 from "./Section8/Section8";
 
 function App() {
     let message = "How are you?";
@@ -30,11 +31,11 @@ function App() {
             <hr style={{border: "10px solid green"}}/>
             <div className="">
                Section 8 Communiation using the context
-                <Section7ApiRelated></Section7ApiRelated>
+                <Section8></Section8>
             </div>
             <hr style={{border: "10px solid green"}}/>
             <div className="">
-                Section 6 Practice Form Handling
+                Section 7 Practice Form Handling
 
                 <Section7ApiRelated></Section7ApiRelated>
             </div>
