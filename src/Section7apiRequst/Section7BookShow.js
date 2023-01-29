@@ -1,7 +1,7 @@
 import React, {useState} from "react";
-import BookEdit from "./BookEdit";
+import Section7BookEdit from "./Section7BookEdit";
 
-function BookShow({book, itemKey,  onDelete, onEdit}) {
+function Section7BookShow({book, itemKey,  onDelete, onEdit}) {
 
     const [enableEdit, setEnableEdit] = useState(true)
     const handleDelete = () => {
@@ -62,7 +62,7 @@ function BookShow({book, itemKey,  onDelete, onEdit}) {
                             />
                         </div>
                         {
-                            enableEdit?  <BookEdit book={book} onEdit={onEdit} itemKey={itemKey} /> : null
+                            enableEdit?  <Section7BookEdit book={book} onEdit={onEdit} itemKey={itemKey} /> : null
                         }
                     </div>
                 </div>
@@ -73,4 +73,4 @@ function BookShow({book, itemKey,  onDelete, onEdit}) {
 
 }
 
-export default BookShow
+export default Section7BookShow

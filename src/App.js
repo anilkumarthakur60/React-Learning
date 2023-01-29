@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import App1, {message11} from "./App1";
 import Section41 from "./Section4/Section41";
 import Section5 from "./Section5/Section5";
-import Section6 from "./Section7apiRequst/Section6";
+import Section7 from "./Section7apiRequst/Section7";
 import {axiosInstance} from "./api_instance";
 import Section7 from "./FormHandleSection6/Section7";
 
@@ -35,7 +35,7 @@ function App() {
             <hr style={{border: "10px solid green"}}/>
             <div className="">
                 Section 6 Practice Form Handling
-                <Section6/>
+                <Section7/>
             </div>
 
             <hr style={{border: "10px solid red"}}/>

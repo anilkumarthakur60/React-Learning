@@ -5,7 +5,10 @@ import {axiosInstance} from "../api_instance";
 function  Section7() {
 
 
-    console.log(process.env)
+
+
+
+
    const callApi=()=>{
        const data= axiosInstance.get("/posts").then((res)=>{
            console.log(res.data)
@@ -13,6 +16,7 @@ function  Section7() {
    }
     return (
         <div>
+            {process.env.APPURL}
             <button className="btn btn-primary" onClick={callApi}>Add Book 122 </button>
 
         </div>

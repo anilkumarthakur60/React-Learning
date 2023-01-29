@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function    BookCreate({onCreateBook}) {
+function    Section7BookCreate({onCreateBook}) {
     const [book,setBook]=useState({
         title:'',
         author:''
@@ -59,4 +59,4 @@ function    BookCreate({onCreateBook}) {
     )
 }
 
-export default BookCreate
+export default Section7BookCreate

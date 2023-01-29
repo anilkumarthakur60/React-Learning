@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function BookEdit({onEdit,book,itemKey}) {
+function Section7BookEdit({onEdit,book,itemKey}) {
     const [editBook, setEditBook] = useState({
         title: book.title,
         author: book.author
@@ -47,4 +47,4 @@ function BookEdit({onEdit,book,itemKey}) {
 
 }
 
-export default BookEdit
+export default Section7BookEdit

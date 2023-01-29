@@ -34,16 +34,12 @@ J
 src/Section4/AnimalShow.js,6/4/64b51160a9fc81a756a43230f2a64e945468b538
 9
 	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-<
-package.json,7/0/7030d0b2f71b999ff89a343de08c414af32fc93a
 H
 src/Section5/Section5.js,8/9/8956b968284023fc16051b4f77cd9b4da7b52060
 I
 src/Section5/ImageList.js,4/7/47e2e3328b802ba9453b32f523648a3a01095163
 I
 src/Section4/Section41.js,4/5/455aef1d8771021bf454f13744df6f1abf622f85
-Q
-!src/Section7apiRequst/Section6.js,d/6/d6e4e031b12e6a75080d75e3d42f182c0bdf66c5
 8
 api.http,a/0/a0edea362c06c693d604f3480b4acc56745672db
 :

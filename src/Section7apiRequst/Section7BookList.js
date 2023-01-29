@@ -1,14 +1,14 @@
 import React from "react";
-import BookShow from "./BookShow";
+import Section7BookShow from "./Section7BookShow";
 
 
-function BookList({list, onDelete, onEdit}) {
+function Section7BookList({list, onDelete, onEdit}) {
 
 
 
     const bookShowList = list.map((book, index) => {
         return (
-            <BookShow book={book} itemKey={index} key={index} onDelete={onDelete} onEdit={onEdit}/>
+            <Section7BookShow book={book} itemKey={index} key={index} onDelete={onDelete} onEdit={onEdit}/>
         )
     })
 
@@ -24,4 +24,4 @@ function BookList({list, onDelete, onEdit}) {
 }
 
 
-export default BookList;
+export default Section7BookList;
