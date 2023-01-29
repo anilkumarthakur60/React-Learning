@@ -1,11 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import {axiosInstance} from "../api_instance";
 
 function  Section7() {
+
+   const callApi=()=>{
+       const data= axiosInstance.get("/posts").then((res)=>{
+           console.log(res.data)
+       })
+   }
     return (
         <div>
-            <h1>Section 7</h1>
+            <button className="btn btn-primary" onClick={callApi}>Add Book 122 </button>
+
         </div>
     );
 }
-export default Section7();
+export default Section7;

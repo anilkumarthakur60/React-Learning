@@ -12,9 +12,6 @@ O
 src/Assets/images/Svg/horse.svg,a/d/ad6ef5096fccfd633064c0023178a016fe24c8d8
 A
 public/index.html,f/4/f43ecdf8d666ee908aacce037b4cd72159e4741b
-:
-
-src/api.js,8/c/8c37372e0f85ef2d908f9d02c49f6a0d04b1f091
 K
 src/Section4/animalShow.css,4/6/4674bfa1b12f5b5de4475a77170bad178a1218b5
 I
