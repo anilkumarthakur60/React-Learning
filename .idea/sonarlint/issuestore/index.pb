@@ -45,8 +45,5 @@ I
 :
 
 src/api.js,8/c/8c37372e0f85ef2d908f9d02c49f6a0d04b1f091
-:
-
-src/App.js,1/e/1e43fa63aecd2127be034b3fb9d4caa172275714
 C
 src/api_instance.js,c/a/cab788c7a5e9db95ade3cc453b6cb42ffdcf4a74

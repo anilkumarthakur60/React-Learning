@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import {axiosInstance} from "../api_instance";
 
-function  Section7() {
+function  Section7ApiRelated() {
 
 
 
@@ -22,4 +22,4 @@ function  Section7() {
         </div>
     );
 }
-export default Section7;
+export default Section7ApiRelated;

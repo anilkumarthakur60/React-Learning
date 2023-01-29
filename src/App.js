@@ -2,9 +2,9 @@ import React, {useEffect} from "react";
 import App1, {message11} from "./App1";
 import Section41 from "./Section4/Section41";
 import Section5 from "./Section5/Section5";
-import Section7 from "./Section7apiRequst/Section7";
+import Section6 from "./Section7apiRequst/Section6";
 import {axiosInstance} from "./api_instance";
-import Section7 from "./FormHandleSection6/Section7";
+import Section7ApiRelated from "./FormHandleSection6/Section7ApiRelated";
 
 function App() {
     let message = "How are you?";
@@ -29,13 +29,16 @@ function App() {
         <div className="container">
             <hr style={{border: "10px solid green"}}/>
             <div className="">
-                Section 7 Practice Form Handling
-                <Section7/>
+                Section 6 Practice Form Handling
+
+                <Section7ApiRelated></Section7ApiRelated>
             </div>
+
             <hr style={{border: "10px solid green"}}/>
             <div className="">
                 Section 6 Practice Form Handling
-                <Section7/>
+
+                <Section6></Section6>
             </div>
 
             <hr style={{border: "10px solid red"}}/>

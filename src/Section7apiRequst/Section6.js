@@ -1,10 +1,10 @@
 import React, {useState} from "react";
-import Section7BookCreate from "./Section7BookCreate.js";
-import Section7BookList from "./Section7BookList";
+import Section6BookCreate from "./Section6BookCreate.js";
+import Section6BookList from "./Section6BookList";
 import Swal from "sweetalert2";
 
 
-function Section7() {
+function Section6() {
     const [list, setList] = useState([]);
 
     const [fruit, setFruit] = useState(
@@ -198,9 +198,9 @@ function Section7() {
 
                     <div className="col-12">
                         <h6>Section 6</h6>
-                        <Section7BookList list={list} onDelete={removeBookById} onEdit={editBookByIndex}/>
+                        <Section6BookList list={list} onDelete={removeBookById} onEdit={editBookByIndex}/>
                         <hr/>
-                        <Section7BookCreate onCreateBook={handleBookCreate} oncl/>
+                        <Section6BookCreate onCreateBook={handleBookCreate} oncl/>
                     </div>
                 </div>
             </div>
@@ -208,4 +208,4 @@ function Section7() {
     );
 }
 
-export default Section7;
+export default Section6;
