@@ -28,12 +28,13 @@ function Section7ApiRelated() {
 
         axios.delete(`http://127.0.0.1:8000/api/react/posts/${id}`).then((response) => {
             console.log(response);
+
+            fetchApi();
         }).catch((error) => {
             console.log(error);
         }).finally(() => {
             console.log("Finally");
         })
-        fetchApi();
     }
     const editBookByIndex = (editList, key) => {
         console.log(editList, key   )

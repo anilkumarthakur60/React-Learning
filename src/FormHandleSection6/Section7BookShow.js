@@ -54,7 +54,7 @@ function Section7BookShow({book,  onDelete, onEdit}) {
                         </div>
 
                         {
-                            enableEdit?  <Section7BookEdit book={book} onEdit={onEdit} /> : null
+                            enableEdit?null:  <Section7BookEdit book={book} onEdit={onEdit} />
                         }
                     </div>
                 </div>
