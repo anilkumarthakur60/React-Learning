@@ -59,11 +59,6 @@ Z
 *src/FormHandleSection6/Section7BookEdit.js,a/3/a3e71b49133fdb236ba4201e83e82f9ca0707a77
 Q
 !src/Section7apiRequst/Section6.js,d/6/d6e4e031b12e6a75080d75e3d42f182c0bdf66c5
-:
-
-src/App.js,1/e/1e43fa63aecd2127be034b3fb9d4caa172275714
-H
-src/Section8/Section8.js,9/3/93329f5f9ecb93f6c4337936e6b34f21995afd15
 \
 ,src/FormHandleSection6/Section7ApiRelated.js,0/d/0daed8b82bec7a5fb985c72d5dd1ad9aa7262d11
 Z

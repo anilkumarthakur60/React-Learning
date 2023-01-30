@@ -3,10 +3,9 @@ import App1, {message11} from "./App1";
 import Section41 from "./Section4/Section41";
 import Section5 from "./Section5/Section5";
 import Section6 from "./Section7apiRequst/Section6";
-import {axiosInstance} from "./api_instance";
 import Section7ApiRelated from "./FormHandleSection6/Section7ApiRelated";
 import Section8 from "./Section8/Section8";
-
+import BookContext from "./Context/books";
 function App() {
     let message = "How are you?";
 
@@ -23,16 +22,29 @@ function App() {
         {id: 3, name: "Peter"}
 
     ];
+    const m2 = [
+        {id: 1, name: "John"},
+        {id: 2, name: "Mary"},
+        {id: 3, name: "Peter"}
+
+    ];
 
 
     let dates = new Date().toLocaleTimeString()
+
+
     return <>
         <div className="container">
             <hr style={{border: "10px solid green"}}/>
             <div className="">
-               Section 8 Communiation using the context
-                <Section8></Section8>
+                Section 8 Communiation using the context
+
+                <BookContext.Provider value={10}>
+                    <Section8></Section8>
+                </BookContext.Provider>
+
             </div>
+
             <hr style={{border: "10px solid green"}}/>
             <div className="">
                 Section 7 Practice Form Handling
