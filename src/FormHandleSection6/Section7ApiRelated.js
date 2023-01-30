@@ -5,12 +5,13 @@ import Section7BookCreate from "./Section7BookCreate";
 import axios from "axios";
 
 
-function Section7ApiRelated() {
+function Section7ApiRelated({lists}) {
     const [list, setList] = useState([]);
 
     const fetchApi = async () => {
       await axios.get("http://127.0.0.1:8000/api/react/posts").then((response) => {
               setList(response.data.data);
+          lists(response.data.data);
        }).catch((error) => {
               console.log(error);
        }).finally(() => {

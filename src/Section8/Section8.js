@@ -1,13 +1,14 @@
 import React, {useContext} from "react";
 
-import BookContext from "../Context/books";
+import {Provider} from "../Context/books";
+import Section8Content from "./Section8Content";
 
-function Section8() {
-    const m2 = useContext(BookContext);
+function Section8({listData}) {
+
     return (
-        <div>
-            <h1>{m2}</h1>
-        </div>
+       <Provider>
+              <Section8Content listData={listData} />
+         </Provider>
     )
 }
 

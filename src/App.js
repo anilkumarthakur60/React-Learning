@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import App1, {message11} from "./App1";
 import Section41 from "./Section4/Section41";
 import Section5 from "./Section5/Section5";
@@ -32,24 +32,27 @@ function App() {
 
     let dates = new Date().toLocaleTimeString()
 
+    const [listData, setListData] = useState([]);
+    const getList = (val) => {
+
+        setListData(val)
+        console.log(val)
+    }
+
 
     return <>
         <div className="container">
             <hr style={{border: "10px solid green"}}/>
             <div className="">
-                Section 8 Communiation using the context
-
-                <BookContext.Provider value={10}>
-                    <Section8></Section8>
-                </BookContext.Provider>
-
+                Section 8 Content
+                    <Section8 listData={listData}></Section8>
             </div>
 
             <hr style={{border: "10px solid green"}}/>
             <div className="">
                 Section 7 Practice Form Handling
 
-                <Section7ApiRelated></Section7ApiRelated>
+                <Section7ApiRelated lists={getList}></Section7ApiRelated>
             </div>
 
             <hr style={{border: "10px solid green"}}/>
