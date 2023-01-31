@@ -14,6 +14,7 @@ function  Section8Content({listData}) {
         <div>
             Count : {count}
             {renderedBooks}
+            https://plieger.udemy.com/course/react-redux/learn/lecture/34694720#overview
             <button className={`btn btn-sm btn-danger`} onClick={incrementCount}>Increment</button>
         </div>
     )
