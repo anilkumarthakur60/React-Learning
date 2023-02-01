@@ -63,14 +63,3 @@ Z
 *src/FormHandleSection6/Section7BookShow.js,8/5/85f1c76cdcb8183cba5f80dbedcfab17e7db956d
 Z
 *src/FormHandleSection6/Section7BookList.js,0/0/00dacf6e999021c21c83c977a7ce8b127f1dcd56
-D
-src/Context/books.js,7/8/78727b38ccb9a623957744c2a12af4e49acdf898
-\
-,src/FormHandleSection6/Section7ApiRelated.js,0/d/0daed8b82bec7a5fb985c72d5dd1ad9aa7262d11
-:
-
-src/App.js,1/e/1e43fa63aecd2127be034b3fb9d4caa172275714
-H
-src/Section8/Section8.js,9/3/93329f5f9ecb93f6c4337936e6b34f21995afd15
-O
-src/Section8/Section8Content.js,d/d/dd13c6141dc35e85b8914f986ffb463181b072f7
