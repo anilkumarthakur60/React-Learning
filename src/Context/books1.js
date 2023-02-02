@@ -47,9 +47,11 @@ function Provider({children}) {
 
     }
     const handleBookCreate = (data) => {
-        axios.post(`http://127.0.0.1:8000/api/react/posts`, {
-            name: data.name,
 
+
+        console.log('---------data logging--------',data.name);
+        axios.post(`http://127.0.0.1:8000/api/react/posts`, {
+            name: data.name
         }).then((response) => {
             fetchApi();
         }).catch((error) => {
@@ -60,11 +62,11 @@ function Provider({children}) {
     }
 
     const valueToShare = {
-        list: list,
-        fetchApi: fetchApi,
-        removeBookById: removeBookById,
-        editBookByIndex: editBookByIndex,
-        handleBookCreate: handleBookCreate
+        list,
+        fetchApi,
+        removeBookById,
+        editBookByIndex,
+        handleBookCreate
 
     }
 

@@ -1,9 +1,13 @@
-import React, {useContext, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import Section8BookEdit from "./Section8BookEdit";
 import BookContext from "../Context/books1";
+import books from "../Context/books";
 
 function Section8BookShow({book}) {
+
     const {removeBookById,editBookByIndex} = useContext(BookContext);
+
+
 
     const [enableEdit, setEnableEdit] = useState(true)
     const handleDelete = () => {
@@ -35,6 +39,7 @@ function Section8BookShow({book}) {
             <div className="col-3 col-sm-6   mt-4">
                 <div className="card h-100 bg-light px-3 ">
                     <div className="row my-3">
+
                         <div className="d-flex">
 
 

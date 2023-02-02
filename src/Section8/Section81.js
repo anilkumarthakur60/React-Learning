@@ -5,11 +5,11 @@ import  BookContext from "../Context/books1";
 
 function Section81() {
 
-    // const {fetchApi} = useContext(BookContext1);
-    //
-    // useEffect(() => {
-    //     fetchApi()
-    // },[]);
+    const {fetchApi} = useContext(BookContext);
+
+    useEffect(() => {
+        fetchApi()
+    },[]);
 
 
     return (

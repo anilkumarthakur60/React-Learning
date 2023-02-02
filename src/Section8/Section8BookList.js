@@ -8,11 +8,10 @@ function Section8BookList() {
 
     const {list} = useContext(BookContext);
 
-    const bookShowList = list.map((book, index) => {
+    const bookShowList = list.map((book) => {
         return (
-            <div className="col-4">
-            </div>
-            // <Section8BookShow book={book}  key={index} />
+
+            <Section8BookShow book={book}  key={book.id} />
         )
     })
 

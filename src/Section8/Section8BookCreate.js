@@ -5,19 +5,13 @@ function Section8BookCreate() {
 
 
     const {handleBookCreate} = useContext(BooksContext);
-    const [book, setBook] = useState({
-        title: '',
-        author: ''
-    })
+    const [book, setBook] = useState({})
 
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         handleBookCreate(book)
-        setBook({
-            title: '',
-            author: ''
-        })
+        setBook({})
     }
     const handleChanges = (e) => {
 
@@ -33,13 +27,14 @@ function Section8BookCreate() {
     return (
         <>
             <form onSubmit={handleSubmit} className={`mt-4`}>
+                <pre>{JSON.stringify(book)}</pre>
                 <div className="row card p-2 ">
                     <div className="col-6 mt-3">
                         <label htmlFor="title" className="form-label">Title</label>
                         <input
                             type="text"
                             className="form-control"
-                            id="title"
+                            id="name"
                             required={true}
                             value={book?.title}
                             onChange={(e) => {
@@ -47,20 +42,7 @@ function Section8BookCreate() {
                             }}
                         />
                     </div>
-                    <div className="col-6">
-                        <label
-                            htmlFor="author" className="form-label">Author</label>
-                        <input
-                            type="text"
-                            className="form-control"
-                            id="author"
-                            value={book?.author}
-                            required={true}
-                            onChange={(e) => {
-                                handleChanges(e)
-                            }}
-                        />
-                    </div>
+
                     <div className="col-12 d-flex">
                         <button type="submit" className="btn btn-primary me-auto my-3">Submit</button>
                     </div>
