@@ -54,11 +54,7 @@ C
 ,src/FormHandleSection6/Section7BookCreate.js,8/0/8055d33891f2b9ad8440d51adfaa544758b42426
 Z
 *src/FormHandleSection6/Section7BookEdit.js,a/3/a3e71b49133fdb236ba4201e83e82f9ca0707a77
-Q
-!src/Section7apiRequst/Section6.js,d/6/d6e4e031b12e6a75080d75e3d42f182c0bdf66c5
 Z
 *src/FormHandleSection6/Section7BookShow.js,8/5/85f1c76cdcb8183cba5f80dbedcfab17e7db956d
 Z
 *src/FormHandleSection6/Section7BookList.js,0/0/00dacf6e999021c21c83c977a7ce8b127f1dcd56
-O
-src/Section8/Section8Content.js,d/d/dd13c6141dc35e85b8914f986ffb463181b072f7
