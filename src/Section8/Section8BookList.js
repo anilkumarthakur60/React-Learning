@@ -1,12 +1,12 @@
 import React, {useContext} from "react";
 import Section8BookShow from "./Section8BookShow";
-import BookContext from "../Context/books1";
+import useBooksContext from "../Hooks/useBooksContext";
 
 
 function Section8BookList() {
 
 
-    const {list} = useContext(BookContext);
+    const {list} =useBooksContext();
 
     const bookShowList = list.map((book) => {
         return (
