@@ -23,8 +23,12 @@ function Section8BookEdit({book}) {
     const handleSubmit =  (e) => {
         e.preventDefault()
         editBookByIndex(editBook)
+        setEditBook({
+            name: "",
+        })
 
     }
+
     return (
         <>
             <form onSubmit={handleSubmit}>
