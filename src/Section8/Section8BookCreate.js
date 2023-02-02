@@ -11,7 +11,9 @@ function Section8BookCreate() {
     const handleSubmit = async (e) => {
         e.preventDefault()
         handleBookCreate(book)
-        setBook({})
+        setBook({
+            name: "",
+        })
     }
     const handleChanges = (e) => {
 
