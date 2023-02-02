@@ -6,8 +6,8 @@ function Section8BookEdit({book}) {
 
     const {editBookByIndex} = useContext(BookContext);
     const [editBook, setEditBook] = useState({
-        title: book.title,
-        author: book.author
+        name: book.name,
+        id: book.id
     })
 
 
@@ -29,15 +29,11 @@ function Section8BookEdit({book}) {
             <form onSubmit={handleSubmit}>
                 <div className="row">
                     <div className="col-6">
-                        <label htmlFor="title" className="form-label">Title</label>
-                        <input type="text" className="form-control" id="title" value={editBook.title}
+                        <label htmlFor="name" className="form-label">Title</label>
+                        <input type="text" className="form-control" id="name" value={editBook.title}
                                onChange={handleChanges}/>
                     </div>
-                    <div className="col-6">
-                        <label htmlFor="author" className="form-label">Author</label>
-                        <input type="text" className="form-control" id="author" value={editBook.author}
-                               onChange={handleChanges}/>
-                    </div>
+
                     <div className="col-12 d-flex">
 
                     <button type="submit" className="btn btn-primary me-auto my-3">Submit</button>

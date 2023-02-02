@@ -31,10 +31,10 @@ function Provider({children}) {
             console.log("Finally");
         })
     }
-    const editBookByIndex = (editList, key) => {
-        console.log(editList, key)
+    const editBookByIndex = (editList) => {
+        console.log('---------data logging-----editList---',editList);
 
-        axios.put(`http://127.0.0.1:8000/api/react/posts/${key}`, {
+        axios.put(`http://127.0.0.1:8000/api/react/posts/${editList.id}`, {
             name: editList.name,
 
         }).then((response) => {

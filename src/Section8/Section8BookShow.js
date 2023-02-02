@@ -29,7 +29,7 @@ function Section8BookShow({book}) {
             [e.target.id]: e.target.value
         }
         setEditBook(editedData)
-        editBookByIndex(editedData, book.id)
+        editBookByIndex(editedData)
     }
 
 
@@ -53,21 +53,13 @@ function Section8BookShow({book}) {
                         </div>
                         <div className="col-12">
                             <label htmlFor="title" className="form-label">Title</label>
-                            <input type="text" className="form-control" id="title"
+                            <input type="text" className="form-control" id="name"
                                    disabled={enableEdit}
                                    onChange={handleChanges}
                                    value={book.title}
                             />
                         </div>
-                        <div className="col-12">
-                            <label htmlFor="author" className="form-label">Author</label>
-                            <input type="text" className="form-control"
-                                   id={`author`}
-                                   disabled={enableEdit}
-                                   onChange={handleChanges}
-                                   value={book.author}
-                            />
-                        </div>
+
                         {
                             enableEdit?  <Section8BookEdit book={book}  /> : null
                         }
