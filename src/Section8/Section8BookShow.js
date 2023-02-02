@@ -56,7 +56,7 @@ function Section8BookShow({book}) {
                             <input type="text" className="form-control" id="name"
                                    disabled={enableEdit}
                                    onChange={handleChanges}
-                                   value={book.title}
+                                   value={book.name}
                             />
                         </div>
 

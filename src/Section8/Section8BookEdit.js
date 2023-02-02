@@ -4,6 +4,7 @@ import BookContext from "../Context/books1";
 function Section8BookEdit({book}) {
 
 
+    console.log('---------data logging-----sdds---',book)
     const {editBookByIndex} = useContext(BookContext);
     const [editBook, setEditBook] = useState({
         name: book.name,
@@ -21,7 +22,7 @@ function Section8BookEdit({book}) {
 
     const handleSubmit =  (e) => {
         e.preventDefault()
-        editBookByIndex(editBook, book.id)
+        editBookByIndex(editBook)
 
     }
     return (
@@ -30,7 +31,7 @@ function Section8BookEdit({book}) {
                 <div className="row">
                     <div className="col-6">
                         <label htmlFor="name" className="form-label">Title</label>
-                        <input type="text" className="form-control" id="name" value={editBook.title}
+                        <input type="text" className="form-control" id="name" value={editBook.name}
                                onChange={handleChanges}/>
                     </div>
 
