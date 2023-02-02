@@ -22,6 +22,7 @@ function Section8BookShow({book}) {
     const handleEdit = () => {
         setEnableEdit(!enableEdit)
 
+
     }
     const handleChanges = (e) => {
         const editedData = {

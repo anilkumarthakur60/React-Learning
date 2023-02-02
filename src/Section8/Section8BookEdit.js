@@ -1,11 +1,11 @@
 import React, {useContext, useState} from "react";
-import BookContext from "../Context/books1";
+import useBooksContext from "../Hooks/useBooksContext";
 
 function Section8BookEdit({book}) {
 
 
     console.log('---------data logging-----sdds---',book)
-    const {editBookByIndex} = useContext(BookContext);
+    const {editBookByIndex} =  useBooksContext();
     const [editBook, setEditBook] = useState({
         name: book.name,
         id: book.id
