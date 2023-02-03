@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from "react";
+import React, {useCallback, useContext, useEffect} from "react";
 import Section8BookList from "./Section8BookList";
 import Section8BookCreate from "./Section8BookCreate";
 import useBooksContext from "../Hooks/useBooksContext";
@@ -6,6 +6,13 @@ import useBooksContext from "../Hooks/useBooksContext";
 function Section81() {
 
     const {fetchApi} =  useBooksContext();
+
+
+    const  stableFetchApi = useCallback(
+        fetchApi,
+        []
+    );
+
 
     useEffect(() => {
         fetchApi()

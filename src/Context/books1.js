@@ -1,4 +1,4 @@
-import {createContext, useState} from "react";
+import {createContext, useState,useCallback} from "react";
 import axios from "axios";
 
 const BookContext = createContext();
@@ -17,6 +17,11 @@ function Provider({children}) {
 
         })
     }
+
+    const  stableFetchApi = useCallback(
+        fetchApi,
+        []
+    );
 
 
     const removeBookById = (id) => {
