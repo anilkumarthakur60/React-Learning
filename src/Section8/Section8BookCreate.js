@@ -29,7 +29,7 @@ function Section8BookCreate() {
     return (
         <>
             <form onSubmit={handleSubmit} className={`mt-4`}>
-                <pre>{JSON.stringify(book)}</pre>
+
                 <div className="row card p-2 ">
                     <div className="col-6 mt-3">
                         <label htmlFor="title" className="form-label">Title</label>
