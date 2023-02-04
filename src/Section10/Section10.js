@@ -6,23 +6,9 @@ function Section10() {
     return (
         <div>
                 <div className="">
-                    <Button>kjsad</Button>
+                    <Button primary secondary danger  variation={` variation akjsnas`} >aljs</Button>
                 </div>
-                <div className="">
-                    <Button>kjsad</Button>
-                </div>
-                <div className="">
-                    <Button>kjsad</Button>
-                </div>
-                <div className="">
-                    <Button>kjsad</Button>
-                </div>
-                <div className="">
-                    <Button>kjsad</Button>
-                </div>
-                <div className="">
-                    <Button>kjsad</Button>
-                </div>
+
 
         </div>
     )

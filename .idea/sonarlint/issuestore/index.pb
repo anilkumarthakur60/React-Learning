@@ -7,8 +7,6 @@ M
 src/Assets/images/Svg/dog.svg,c/7/c799b57d38f46dd6ac88ca257a1847207e4f24b3
 O
 src/Assets/images/Svg/horse.svg,a/d/ad6ef5096fccfd633064c0023178a016fe24c8d8
-A
-public/index.html,f/4/f43ecdf8d666ee908aacce037b4cd72159e4741b
 K
 src/Section4/animalShow.css,4/6/4674bfa1b12f5b5de4475a77170bad178a1218b5
 I
@@ -17,8 +15,6 @@ I
 src/Section5/ImageShow.js,1/b/1b7987f55401c74a6c6ab74e2207eb4e92e3ea7e
 S
 #.idea/sonarlint/issuestore/index.pb,9/f/9fe84ebb15faf917b7def6236dba604453cc61e0
-;
-src/App1.js,3/6/36e813de9c44fa87533e16f8ae2af6973e89e799
 B
 src/ProfileCard.js,6/a/6afe34dbc4fb4d080bfb84fc87a9c3670f8bef48
 w
@@ -46,8 +42,6 @@ C
 src/api_instance.js,c/a/cab788c7a5e9db95ade3cc453b6cb42ffdcf4a74
 4
 .env,3/c/3c84dcdc6bbe3d7817c49dcdc327b926fea1808a
-<
-src/index.js,f/9/f900edc44cb929c2267a16100a32851f6d5b477d
 <
 package.json,7/0/7030d0b2f71b999ff89a343de08c414af32fc93a
 \
