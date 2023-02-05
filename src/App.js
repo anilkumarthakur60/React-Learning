@@ -7,6 +7,7 @@ import Section7ApiRelated from "./FormHandleSection6/Section7ApiRelated";
 import Section8 from "./Section8/Section8";
 import Section81MainFile from "./Section8/Section81MainFile";
 import Section10 from "./Section10/Section10";
+import Section11 from "./Section11/Section11";
 function App() {
     let message = "How are you?";
 
@@ -47,6 +48,11 @@ function App() {
 
     return <>
         <div className="container">
+            <hr style={{border: "10px solid green"}}/>
+            <div className="">
+                Section 11
+                <Section11 ></Section11>
+            </div>
             <hr style={{border: "10px solid green"}}/>
             <div className="">
                 Section 10 Custom Navigation and routing system
