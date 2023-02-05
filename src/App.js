@@ -8,6 +8,7 @@ import Section8 from "./Section8/Section8";
 import Section81MainFile from "./Section8/Section81MainFile";
 import Section10 from "./Section10/Section10";
 import Section11 from "./Section11/Section11";
+import Section12 from "./Section12/Section12";
 function App() {
     let message = "How are you?";
 
@@ -48,6 +49,11 @@ function App() {
 
     return <>
         <div className="container-lg mx-20">
+            <hr style={{border: "10px solid green"}}/>
+            <div className="">
+                Section 12
+                <Section12 ></Section12>
+            </div>
             <hr style={{border: "10px solid green"}}/>
             <div className="">
                 Section 11
