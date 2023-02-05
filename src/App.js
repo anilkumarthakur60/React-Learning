@@ -47,7 +47,7 @@ function App() {
 
 
     return <>
-        <div className="container">
+        <div className="container-lg mx-20">
             <hr style={{border: "10px solid green"}}/>
             <div className="">
                 Section 11
