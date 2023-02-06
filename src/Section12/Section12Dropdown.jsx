@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState,useRef} from "react";
 import {GoChevronDown} from "react-icons/go";
 import Panel from "../Component/Panel";
 
@@ -6,10 +6,13 @@ function Section12Dropdown({items, value, onChange}) {
     const [isOpen, setIsOpen] = useState(false);
 
 
+    const divEl=useRef();
+
     useEffect(() => {
 
         const  handler=(event)=>{
-            console.log('---------data logging--------',event.target);
+            setIsOpen(!isOpen);
+            console.log('---------data logging- divel-------',divEl.current);
         };
         document.addEventListener('click',handler,true);
 
@@ -40,7 +43,7 @@ function Section12Dropdown({items, value, onChange}) {
     });
 
     return (
-        <div className="w-48 relative">
+        <div className="w-48 relative" ref={divEl}>
             <Panel className="flex justify-between items-center cursor-pointer"
                 onClick={handleClick}>
                 {value?.label || 'Select...'}
