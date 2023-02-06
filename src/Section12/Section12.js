@@ -1,35 +1,37 @@
-import React from "react";
+import React, {useState} from "react";
 import {GoChevronDown} from "react-icons/go";
+import Dropdown from "../Component/Dropdown";
 
 function Section12() {
 
 
+    const [selection,setSelection] = useState(null);
     const items= [
         {
-            id: 1,
-            title: "What is React?",
-            content: "React is a front end javascript framework"
+            value: 1,
+            label: "What is React?",
         },
         {
-            id: 2,
-            title: "Why use React?",
-            content: "React is a favorite JS library among engineers"
+            value: 2,
+            label: "Why use React?",
 
         },
         {
-            id: 3,
-            title: "How do you use React?",
-            content: "You use React by creating components"
+            value: 3,
+            label: "How do you use React?",
 
         },
     ];
 
 
+    const handleSelection= (value) => {
+        console.log(value)
+    }
+
 
     return (
         <div>
-
-
+            <Dropdown options={items} selection={selection} onSelect={handleSelection}></Dropdown>
         </div>
     )
 }
