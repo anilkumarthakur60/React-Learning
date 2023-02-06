@@ -1,11 +1,24 @@
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
 
 function Dropdown({ options, selection, onSelect }) {
     const [isOpen, setIsOpen] = useState(false);
 
+    //
+    // const dropdown=document.querySelector('.w-48');
+    // const handleClicks=(event)=>{
+    //     if(dropdown.contains(event.target)){
+    //         console.log('inside dropdown');
+    //     }else{
+    //         console.log('outside dropdown');
+    //     }
+    // }
+    // document.addEventListener('click',handleClicks,true)
     const handleClick = () => {
         setIsOpen(!isOpen);
     };
+
+
+
 
     const handleOptionClick = (option) => {
         // CLOSE DROPDOWN
@@ -13,6 +26,9 @@ function Dropdown({ options, selection, onSelect }) {
         // WHAT OPTION DID THE USER CLICK ON???
         onSelect(option);
     };
+
+
+
 
     const renderedOptions = options.map((option) => {
         return (

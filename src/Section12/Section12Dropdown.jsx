@@ -1,10 +1,23 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {GoChevronDown} from "react-icons/go";
 import Panel from "../Component/Panel";
 
 function Section12Dropdown({items, value, onChange}) {
     const [isOpen, setIsOpen] = useState(false);
 
+
+    useEffect(() => {
+
+        const  handler=(event)=>{
+            console.log('---------data logging--------',event.target);
+        };
+        document.addEventListener('click',handler,true);
+
+        return ()=>{
+            document.removeEventListener('click',handler);
+        }
+
+    },[])
     const handleClick = () => {
         setIsOpen(!isOpen);
     };
