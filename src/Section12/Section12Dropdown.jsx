@@ -11,8 +11,11 @@ function Section12Dropdown({items, value, onChange}) {
     useEffect(() => {
 
         const  handler=(event)=>{
-            setIsOpen(!isOpen);
-            console.log('---------data logging- divel-------',divEl.current);
+            if (!divEl.current) return;
+            if(!divEl.current.contains(event.target)){
+
+            setIsOpen(false);
+            }
         };
         document.addEventListener('click',handler,true);
 
