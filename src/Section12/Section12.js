@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import {GoChevronDown} from "react-icons/go";
 import Dropdown from "../Component/Dropdown";
+import Section12Dropdown from "./Section12Dropdown";
 
 function Section12() {
     const [selection, setSelection] = useState(null);
@@ -10,13 +10,17 @@ function Section12() {
     };
 
     const options = [
-        { label: 'Red', value: 'red' },
-        { label: 'Green', value: 'green' },
-        { label: 'Blue', value: 'blue' },
+        {label: 'Red', value: 'red'},
+        {label: 'Green', value: 'green'},
+        {label: 'Blue', value: 'blue'},
     ];
 
     return (
-        <Dropdown options={options} selection={selection} onSelect={handleSelect} />
+        <div>
+            <Dropdown options={options} selection={selection} onSelect={handleSelect}/>
+            <Section12Dropdown items={options} value={selection} onChange={handleSelect} />
+        </div>
     );
 }
+
 export default Section12;
