@@ -17,7 +17,10 @@ function Section12() {
 
     return (
         <div>
+
             <Dropdown options={options} selection={selection} onSelect={handleSelect}/>
+            <div className={`my-8`}>
+            </div>
             <Section12Dropdown items={options} value={selection} onChange={handleSelect} />
         </div>
     );
