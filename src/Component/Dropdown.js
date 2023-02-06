@@ -1,44 +1,33 @@
-import React, {useEffect, useState} from "react";
+import { useState } from 'react';
 
+function Dropdown({ options, selection, onSelect }) {
+    const [isOpen, setIsOpen] = useState(false);
 
+    const handleClick = () => {
+        setIsOpen(!isOpen);
+    };
 
-function  Dropdown({options,selection, onSelect}) {
-    const  [selectedOption, setSelectedOption] = useState();
-    const  [isOpen, setIsOpen] = useState(false);
+    const handleOptionClick = (option) => {
+        // CLOSE DROPDOWN
+        setIsOpen(false);
+        // WHAT OPTION DID THE USER CLICK ON???
+        onSelect(option);
+    };
 
-    const handleOptionClick = (event) => {
-        setIsOpen((isOpen) => !isOpen);
-        onSelect(event);
-    }
-    const renderOptions = options.map((option) => {
+    const renderedOptions = options.map((option) => {
         return (
-            <div onClick={()=>handleOptionClick(option)}  key={option.value} >
+            <div onClick={() => handleOptionClick(option)} key={option.value}>
                 {option.label}
             </div>
         );
     });
 
-    const  handleClick = () => {
-        setIsOpen((isOpen) => !isOpen);
-    }
-    useEffect(() => {
-            onSelect(selectedOption);
-        },
-        [selectedOption]
-    );
-
-    let content='Select...';
-    if(selection){
-        content=selection.label;
-    }
-
-    return(
+    return (
         <div>
-
-
-            <div className="" onClick={handleClick}>Select</div>
-            {isOpen && <div className="">{renderOptions}</div>}
+            <div onClick={handleClick}>{selection?.label || 'Select...'}</div>
+            {isOpen && <div>{renderedOptions}</div>}
         </div>
-    )
+    );
 }
-export  default Dropdown;
+
+export default Dropdown;
