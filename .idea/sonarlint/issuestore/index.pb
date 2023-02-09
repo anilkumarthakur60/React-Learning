@@ -54,15 +54,11 @@ Z
 *src/FormHandleSection6/Section7BookList.js,0/0/00dacf6e999021c21c83c977a7ce8b127f1dcd56
 P
  src/Section8/Section8Content1.js,1/b/1bb5a4159c48c46e7095eb051ff78ea60d384c52
-P
- src/Section8/Section8BookEdit.js,f/8/f869c46472d50dd94471adfdc6c24d0b997e74c0
 :
 
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
 P
  src/Section8/Section8BookList.js,9/0/907c7d7fd5b963f1116f369d89ff57297b00eac9
-E
-src/Context/books1.js,8/d/8deb49db8260fceef6c86d92061dc880c54f1faa
 R
 "src/Section8/Section8BookCreate.js,4/7/47b16973073d0b6847d95ac16700c77fd339617a
 I
@@ -73,15 +69,25 @@ Q
 !src/Section8/Section81MainFile.js,d/e/deb5930835056fabc16b1c4152faa99fe81b0e8f
 P
  src/Section8/Section8BookShow.js,1/a/1a85eab0130858346192febc024729d2868a9cad
-L
-src/Hooks/useBooksContext.js,3/0/30d532e56ba8f3c40f5821413a401e34cb3b846d
 A
 public/index.html,f/4/f43ecdf8d666ee908aacce037b4cd72159e4741b
 ;
 src/App1.js,3/6/36e813de9c44fa87533e16f8ae2af6973e89e799
 B
 tailwind.config.js,0/9/0918cbb76f2c44f223706cec9d31a32cd1177ce4
-J
-src/Section10/Section10.js,d/5/d5cca935c15e2496ca969ee665d45e36fc8379da
 G
 src/Component/Button.js,a/f/af36fa860a7995e3ab27dd486c20ddb4c15a2c42
+H
+src/Component/Button.css,0/3/0304f559c5a20275b59e08c25c61fc6fa6aa2cbd
+J
+src/Component/Accordion.js,d/0/d07ab475976a16e5f271740c4bc4e913d8625205
+G
+src/Component/Panel.jsx,3/6/36148a0607c0432c24d142549220c93412dce566
+I
+src/Component/Dropdown.js,8/a/8ab7dc41d8b9d31ac7648053a9af5306c44651e8
+S
+#src/Section12/Section12Dropdown.jsx,3/c/3ca6aa390b04ad99e832723ebce12d3435da934e
+<
+src/index.js,f/9/f900edc44cb929c2267a16100a32851f6d5b477d
+=
+src/index.css,c/5/c5d38a62d1faae90a2acaa34b79a7ef365c917e4

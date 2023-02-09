@@ -19,12 +19,8 @@ function Section12() {
         <div>
 
             <Dropdown options={options} selection={selection} onSelect={handleSelect}/>
-            <div className={`my-8`}>
-            </div>
+
             <div className="flex">
-                <Section12Dropdown items={options} value={selection} onChange={handleSelect}/>
-                <Section12Dropdown items={options} value={selection} onChange={handleSelect}/>
-                <Section12Dropdown items={options} value={selection} onChange={handleSelect}/>
                 <Section12Dropdown items={options} value={selection} onChange={handleSelect}/>
             </div>
         </div>
