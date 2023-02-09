@@ -79,14 +79,10 @@ G
 src/Component/Button.js,a/f/af36fa860a7995e3ab27dd486c20ddb4c15a2c42
 H
 src/Component/Button.css,0/3/0304f559c5a20275b59e08c25c61fc6fa6aa2cbd
-J
-src/Component/Accordion.js,d/0/d07ab475976a16e5f271740c4bc4e913d8625205
 G
 src/Component/Panel.jsx,3/6/36148a0607c0432c24d142549220c93412dce566
 I
 src/Component/Dropdown.js,8/a/8ab7dc41d8b9d31ac7648053a9af5306c44651e8
-S
-#src/Section12/Section12Dropdown.jsx,3/c/3ca6aa390b04ad99e832723ebce12d3435da934e
 <
 src/index.js,f/9/f900edc44cb929c2267a16100a32851f6d5b477d
 =

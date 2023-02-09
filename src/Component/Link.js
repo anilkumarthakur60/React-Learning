@@ -10,6 +10,7 @@ function Link({ to, children }) {
         navigate(to);
     };
 
+    // eslint-disable-next-line jsx-a11y/anchor-is-valid
     return <a onClick={handleClick}>{children}</a>;
 }
 
