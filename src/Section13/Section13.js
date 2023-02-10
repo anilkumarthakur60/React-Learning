@@ -11,9 +11,7 @@ function Section13() {
         <div>
 
             <NavigationProvider>
-                <div className="container-lg mx-20">
                     <Section131></Section131>
-                </div>
 
             </NavigationProvider>
 

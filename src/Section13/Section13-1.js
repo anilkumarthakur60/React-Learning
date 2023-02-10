@@ -43,15 +43,15 @@ function Section131() {
 
             <Sidebar></Sidebar>
 
-            <div className="">
-                <Route path="/accordion">
-                    <Accordion items={items}></Accordion>
-                </Route>
-                <Route path="/dropdown">
-                    <Section12Dropdown items={options} value={selection} onChange={handleSelect}/>
+            {/*<div className="">*/}
+            {/*    <Route path="/accordion">*/}
+            {/*        <Accordion items={items}></Accordion>*/}
+            {/*    </Route>*/}
+            {/*    <Route path="/dropdown">*/}
+            {/*        <Section12Dropdown items={options} value={selection} onChange={handleSelect}/>*/}
 
-                </Route>
-            </div>
+            {/*    </Route>*/}
+            {/*</div>*/}
         </div>
     );
 }

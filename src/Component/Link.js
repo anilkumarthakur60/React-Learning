@@ -16,7 +16,7 @@ function Link({ to, children }) {
         navigate(to);
     };
 
-    const classes = classNames('text-blue-500 hover:text-blue-700 cursor-pointer text-sm font-semibold mr-4 ml-4');
+    const classes = classNames('text-blue-500 hover:text-blue-700 cursor-pointer text-sm font-semibold mr-4 ml-4 btn btn-sm btn-outline-primary');
 
     return <a className={classes} href={to} onClick={handleClick}>{children}</a>;
 }

@@ -1,26 +1,25 @@
 import Link from './Link';
-import {useState} from "react";
 
 function Sidebar() {
-    const linksData = useState([
-        {label: 'Accordion', path: '/accordion'},
-        {label: 'Dropdown', path: '/dropdown'},
-        {label: 'Translate', path: '/translate'},
-    ]);
+    const links = [
+        { label: 'Dropdown', path: '/' },
+        { label: 'Accordion', path: '/accordion' },
+        { label: 'Buttons', path: '/buttons' },
+    ];
 
-
-    const renderLinks = linksData.map((link) => {
-        return <Link key={link.path} to={link.path}>{link.label}</Link>
+    const renderedLinks = links.map((link) => {
+        return (
+            <Link key={link.label} to={link.path}>
+                {link.label}
+            </Link>
+        );
     });
 
-
     return (
-        <div >
-            {renderLinks}
-<h1>akjshajs</h1>
+        <div className="sticky top-0 overflow-y-scroll flex flex-col">
+            {renderedLinks}
         </div>
     );
-
 }
 
 export default Sidebar;
