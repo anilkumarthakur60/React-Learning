@@ -83,7 +83,3 @@ G
 src/Component/Panel.jsx,3/6/36148a0607c0432c24d142549220c93412dce566
 I
 src/Component/Dropdown.js,8/a/8ab7dc41d8b9d31ac7648053a9af5306c44651e8
-<
-src/index.js,f/9/f900edc44cb929c2267a16100a32851f6d5b477d
-=
-src/index.css,c/5/c5d38a62d1faae90a2acaa34b79a7ef365c917e4

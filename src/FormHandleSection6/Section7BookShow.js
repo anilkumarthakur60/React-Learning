@@ -21,7 +21,6 @@ function Section7BookShow({book,  onDelete, onEdit}) {
             ...editBook,
             [e.target.id]: e.target.value
         }
-        console.log(editedData)
         setEditBook(editedData)
         onEdit(editedData, book.id)
     }

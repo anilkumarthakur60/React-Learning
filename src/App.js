@@ -44,18 +44,18 @@ function App() {
     const getList = (val) => {
 
         setListData(val)
-        console.log(val)
     }
 
 
     return <>
         <div className="container-lg mx-20">
-            <hr style={{border: "10px solid green"}}/>
             <div className="">
-                Section 12
+                Section 13
                 <Section13 ></Section13>
             </div>
             <hr style={{border: "10px solid green"}}/>
+
+
             <div className="">
                 Section 12
                 <Section12 ></Section12>

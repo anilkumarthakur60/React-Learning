@@ -4,7 +4,6 @@ import useBooksContext from "../Hooks/useBooksContext";
 function Section8BookEdit({book}) {
 
 
-    console.log('---------data logging-----sdds---',book)
     const {editBookByIndex} =  useBooksContext();
     const [editBook, setEditBook] = useState({
         name: book.name,

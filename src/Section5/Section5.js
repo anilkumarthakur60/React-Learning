@@ -40,7 +40,6 @@ function Section5() {
     const decreasePageSize =async () => {
         if (page > 1) {
             setPage(page - 1);
-            console.log(page)
             const result = await searchImages({
                 termSearch: termSearch,
                 page: page

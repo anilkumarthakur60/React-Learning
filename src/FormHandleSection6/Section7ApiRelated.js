@@ -13,7 +13,6 @@ function Section7ApiRelated({lists}) {
               setList(response.data.data);
           lists(response.data.data);
        }).catch((error) => {
-              console.log(error);
        }).finally(() => {
 
        })
@@ -28,17 +27,13 @@ function Section7ApiRelated({lists}) {
     const removeBookById = (id) => {
 
         axios.delete(`http://127.0.0.1:8000/api/react/posts/${id}`).then((response) => {
-            console.log(response);
 
             fetchApi();
         }).catch((error) => {
-            console.log(error);
         }).finally(() => {
-            console.log("Finally");
         })
     }
     const editBookByIndex = (editList, key) => {
-        console.log(editList, key   )
 
         axios.put(`http://127.0.0.1:8000/api/react/posts/${key}`,{
             name: editList.name,
@@ -46,9 +41,7 @@ function Section7ApiRelated({lists}) {
         }).then((response) => {
             fetchApi();
         }).catch((error) => {
-            console.log(error);
         }).finally(() => {
-            console.log("Finally");
         })
 
     }
@@ -59,9 +52,7 @@ function Section7ApiRelated({lists}) {
         }).then((response) => {
             fetchApi();
         }).catch((error) => {
-            console.log(error);
         }).finally(() => {
-            console.log("Finally");
         })
     }
 

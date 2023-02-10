@@ -27,19 +27,15 @@ function Section41() {
 
     const handleClick = () => {
         setState(!state);
-        console.log(s1, s3)
     }
     const handleClicks = () => {
         setAnimal([...animal, getRandomAnimals()]);
     }
     const handleCopy = () => {
-        console.log("Text Copied");
     }
     const handleCut = () => {
-        console.log("Text cut");
     }
     const handlePaste = () => {
-        console.log("Text paste");
     }
 
     function arrayData() {
@@ -58,7 +54,6 @@ function Section41() {
             {state ? <h6>True</h6> : <h6>False</h6>}
             <h6 onCopy={handleCopy} onCut={handleCut}
                 onMouseOver={(e) => {
-                    console.log('hover logging');
                 }}
 
             >Animal Show</h6>
@@ -66,7 +61,6 @@ function Section41() {
                 onPaste={handlePaste}
 
                 onChange={(event) => {
-                    console.log(event.target.value);
                 }
                 } type="text"/>
 

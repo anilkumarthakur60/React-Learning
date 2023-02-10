@@ -2,8 +2,8 @@ import React, {useState} from "react";
 import Link from "../Component/Link";
 import Route from "../Component/Route";
 import Accordion from "../Component/Accordion";
-import Dropdown from "../Component/Dropdown";
 import Section12Dropdown from "../Section12/Section12Dropdown";
+import Sidebar from "../Component/Sidebar";
 
 function Section131() {
     const [selection, setSelection] = useState(null);
@@ -18,7 +18,7 @@ function Section131() {
         {label: 'Blue', value: 'blue'},
     ];
 
-    const items= [
+    const items = [
         {
             id: 1,
             title: "What is React?",
@@ -40,12 +40,11 @@ function Section131() {
 
     return (
         <div>
-            <Link to="/accordion">accordion 12</Link>
-            <Link to="/dropdown">dropdown 13</Link>
+
+            <Sidebar></Sidebar>
 
             <div className="">
                 <Route path="/accordion">
-
                     <Accordion items={items}></Accordion>
                 </Route>
                 <Route path="/dropdown">

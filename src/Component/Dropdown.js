@@ -7,9 +7,7 @@ function Dropdown({ options, selection, onSelect }) {
     // const dropdown=document.querySelector('.w-48');
     // const handleClicks=(event)=>{
     //     if(dropdown.contains(event.target)){
-    //         console.log('inside dropdown');
     //     }else{
-    //         console.log('outside dropdown');
     //     }
     // }
     // document.addEventListener('click',handleClicks,true)

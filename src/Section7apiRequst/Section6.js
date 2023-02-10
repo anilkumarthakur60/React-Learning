@@ -103,7 +103,6 @@ function Section6() {
 
     const removeBookById = (deleteList) => {
 
-        console.log(deleteList)
         const newList = list.filter((book, index) => {
             return index !== deleteList;
         })
@@ -111,11 +110,9 @@ function Section6() {
     }
     const removeBookByIds = (deleteList) => {
 
-        console.log(deleteList)
         const newList = books.filter((book) => {
             return book.id!== deleteList;
         })
-        console.log(newList)
         setBooks(newList);
     }
     const editBookByIndex = (editList, key) => {

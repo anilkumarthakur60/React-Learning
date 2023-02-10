@@ -4,7 +4,6 @@ import { GoBell, GoCloudDownload, GoDatabase } from 'react-icons/go';
 
 function Section10() {
     const handleClick = () => {
-        console.log("Button Clicked");
     }
     return (
         <div>
