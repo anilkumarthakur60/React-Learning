@@ -1,9 +1,9 @@
 import React, {useState} from "react";
-import Link from "../Component/Link";
 import Route from "../Component/Route";
 import Accordion from "../Component/Accordion";
 import Section12Dropdown from "../Section12/Section12Dropdown";
 import Sidebar from "../Component/Sidebar";
+import Button from "../Component/Button";
 
 function Section131() {
     const [selection, setSelection] = useState(null);
@@ -39,19 +39,25 @@ function Section131() {
     ];
 
     return (
-        <div>
+        <div className="grid grid-cols-4 gap-4">
 
-            <Sidebar></Sidebar>
+            <div className="">
 
-            {/*<div className="">*/}
-            {/*    <Route path="/accordion">*/}
-            {/*        <Accordion items={items}></Accordion>*/}
-            {/*    </Route>*/}
-            {/*    <Route path="/dropdown">*/}
-            {/*        <Section12Dropdown items={options} value={selection} onChange={handleSelect}/>*/}
+                <Sidebar></Sidebar>
+            </div>
 
-            {/*    </Route>*/}
-            {/*</div>*/}
+            <div className="col-span-2">
+                <Route path="/accordion">
+                    <Accordion items={items}></Accordion>
+                </Route>
+                <Route path="/dropdown">
+                    <Section12Dropdown items={options} value={selection} onChange={handleSelect}/>
+                </Route>
+                <Route path="/button">
+                    <Button rounded danger outline >Hello </Button>
+
+                </Route>
+            </div>
         </div>
     );
 }
