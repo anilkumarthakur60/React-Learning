@@ -33,10 +33,13 @@ function ModalPage(){
             <p>Here is an important agreement for you to accept</p>
         </Modal>
     );
+
+
     return (
         <div className="relative ">
             <Button primary onClick={handleClick}>Open Modal</Button>
             {showModal && modal}
+
         </div>
     );
 }
