@@ -6,6 +6,10 @@ import Sidebar from "../Component/Sidebar";
 import Button from "../Component/Button";
 import ModalPage from "../Section14/ModalPage";
 import TablePage16 from "../Section16/TablePage16";
+import CounterPage from "../Section17/CounterPage";
+import Section17 from "../Section17/Section17";
+import Section16 from "../Section16/Section16";
+import Section15 from "../Section15/Section15";
 
 function Section131() {
     const [selection, setSelection] = useState(null);
@@ -56,14 +60,26 @@ function Section131() {
                     <Section12Dropdown items={options} value={selection} onChange={handleSelect}/>
                 </Route>
                 <Route path="/button">
-                    <Button rounded danger outline >Hello </Button>
+                    <Button rounded danger outline>Hello </Button>
 
                 </Route>
                 <Route path="/modal">
-                    <ModalPage />
+                    <ModalPage/>
                 </Route>
                 <Route path="/table">
-                    <TablePage16 />
+                    <TablePage16/>
+                </Route>
+                <Route path="/counter">
+                    <CounterPage/>
+                </Route>
+                <Route path="/section15">
+                    <Section15/>
+                </Route>
+                <Route path="/section16">
+                    <Section16/>
+                </Route>
+                <Route path="/section17">
+                    <Section17/>
                 </Route>
             </div>
         </div>

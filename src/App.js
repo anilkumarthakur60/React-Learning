@@ -13,6 +13,7 @@ import Section13 from "./Section13/Section13";
 import Section14 from "./Section14/Section14";
 import Section16 from "./Section16/Section16";
 import Section15 from "./Section15/Section15";
+import Section17 from "./Section17/Section17";
 function App() {
     let message = "How are you?";
 
@@ -52,21 +53,26 @@ function App() {
 
     return <>
         <div className="container-lg mx-20">
-            <div className="">
-                Section 16
-                <Section16></Section16>
-            </div>
-            <hr style={{border: "10px solid green"}}/>
-            <div className="">
-                Section 15
-                <Section15></Section15>
-            </div>
-            <hr style={{border: "10px solid green"}}/>
-            <div className="">
-                Section 14
-                <Section14 ></Section14>
-            </div>
-            <hr style={{border: "10px solid green"}}/>
+            {/*<div className="my-2">*/}
+            {/*    Section 17*/}
+            {/*    <Section17></Section17>*/}
+            {/*</div>*/}
+            {/*<hr style={{border: "10px solid green"}}/>*/}
+            {/*<div className="">*/}
+            {/*    Section 16*/}
+            {/*    <Section16></Section16>*/}
+            {/*</div>*/}
+            {/*<hr style={{border: "10px solid green"}}/>*/}
+            {/*<div className="">*/}
+            {/*    Section 15*/}
+            {/*    <Section15></Section15>*/}
+            {/*</div>*/}
+            {/*<hr style={{border: "10px solid green"}}/>*/}
+            {/*<div className="">*/}
+            {/*    Section 14*/}
+            {/*    <Section14 ></Section14>*/}
+            {/*</div>*/}
+            {/*<hr style={{border: "10px solid green"}}/>*/}
 
 
             <div className="">

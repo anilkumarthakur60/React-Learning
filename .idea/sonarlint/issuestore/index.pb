@@ -119,9 +119,3 @@ J
 src/Section14/ModalPage.js,2/7/27ce93165c7ec2b63ab256fcb5b8a10e30fefcb0
 J
 src/Section14/Section14.js,3/5/35d2a32843005a99525c6cf4226a9ee91f703d48
-J
-src/Section13/Section13.js,d/3/d32d5527e1699370f02296a15eb818eabbaec0af
-L
-src/Section13/Section13-1.js,8/e/8e229c56325ad5ec7e8a49c6ee640cdac6a160f0
-H
-src/Component/Sidebar.js,2/a/2a083d7f0a0a4c70bd720706ad3144b2f13f4ce8
