@@ -29,9 +29,11 @@ function TablePage() {
         },
         {
             label: 'Score',
-            render: (row) => row.score ** 2,
+            render: (row) => row.score,
             sortable: true,
-            sortField: 'score',
+            header:() => <th className="bg-red-500">Score </th>,
+            sortValue: (row) => row.score,
+
         },
         {
             label: 'Color',

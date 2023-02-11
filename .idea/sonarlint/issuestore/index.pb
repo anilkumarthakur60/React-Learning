@@ -69,8 +69,6 @@ B
 tailwind.config.js,0/9/0918cbb76f2c44f223706cec9d31a32cd1177ce4
 H
 src/Component/Button.css,0/3/0304f559c5a20275b59e08c25c61fc6fa6aa2cbd
-G
-src/Component/Panel.jsx,3/6/36148a0607c0432c24d142549220c93412dce566
 I
 src/Component/Dropdown.js,8/a/8ab7dc41d8b9d31ac7648053a9af5306c44651e8
 D
@@ -119,8 +117,6 @@ A
 public/index.html,f/4/f43ecdf8d666ee908aacce037b4cd72159e4741b
 J
 src/Section14/ModalPage.js,2/7/27ce93165c7ec2b63ab256fcb5b8a10e30fefcb0
-J
-src/Section15/TablePage.js,d/0/d011f0820266b28b3a1efd0307127b7c92ca46de
 J
 src/Section15/Section15.js,3/5/3520631ff6c7b153d75e50860b2a0122833f760a
 J
