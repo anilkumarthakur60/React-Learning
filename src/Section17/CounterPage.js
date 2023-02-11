@@ -1,10 +1,10 @@
 import Button from "../Component/Button";
 import useCounterHook from "../Hooks/useCounterHook";
 
-function CounterPage({initalCount}) {
+function CounterPage({initialCount}) {
 
-    console.log('---------data logging--------',initalCount);
-    const {count,increment,decrement} = useCounterHook(initalCount);
+    console.log('---------data logging--------',initialCount);
+    const {count,increment,decrement} = useCounterHook(initialCount);
 
     return (
         <div>

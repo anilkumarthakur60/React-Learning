@@ -5,7 +5,7 @@ function Section17() {
     return (
         <div>
             Section 17
-            <CounterPage initalCount={0}/>
+            <CounterPage initialCount={0}/>
         </div>
     );
 }
