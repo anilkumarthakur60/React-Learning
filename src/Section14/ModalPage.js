@@ -8,12 +8,10 @@ function ModalPage(){
 
     const handleClick = (e) => {
         setShowModal(!showModal);
-        console.log('---------data logging--------', e);
     }
 
     const handleModalClick = (e) => {
         setShowModal(e);
-        console.log('---------data logging--------', e);
     }
 
 
