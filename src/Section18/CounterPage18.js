@@ -31,7 +31,7 @@ function CounterPage18() {
             </div>
 
             <form action="">
-                <div className="grid gap-6 mb-6 md:grid-cols-2">
+                <div className="grid gap-6 mb-6 md:grid-cols-1">
                     <div>
                         <label htmlFor="first_name"
                                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Add a Lot
