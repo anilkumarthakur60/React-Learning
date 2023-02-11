@@ -35,6 +35,13 @@ function TablePage16() {
             sortValue:(row)=>row.score,
 
         },
+           {
+            label: 'Score Square',
+            render: (row) => row.score**2,
+            sortValue:(row)=>row.score**2,
+
+        },
+
         {
             label: 'Color',
             render: (row) => <div className={`p-2 m-3 ${row.color}`}>{row.color}</div>,
