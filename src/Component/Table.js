@@ -1,13 +1,12 @@
-// import '../Assets/Css/Table.css'
-
-import {Fragment} from "react";
+import { Fragment } from 'react';
 
 function Table({ data, config, keyFn }) {
     const renderedHeaders = config.map((column) => {
         if (column.header) {
             return <Fragment key={column.label}>{column.header()}</Fragment>;
         }
-        return <tr key={column.label}>{column.label}</tr>;
+
+        return <th key={column.label}>{column.label}</th>;
     });
 
     const renderedRows = data.map((rowData) => {

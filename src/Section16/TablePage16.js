@@ -1,6 +1,7 @@
 import Table from "../Component/Table";
+import SortableTable from "../Component/SortableTable";
 
-function TablePage() {
+function TablePage16() {
 
 
     const data = [
@@ -17,33 +18,30 @@ function TablePage() {
         {
             label: 'Id',
             render: (row) => row.id,
-            sortable: true,
-            sortField: 'id',
-            header:() => 'Id'
+            sortValue:(row)=>row.id,
         },
         {
             label: 'Name',
             render: (row) => row.name,
             sortValue:(row)=>row.name,
-            header:() =><th className="bg-red-500">Name </th>,
 
 
         },
         {
             label: 'Score',
             render: (row) => row.score,
-            sortable: true,
-            header:() => <th className="bg-red-500">Score </th>,
-            sortValue: (row) => row.score,
+            sortValue:(row)=>row.score,
 
         },
         {
             label: 'Color',
             render: (row) => <div className={`p-2 m-3 ${row.color}`}>{row.color}</div>,
-            header:() => 'Color'
+            header:() => <th className="bg-red-500">Score </th>,
+
 
         }
     ];
+
 
     const keyFn = (item) => {
         return item.label;
@@ -51,14 +49,9 @@ function TablePage() {
 
     return (
         <div>
-            <Table
-                data={data}
-                config={columns}
-                keyFn={keyFn}
-            >
-            </Table>
+            <SortableTable config={columns} data={data} keyFn={keyFn} ></SortableTable>
         </div>
     );
 }
 
-export default TablePage;
+export default TablePage16;

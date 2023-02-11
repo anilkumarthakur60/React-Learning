@@ -5,7 +5,7 @@ import Section12Dropdown from "../Section12/Section12Dropdown";
 import Sidebar from "../Component/Sidebar";
 import Button from "../Component/Button";
 import ModalPage from "../Section14/ModalPage";
-import TablePage from "../Section15/TablePage";
+import TablePage16 from "../Section16/TablePage16";
 
 function Section131() {
     const [selection, setSelection] = useState(null);
@@ -63,7 +63,7 @@ function Section131() {
                     <ModalPage />
                 </Route>
                 <Route path="/table">
-                    <TablePage />
+                    <TablePage16 />
                 </Route>
             </div>
         </div>
