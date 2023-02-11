@@ -22,16 +22,16 @@ function SortableTable(props) {
         }
     }
 
-    const getIcons = (label,sortBy,sortOrder) => {
+    const getIcons = (label, sortBy, sortOrder) => {
         if (label !== sortBy) {
             return <BsArrowsExpand/>
         }
-        if(sortOrder===null){
+        if (sortOrder === null) {
 
             return <BsArrowsExpand/>
-        }else if(sortOrder==='asc'){
+        } else if (sortOrder === 'asc') {
             return <BsArrowBarUp/>
-        }else if(sortOrder==='desc'){
+        } else if (sortOrder === 'desc') {
             return <BsArrowBarDown/>
         }
     }
@@ -44,14 +44,13 @@ function SortableTable(props) {
                 ...item,
                 header: () => {
                     return (
-                        <th onClick={() => {
+                        <th className="cursor-pointer " onClick={() => {
                             handleClick(item.label);
                         }}>
-
-                            {getIcons(item.label,sortBy,sortOrder)}
-
-
-                            {item.label}
+                            <div className="flex items-center ">
+                                {getIcons(item.label, sortBy, sortOrder)}
+                                {item.label}
+                            </div>
                         </th>
                     );
                 }
@@ -74,9 +73,9 @@ function SortableTable(props) {
             const valueB = sortValue(b);
             const reverseOrder = sortOrder === 'asc' ? 1 : -1;
 
-            if(typeof valueA === 'string') {
+            if (typeof valueA === 'string') {
                 return valueA.localeCompare(valueB) * reverseOrder;
-            }else {
+            } else {
                 return (valueA - valueB) * reverseOrder;
             }
 
