@@ -14,6 +14,8 @@ function TablePage16() {
         {id: 7, name: "John", score: 7, color: 'bg-pink-500'},
         {id: 8, name: "Mary", score: 8, color: 'bg-gray-500'},
     ];
+
+
     const columns = [
         {
             label: 'Id',
@@ -36,7 +38,7 @@ function TablePage16() {
         {
             label: 'Color',
             render: (row) => <div className={`p-2 m-3 ${row.color}`}>{row.color}</div>,
-            header:() => <th className="bg-red-500">Score </th>,
+            header:() => <th className="bg-red-500">Color </th>,
 
 
         }

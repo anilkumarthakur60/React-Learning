@@ -5,13 +5,13 @@ function SortableTable(props) {
 
     const {config} = props;
     const  updatedConfig = config.map((item) => {
-        if (item.sortable) {
+        if (item.sortValue) {
             return {
                 ...item,
                 header: () => {
                     return (
                         <th onClick={() => {
-                            props.onSort(item.sortField);
+                            handleClick(item.label);
                         }}>
                             {item.label}
                         </th>
@@ -21,6 +21,10 @@ function SortableTable(props) {
         }
         return item;
     });
+
+    const handleClick = (name) => {
+        console.log(name);
+    }
 
 
     return (
