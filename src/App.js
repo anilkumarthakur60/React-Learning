@@ -11,6 +11,7 @@ import Section11 from "./Section11/Section11";
 import Section12 from "./Section12/Section12";
 import Section13 from "./Section13/Section13";
 import Section14 from "./Section14/Section14";
+import Section15 from "./Section15/Section15";
 function App() {
     let message = "How are you?";
 
@@ -51,6 +52,11 @@ function App() {
     return <>
         <div className="container-lg mx-20">
             <div className="">
+                Section 15
+                <Section15></Section15>
+            </div>
+            <hr style={{border: "10px solid green"}}/>
+            <div className="">
                 Section 14
                 <Section14 ></Section14>
             </div>
@@ -58,7 +64,7 @@ function App() {
 
 
             <div className="">
-                Section 13
+                Section 13 Side bar
                 <Section13 ></Section13>
             </div>
             <hr style={{border: "10px solid green"}}/>
