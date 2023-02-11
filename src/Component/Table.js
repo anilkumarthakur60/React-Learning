@@ -1,33 +1,28 @@
-
 import React from 'react';
-import  '../Assets/Css/Table.css';
-function Table() {
+import '../Assets/Css/Table.css';
+
+function Table({data, columns}) {
     return (
+
         <table>
             <thead>
             <tr>
-                <th>Name</th>
-                <th>Color</th>
-                <th>Score</th>
+                {
+                    columns.map((item, index) => (
+                        <th key={index}>{item}</th>
+                    ))
+                }
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>Orange</td>
-                <td>bg-orange-500</td>
-                <td>500</td>
-            </tr>
-            <tr>
-                <td>Red</td>
-                <td>bg-red-500</td>
-                <td>23</td>
-            </tr>
-            <tr>
-                <td>Banana</td>
-                <td>bg-yellow-500</td>
-                <td>35</td>
-            </tr>
-
+            {data.map((item) => (
+                <tr key={item.id}>
+                    <td>{item.id}</td>
+                    <td>{item.name}</td>
+                    <td className={item.color}>{item.color}</td>
+                    <td>{item.score}</td>
+                </tr>
+            ))}
 
             </tbody>
         </table>
