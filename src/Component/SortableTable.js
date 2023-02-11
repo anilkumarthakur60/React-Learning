@@ -1,5 +1,6 @@
 import Table from "./Table";
 import {useState} from "react";
+import {BsArrowBarDown, BsArrowBarUp, BsArrowsExpand} from "react-icons/bs";
 
 function SortableTable(props) {
     const [sortOrder, setSortOrder] = useState(null)
@@ -21,6 +22,20 @@ function SortableTable(props) {
         }
     }
 
+    const getIcons = (label,sortBy,sortOrder) => {
+        if (label !== sortBy) {
+            return <BsArrowsExpand/>
+        }
+        if(sortOrder===null){
+
+            return <BsArrowsExpand/>
+        }else if(sortOrder==='asc'){
+            return <BsArrowBarUp/>
+        }else if(sortOrder==='desc'){
+            return <BsArrowBarDown/>
+        }
+    }
+
 
     const {config, data} = props;
     const updatedConfig = config.map((item) => {
@@ -32,6 +47,10 @@ function SortableTable(props) {
                         <th onClick={() => {
                             handleClick(item.label);
                         }}>
+
+                            {getIcons(item.label,sortBy,sortOrder)}
+
+
                             {item.label}
                         </th>
                     );
