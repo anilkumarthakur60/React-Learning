@@ -4,6 +4,7 @@ import Accordion from "../Component/Accordion";
 import Section12Dropdown from "../Section12/Section12Dropdown";
 import Sidebar from "../Component/Sidebar";
 import Button from "../Component/Button";
+import ModalPage from "../Section14/ModalPage";
 
 function Section131() {
     const [selection, setSelection] = useState(null);
@@ -55,6 +56,11 @@ function Section131() {
                 </Route>
                 <Route path="/button">
                     <Button rounded danger outline >Hello </Button>
+
+                </Route>
+                <Route path="/modal">
+                    <ModalPage></ModalPage>
+
 
                 </Route>
             </div>

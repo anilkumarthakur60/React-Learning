@@ -1,6 +1,6 @@
 import className from 'classnames';
 
-function Button({
+function    Button({
                     children,
                     primary,
                     secondary,
