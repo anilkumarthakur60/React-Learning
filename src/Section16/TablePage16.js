@@ -1,6 +1,7 @@
 import Table from "../Component/Table";
 import SortableTable from "../Component/SortableTable";
 import {useState} from "react";
+import SortableTable1 from "../Component/SortableTable1";
 
 function TablePage16() {
 
@@ -63,6 +64,8 @@ function TablePage16() {
         <div>
 
             <SortableTable config={columns} data={data} keyFn={keyFn}  ></SortableTable>
+            //With hooks
+            <SortableTable1 config={columns} data={data} keyFn={keyFn}  ></SortableTable1>
         </div>
     );
 }
