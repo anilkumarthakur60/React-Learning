@@ -29,21 +29,6 @@ function SortableTable(props) {
         }
     }
 
-    const getIcons = (label, sortBy, sortOrder) => {
-        if (label !== sortBy) {
-            return <BsArrowsExpand/>
-        }
-        if (sortOrder === null) {
-
-            return <BsArrowsExpand/>
-        } else if (sortOrder === 'asc') {
-            return <BsArrowBarUp/>
-        } else if (sortOrder === 'desc') {
-            return <BsArrowBarDown/>
-        }
-    }
-
-
     const {config, data} = props;
     const updatedConfig = config.map((item) => {
         if (item.sortValue) {
@@ -100,5 +85,21 @@ function SortableTable(props) {
         </div>
     );
 }
+
+
+function getIcons(label, sortBy, sortOrder) {
+    if (label !== sortBy) {
+        return <BsArrowsExpand/>
+    }
+    if (sortOrder === null) {
+
+        return <BsArrowsExpand/>
+    } else if (sortOrder === 'asc') {
+        return <BsArrowBarUp/>
+    } else if (sortOrder === 'desc') {
+        return <BsArrowBarDown/>
+    }
+}
+
 
 export default SortableTable;
