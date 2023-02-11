@@ -5,7 +5,7 @@ import Panel from "../Component/Panel";
 
 const reducer = (state, action) => {
 
-    console.log('---------data logging--------',state);
+    console.log('---------data logging--------', state);
     switch (action.type) {
         case 'increment':
             return {
@@ -15,7 +15,17 @@ const reducer = (state, action) => {
         case 'decrement':
             return {
                 ...state,
-                count: state.count -1
+                count: state.count - 1
+            }
+        case 'change-value':
+            return {
+                ...state,
+                count: state.count + action.payload
+            }
+        case 'change-value-to-add':
+            return {
+                ...state,
+                count: state.count + action.payload
             }
         default:
             return state;
@@ -52,7 +62,10 @@ function CounterPage18({initalCount}) {
 
         const value = parseInt(e.target.value) || 0;
         console.log('---------data logging--------', value);
-        state.value.count = state.value.count + value;
+        dispatch({
+            type: 'change-value-to-add',
+            payload: value
+        })
         // setValueToAdd(value);
     }
 
@@ -61,6 +74,12 @@ function CounterPage18({initalCount}) {
         // console.log('---------data logging--------',valueToAdd);
         // setCount(count + valueToAdd);
         // setValueToAdd(0);
+
+        const value = parseInt(e.target.value) || 0;
+        dispatch({
+            type: 'change-value',
+            payload: value
+        })
     }
 
     return (
@@ -75,13 +94,14 @@ function CounterPage18({initalCount}) {
 
             <form onSubmit={handleFormSubmit}>
                 <div className="grid gap-6 mb-6 md:grid-cols-1">
+                    //287 content id
                     <div>
                         <label htmlFor="first_name"
                                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Add a Lot
                         </label>
                         <input type="number" id="first_name"
 
-                               value={state.valueToAdd}
+                               value={state.count}
                                onChange={handleChange}
                                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                placeholder="John" required/>
