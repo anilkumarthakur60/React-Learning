@@ -1,84 +1,74 @@
-import Button from "../Component/Button";
-import {useReducer} from "react";
+import { useReducer } from 'react';
 import Panel from "../Component/Panel";
+import Button from "../Component/Button";
 
-
-const incrementCount='increment';
-const  decrementCount='decrement';
-const changeValueToAdd='change-value-to-add';
-const  changeValue ='change-value'
+const INCREMENT_COUNT = 'increment';
+const SET_VALUE_TO_ADD = 'change_value_to_add';
+const DECREMENT_COUNT = 'decrement';
+const ADD_VALUE_TO_COUNT = 'add_value_to_count';
 
 const reducer = (state, action) => {
-
-    console.log('---------data logging--------', state);
     switch (action.type) {
-        case incrementCount:
+        case INCREMENT_COUNT:
             return {
                 ...state,
-                count: state.count + 1
-            }
-        case decrementCount:
+                count: state.count + action.payload,
+            };
+        case DECREMENT_COUNT:
             return {
                 ...state,
-                count: state.count - 1
-            }
-        case changeValue:
+                count: state.count - action.payload,
+            };
+        case ADD_VALUE_TO_COUNT:
             return {
                 ...state,
-                count:  action.payload
-            }
-        case changeValueToAdd:
+                count: state.count + state.valueToAdd,
+                valueToAdd: 0,
+            };
+        case SET_VALUE_TO_ADD:
             return {
                 ...state,
-                valueToAdd: action.payload
-            }
+                valueToAdd: action.payload,
+            };
         default:
             return state;
     }
-}
+};
 
-function CounterPage18({initalCount}) {
+function CounterPage18({ initialCount }) {
 
     const [state, dispatch] = useReducer(reducer, {
-        count: initalCount,
-        valueToAdd: 0
+        count: initialCount,
+        valueToAdd: 0,
+    });
 
-    })
     const increment = () => {
-
         dispatch({
-            type: 'increment',
-            payload: 1
-        })
-
-    }
+            type: INCREMENT_COUNT,
+            payload:  1,
+        });
+    };
     const decrement = () => {
+        dispatch({
+            type: DECREMENT_COUNT,
+            payload:  1,
+
+        });
+    };
+    const handleChange = (event) => {
+        const value = parseInt(event.target.value) || 0;
 
         dispatch({
-            type: 'decrement',
-            payload: 1
-        })
-    }
-
-    const handleChange = (e) => {
-
-        const value = parseInt(e.target.value) || 0;
-        console.log('---------data logging--------', value);
+            type: SET_VALUE_TO_ADD,
+            payload: value,
+        });
+    };
+    const handleSubmit = (event) => {
+        event.preventDefault();
         dispatch({
-            type: changeValue,
-            payload: value
-        })
-    }
-
-    const handleFormSubmit = (e) => {
-        e.preventDefault();
-
-        const value = parseInt(e.target.value) || 0;
-        dispatch({
-            type: changeValue,
-            payload: value
-        })
-    }
+            type: ADD_VALUE_TO_COUNT,
+        });
+    };
 
     return (
         <Panel className="m-3">
@@ -90,22 +80,21 @@ function CounterPage18({initalCount}) {
                 <Button secondary className="my-3 ml-4" onClick={decrement}>decrement</Button>
             </div>
 
-            <form onSubmit={handleFormSubmit}>
+            <form onSubmit={handleSubmit}>
                 <div className="grid gap-6 mb-6 md:grid-cols-1">
-                    //287 content id
+
                     <div>
                         <label htmlFor="first_name"
                                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Add a Lot
                         </label>
                         <input type="number" id="first_name"
-
-                               value={state.count}
+                               value={state.valueToAdd||''}
                                onChange={handleChange}
                                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                placeholder="John" required/>
                     </div>
                     <div className="">
-                        <Button primary onClick={handleFormSubmit} className="my-3" type="submit">Add</Button>
+                        <Button primary  className="my-3" type="submit">Add</Button>
                     </div>
                 </div>
             </form>
