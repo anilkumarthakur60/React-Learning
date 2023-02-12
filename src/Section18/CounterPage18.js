@@ -3,29 +3,34 @@ import {useReducer} from "react";
 import Panel from "../Component/Panel";
 
 
+const incrementCount='increment';
+const  decrementCount='decrement';
+const changeValueToAdd='change-value-to-add';
+const  changeValue ='change-value'
+
 const reducer = (state, action) => {
 
     console.log('---------data logging--------', state);
     switch (action.type) {
-        case 'increment':
+        case incrementCount:
             return {
                 ...state,
                 count: state.count + 1
             }
-        case 'decrement':
+        case decrementCount:
             return {
                 ...state,
                 count: state.count - 1
             }
-        case 'change-value':
+        case changeValue:
             return {
                 ...state,
-                count: state.count + action.payload
+                count:  action.payload
             }
-        case 'change-value-to-add':
+        case changeValueToAdd:
             return {
                 ...state,
-                count: state.count + action.payload
+                valueToAdd: action.payload
             }
         default:
             return state;
@@ -40,8 +45,6 @@ function CounterPage18({initalCount}) {
 
     })
     const increment = () => {
-        // setCount(count + 1);
-        // dispatch({type: 'increment', payload: 1})
 
         dispatch({
             type: 'increment',
@@ -50,7 +53,6 @@ function CounterPage18({initalCount}) {
 
     }
     const decrement = () => {
-        // setCount(count - 1);
 
         dispatch({
             type: 'decrement',
@@ -63,21 +65,17 @@ function CounterPage18({initalCount}) {
         const value = parseInt(e.target.value) || 0;
         console.log('---------data logging--------', value);
         dispatch({
-            type: 'change-value-to-add',
+            type: changeValue,
             payload: value
         })
-        // setValueToAdd(value);
     }
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        // console.log('---------data logging--------',valueToAdd);
-        // setCount(count + valueToAdd);
-        // setValueToAdd(0);
 
         const value = parseInt(e.target.value) || 0;
         dispatch({
-            type: 'change-value',
+            type: changeValue,
             payload: value
         })
     }
