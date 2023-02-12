@@ -93,8 +93,6 @@ P
  src/Section8/Section8BookEdit.js,f/8/f869c46472d50dd94471adfdc6c24d0b997e74c0
 J
 src/Section10/Section10.js,d/5/d5cca935c15e2496ca969ee665d45e36fc8379da
-<
-src/index.js,f/9/f900edc44cb929c2267a16100a32851f6d5b477d
 H
 src/Section5/Section5.js,8/9/8956b968284023fc16051b4f77cd9b4da7b52060
 I
