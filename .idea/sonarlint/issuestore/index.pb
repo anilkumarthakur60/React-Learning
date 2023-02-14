@@ -168,3 +168,7 @@ H
 src/Component/Sidebar.js,2/a/2a083d7f0a0a4c70bd720706ad3144b2f13f4ce8
 L
 src/Section13/Section13-1.js,8/e/8e229c56325ad5ec7e8a49c6ee640cdac6a160f0
+<
+src/index.js,f/9/f900edc44cb929c2267a16100a32851f6d5b477d
+B
+src/store/index.js,8/9/89922cab3a870ea7fc32984014e74ed044f89469
