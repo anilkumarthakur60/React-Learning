@@ -150,3 +150,21 @@ D
 src/Hooks/useSort.js,f/a/fab5046a967d69e358a1319e03adfc271a5cb3c7
 O
 src/Component/SortableTable1.js,b/e/be13aa3aba3c7a0a680d53fa13b7ed1243e2868b
+L
+src/Section17/CounterPage.js,8/c/8c8601f5fe7be3844c240b646a6a1c252935cdb0
+J
+src/Section18/Section18.js,c/9/c94c8073fc4609069051d070102b60adb43b71c5
+O
+src/Section18/CounterPage181.js,f/d/fdc55817fe845d01d1260a91575e546de3c251a4
+O
+src/Section19/CounterPage191.js,3/d/3dfa5d0884de5a3964c4240d8792f1344cc12b44
+N
+src/Section18/CounterPage18.js,7/6/76226303ccd5e8ee819f4cf8a814d7a9c4980712
+N
+src/Section19/CounterPage19.js,f/2/f2f1f7b74b8fb25ee8b286afa73da4c33e9cb161
+J
+src/Section19/Section19.js,2/5/25a6fa5db451e1e048e6ec0bacdf47db0224293b
+H
+src/Component/Sidebar.js,2/a/2a083d7f0a0a4c70bd720706ad3144b2f13f4ce8
+L
+src/Section13/Section13-1.js,8/e/8e229c56325ad5ec7e8a49c6ee640cdac6a160f0
