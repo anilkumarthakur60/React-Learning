@@ -12,6 +12,7 @@ import Section16 from "../Section16/Section16";
 import Section15 from "../Section15/Section15";
 import Section18 from "../Section18/Section18";
 import Section19 from "../Section19/Section19";
+import Section20 from "../Section20/Section20";
 
 function Section131() {
     const [selection, setSelection] = useState(null);
@@ -88,6 +89,9 @@ function Section131() {
                 </Route>
                 <Route path="/section19">
                     <Section19/>
+                </Route>
+                <Route path="/section20">
+                    <Section20/>
                 </Route>
             </div>
         </div>
