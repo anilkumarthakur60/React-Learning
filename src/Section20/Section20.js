@@ -5,8 +5,8 @@ import CarValue from "./Component/CarValue";
 
 function Section20() {
     return (
-        <div className="bg-purple-50 h-full w-full">
-            <div className="p-2 ">
+        <div className="">
+            <div >
                 <CarForm></CarForm>
                 <CarSearch></CarSearch>
                 <CarList></CarList>

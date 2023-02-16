@@ -4,15 +4,6 @@ function CarSearch() {
             <div className="p-2 ">
 
                 lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
-                lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
-                lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
-                lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
-                lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
-                lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
-                lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
-                lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
-                lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
-                lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
             </div>
         </div>
     )

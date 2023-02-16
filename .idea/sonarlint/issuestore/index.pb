@@ -65,12 +65,8 @@ P
  src/Section8/Section8BookShow.js,1/a/1a85eab0130858346192febc024729d2868a9cad
 ;
 src/App1.js,3/6/36e813de9c44fa87533e16f8ae2af6973e89e799
-B
-tailwind.config.js,0/9/0918cbb76f2c44f223706cec9d31a32cd1177ce4
 H
 src/Component/Button.css,0/3/0304f559c5a20275b59e08c25c61fc6fa6aa2cbd
-I
-src/Component/Dropdown.js,8/a/8ab7dc41d8b9d31ac7648053a9af5306c44651e8
 D
 src/Context/books.js,7/8/78727b38ccb9a623957744c2a12af4e49acdf898
 L
@@ -83,12 +79,8 @@ S
 #src/Section12/Section12Dropdown.jsx,3/c/3ca6aa390b04ad99e832723ebce12d3435da934e
 J
 src/Section11/Section11.js,5/3/5382a3679c07d6b62b9a0c0fc73057495e2f08fb
-=
-src/index.css,c/5/c5d38a62d1faae90a2acaa34b79a7ef365c917e4
 E
 src/Context/books1.js,8/d/8deb49db8260fceef6c86d92061dc880c54f1faa
-F
-src/Component/Route.js,f/3/f3764bc482a87060b148452ad791cf9d62688ed1
 P
  src/Section8/Section8BookEdit.js,f/8/f869c46472d50dd94471adfdc6c24d0b997e74c0
 J
@@ -101,26 +93,18 @@ J
 src/Section4/AnimalShow.js,6/4/64b51160a9fc81a756a43230f2a64e945468b538
 Q
 !src/Section7apiRequst/Section6.js,d/6/d6e4e031b12e6a75080d75e3d42f182c0bdf66c5
-J
-src/Hooks/useNavigation.js,c/1/c1e1f72cd5447dae3184d70dba1a6398b1e01fad
 E
 src/Component/Link.js,2/5/25d7b2cd325c0c560ccb75e61432b87343132086
 I
 src/Context/navigation.js,9/f/9f678f64ce805c01d72a992d4c2b83387a1d2387
 G
 src/Component/Button.js,a/f/af36fa860a7995e3ab27dd486c20ddb4c15a2c42
-F
-src/Component/Modal.js,f/d/fd9664bd38fba1455cdeb9826324980248592538
 A
 public/index.html,f/4/f43ecdf8d666ee908aacce037b4cd72159e4741b
 J
 src/Section14/ModalPage.js,2/7/27ce93165c7ec2b63ab256fcb5b8a10e30fefcb0
 J
 src/Section14/Section14.js,3/5/35d2a32843005a99525c6cf4226a9ee91f703d48
-E
-src/Component/sort.js,e/0/e02ed6f311a1f91e0318a478bc80b320284c89ad
-F
-src/Component/Panel.js,e/f/effbae1d2e7e7c69ed3f1512d729a579b4d0f2c8
 H
 src/Assets/Css/Table.css,1/d/1d504870adbc14c597356201e170f8ba8729b9e1
 F
@@ -146,8 +130,6 @@ J
 src/Section16/Section16.js,e/9/e980217e84e3d4a82f0b96674efb64807e7a8ad7
 L
 src/Section16/TablePage16.js,d/e/de64e273340ee4380604ac2e1a75b9127fa633d9
-D
-src/Hooks/useSort.js,f/a/fab5046a967d69e358a1319e03adfc271a5cb3c7
 O
 src/Component/SortableTable1.js,b/e/be13aa3aba3c7a0a680d53fa13b7ed1243e2868b
 L
@@ -164,3 +146,5 @@ N
 src/Section19/CounterPage19.js,f/2/f2f1f7b74b8fb25ee8b286afa73da4c33e9cb161
 J
 src/Section19/Section19.js,2/5/25a6fa5db451e1e048e6ec0bacdf47db0224293b
+B
+src/store/index.js,8/9/89922cab3a870ea7fc32984014e74ed044f89469
