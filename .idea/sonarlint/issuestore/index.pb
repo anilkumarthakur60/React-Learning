@@ -118,16 +118,12 @@ K
 src/Hooks/useCounterHook.js,a/9/a9c2136ebed2f8292dd072bc0e635b7475764c79
 J
 src/Section15/Section15.js,3/5/3520631ff6c7b153d75e50860b2a0122833f760a
-N
-src/Component/SortableTable.js,4/c/4ce925c348d8a2aa2c404fe7379f68f96a8abdf1
 J
 src/Section17/Section17.js,e/4/e4d832441d2ece0afd1601111004b9f5a4faab80
 L
 src/Section17/TablePage17.js,9/0/905847856203f0aaa99ff9df760baabd75e3fade
 J
 src/Section16/Section16.js,e/9/e980217e84e3d4a82f0b96674efb64807e7a8ad7
-L
-src/Section16/TablePage16.js,d/e/de64e273340ee4380604ac2e1a75b9127fa633d9
 O
 src/Component/SortableTable1.js,b/e/be13aa3aba3c7a0a680d53fa13b7ed1243e2868b
 L
