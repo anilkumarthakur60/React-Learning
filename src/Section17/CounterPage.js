@@ -3,7 +3,6 @@ import useCounterHook from "../Hooks/useCounterHook";
 
 function CounterPage({initialCount}) {
 
-    console.log('---------data logging--------',initialCount);
     const {count,increment,decrement} = useCounterHook(initialCount);
 
     return (

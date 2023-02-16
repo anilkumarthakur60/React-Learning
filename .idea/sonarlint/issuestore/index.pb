@@ -95,8 +95,6 @@ E
 src/Component/Link.js,2/5/25d7b2cd325c0c560ccb75e61432b87343132086
 I
 src/Context/navigation.js,9/f/9f678f64ce805c01d72a992d4c2b83387a1d2387
-G
-src/Component/Button.js,a/f/af36fa860a7995e3ab27dd486c20ddb4c15a2c42
 A
 public/index.html,f/4/f43ecdf8d666ee908aacce037b4cd72159e4741b
 J
@@ -124,8 +122,6 @@ L
 src/Section17/TablePage17.js,9/0/905847856203f0aaa99ff9df760baabd75e3fade
 J
 src/Section16/Section16.js,e/9/e980217e84e3d4a82f0b96674efb64807e7a8ad7
-O
-src/Component/SortableTable1.js,b/e/be13aa3aba3c7a0a680d53fa13b7ed1243e2868b
 L
 src/Section17/CounterPage.js,8/c/8c8601f5fe7be3844c240b646a6a1c252935cdb0
 J

@@ -5,7 +5,6 @@ function useFormData({data}) {
     const [formData, setFormData] = useState(data)
 
     const  handleChange = (e) => {
-        console.log('---------data logging--------',e.target.name);
         setFormData({
             ...formData,
             [e.target.name]: e.target.value

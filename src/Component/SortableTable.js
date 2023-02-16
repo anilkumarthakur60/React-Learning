@@ -2,7 +2,7 @@ import Table from "./Table";
 import {useState} from "react";
 import {BsArrowBarDown, BsArrowBarUp, BsArrowsExpand} from "react-icons/bs";
 
-function SortableTable(props) {
+function    SortableTable(props) {
     const [sortOrder, setSortOrder] = useState(null)
     const [sortBy, setSortBy] = useState(null)
 
@@ -80,8 +80,6 @@ function SortableTable(props) {
 
     return (
         <div>
-            {sortOrder}-{sortBy}
-
             <Table {...props} data={sortedData} config={updatedConfig}></Table>
         </div>
     );

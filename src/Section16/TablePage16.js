@@ -1,5 +1,5 @@
 import Table from "../Component/Table";
-import SortableTable from "../Component/SortableTable";
+import   SortableTable from "../Component/SortableTable";
 import {useState} from "react";
 import SortableTable1 from "../Component/SortableTable1";
 

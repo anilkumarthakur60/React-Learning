@@ -1,13 +1,13 @@
 import SortableTable from "../../Component/SortableTable";
 
 import {useSelector} from "react-redux";
+import {useEffect} from "react";
 
 
 function CarList() {
     const data = useSelector((state) => {
         return state.cars;
     });
-    console.log('---------data logging-----data---', data);
     const columns = [
         {
             label: 'Id',
@@ -28,16 +28,18 @@ function CarList() {
         }
     ];
     const keyFn = (item) => {
-        return item.id;
+        return item.name;
     };
+    useEffect(() => {
+        console.log(data);
+
+    }, [data])
 
 
     return (
         <div className="bg-purple-50 h-full w-full">
+            <SortableTable config={columns} data={data} keyFn={keyFn}></SortableTable>
 
-            {data.length &&
-                <SortableTable config={columns} data={data} keyFn={keyFn}></SortableTable>
-            }
         </div>
     )
 }
