@@ -6,16 +6,19 @@ function InputLabel({value, children,className}) {
     const values = () => {
         if (value) {
             return (
-                {value}
+                <span>{value}</span>
             )
         } else {
-            return {children}
+            return (
+                <span>{children}</span>
+            )
         }
     }
 
     return (
 
         <label className={finalClassName}>
+            {children}
             {values}
         </label>
     )

@@ -8,40 +8,43 @@ function CarForm() {
 
     const {formData,setFormData,handleChange} = useFormData({
         data: {
-            email: '',
-            name: '',
+            name: null,
+            value: null,
         }
     })
 
     return (
 
         <div>
+            <pre>
+                {JSON.stringify(formData, null, 2)}
+            </pre>
+            <div >
 
-            <div className="w-full ">
-                <InputLabel for="email" value="Email"/>
-                <TextInput
-                    modelValue={formData.email}
-                    type="email"
-                    className="mt-1 block w-full"
-                    required
-                    autofocus
-                    value="email"
-                    emit={handleChange}
-                    autocomplete="email"
-                />
-            </div>
-            <div>
-
-                <InputLabel for="email" value="Email"/>
+                <InputLabel for="name" >Name</InputLabel>
                 <TextInput
                     modelValue={formData.name}
                     type="text"
-                    className="mt-1 block w-full"
+                    className="w-full"
                     required
-                    autofocus
+                    autoFocus
                     value="name"
                     emit={handleChange}
-                    autocomplete="name"
+                    placeholder="Name"
+                    autoComplete="name"
+                />
+            </div>
+            <div className="my-5">
+
+                <InputLabel for="value" >Value</InputLabel>
+                <TextInput
+                    modelValue={formData.value}
+                    type="number"
+                    className="w-full"
+                    required
+                    autoFocus
+                    value="value"
+                    emit={handleChange}
                 />
             </div>
 
