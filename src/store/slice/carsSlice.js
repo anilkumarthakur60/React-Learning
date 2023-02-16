@@ -10,13 +10,25 @@ const carsSlice = createSlice({
         addCars(state, action) {
             state.cars.push(...state.cars, action.payload)
         },
-
         changeSearchTerm(state, action) {
             state.searchTerms = action.payload;
+        },
+        deleteCar(state, action) {
+            state.cars = state.cars.filter((car) => car.id !== action.payload);
+        },
+        searchCarItem(state, action) {
+            state.cars = state.cars.filter((car) => car.name === action.payload);
+
         }
     }
 });
 
-export const {addCars, changeSearchTerm} = carsSlice.actions;
+export const {
+    addCars,
+    changeSearchTerm,
+    deleteCar,
+    searchCarItem,
 
-export const  carsReducer=carsSlice.reducer;
+} = carsSlice.actions;
+
+export const carsReducer = carsSlice.reducer;

@@ -19,6 +19,7 @@ const moviesSlice = createSlice({
     name: "movie",
     initialState: [],
     reducers: {
+
         addMovie(state, action) {
             state.push(action.payload);
         },

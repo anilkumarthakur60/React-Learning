@@ -1,17 +1,18 @@
-import {createSlice} from "@reduxjs/toolkit";
+import {createSlice,nanoid} from "@reduxjs/toolkit";
 
 const formSlice = createSlice({
     name: "form",
     initialState: {
-        formData: {
+        carForm: {
             name: null,
             cost: null,
+            id: nanoid()
         }
     },
     reducers: {
 
         addFormData(state, action) {
-            state.formData=action.payload;
+            state.carForm=action.payload;
         },
     }
 });
