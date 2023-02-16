@@ -146,5 +146,3 @@ N
 src/Section19/CounterPage19.js,f/2/f2f1f7b74b8fb25ee8b286afa73da4c33e9cb161
 J
 src/Section19/Section19.js,2/5/25a6fa5db451e1e048e6ec0bacdf47db0224293b
-B
-src/store/index.js,8/9/89922cab3a870ea7fc32984014e74ed044f89469
