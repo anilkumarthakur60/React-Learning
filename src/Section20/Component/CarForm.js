@@ -9,7 +9,7 @@ function CarForm() {
     const {formData,setFormData,handleChange} = useFormData({
         data: {
             name: null,
-            value: null,
+            cost: null,
         }
     })
 
@@ -36,14 +36,14 @@ function CarForm() {
             </div>
             <div className="my-5">
 
-                <InputLabel for="value" >Value</InputLabel>
+                <InputLabel for="value" >Cost</InputLabel>
                 <TextInput
-                    modelValue={formData.value}
+                    modelValue={formData.cost}
                     type="number"
                     className="w-full"
                     required
                     autoFocus
-                    value="value"
+                    value="cost"
                     emit={handleChange}
                 />
             </div>
