@@ -34,11 +34,7 @@ function CarForm() {
     return (
 
         <div>
-            <pre>
-                formData:{JSON.stringify(formData, null, 2)}
-                <br/>
-                StoreFormData:{JSON.stringify(storeData, null, 2)}
-            </pre>
+
             <div className="flex flex-col space-y-2">
                 <label htmlFor="name">Name</label>
                 <input type="text"
