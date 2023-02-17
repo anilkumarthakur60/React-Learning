@@ -8,13 +8,15 @@ function CarList() {
     const dispatch = useDispatch();
 
 
-    const data = useSelector(({cars: {cars, searchTerms}}) => {
+    const data = useSelector(({  cars: { cars, searchTerm } }) => {
+        const filteredCars = cars.filter((car) =>
+            car.name.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+        return filteredCars;
 
-        return cars.filter((car) => {
-            if (!searchTerms) return true;
-            return car.name.toLowerCase().includes(searchTerms.toLowerCase());
-        });
     });
+
+
     const columns = [
         {
             label: 'Id',
