@@ -53,6 +53,7 @@ function CarList() {
                     <th className="px-4 py-2">Id</th>
                     <th className="px-4 py-2">Name</th>
                     <th className="px-4 py-2">Value</th>
+                    <th className="px-4 py-2">Action</th>
                 </tr>
                 </thead>
                 <tbody>
