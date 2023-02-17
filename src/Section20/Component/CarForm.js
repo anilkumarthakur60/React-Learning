@@ -21,13 +21,11 @@ function CarForm() {
             ...formData,
             [e.target.name]: e.target.value,
         })
-
-
         dispatch(addFormData(formData));
     }
 
     const submitFormData = () => {
-        if (!formData.name || !formData.cost ||formData.id) return
+        if (!formData.name || !formData.cost || !formData.id) return
         dispatch(addCars(formData));
         dispatch(clearFormData());
         clearFormDatas();
