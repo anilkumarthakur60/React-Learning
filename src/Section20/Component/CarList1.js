@@ -75,18 +75,18 @@ function CarList() {
                     )
                 })}
                 </tbody>
-                {/*<tfoot>*/}
-                {/*<tr>*/}
-                {/*    <td colSpan={5} className="border px-4 py-2">*/}
-                {/*        Total:*/}
-                {/*        {data.reduce(function (prev, cur) {*/}
-                {/*            return prev + parseInt(cur.cost);*/}
-                {/*        }, 0)*/}
-                {/*        }*/}
+                <tfoot>
+                <tr>
+                    <td colSpan={5} className="border px-4 py-2">
+                        Total:
+                        {data.reduce(function (prev, cur) {
+                            return prev + parseInt(cur.cost);
+                        }, 0)
+                        }
 
-                {/*    </td>*/}
-                {/*</tr>*/}
-                {/*</tfoot>*/}
+                    </td>
+                </tr>
+                </tfoot>
             </table>
         </div>
     )
