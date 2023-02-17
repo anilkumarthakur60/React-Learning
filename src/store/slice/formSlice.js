@@ -12,7 +12,8 @@ const formSlice = createSlice({
     reducers: {
 
         addFormData(state, action) {
-            state.carForm=action.payload;
+            state.carForm.name=action.payload.name;
+            state.carForm.cost=action.payload.cost;
         },
         clearFormData(state, action) {
             state.carForm={

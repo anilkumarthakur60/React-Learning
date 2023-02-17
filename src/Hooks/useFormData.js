@@ -1,4 +1,5 @@
 import {useState} from "react";
+import {nanoid} from "@reduxjs/toolkit";
 
 
 function useFormData({data}) {
@@ -10,10 +11,17 @@ function useFormData({data}) {
             [e.target.name]: e.target.value
         })
     }
+
+    const clearFormDatas = () => {
+        setFormData({
+            id:nanoid(),
+        })
+    }
     return {
         formData,
         setFormData,
-        handleChange
+        handleChange,
+        clearFormDatas
     }
 }
 

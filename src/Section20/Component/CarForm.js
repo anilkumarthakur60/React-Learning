@@ -13,14 +13,7 @@ function CarForm() {
 
     const dispatch = useDispatch();
 
-    const {formData, setFormData} = useFormData({
-        data: {
-            name: null,
-            cost: null,
-            id: nanoid()
-
-        }
-    })
+    const {formData, setFormData,clearFormDatas} = useFormData({data: storeData});
 
 
     const handleChange = (e) => {
@@ -28,20 +21,25 @@ function CarForm() {
             ...formData,
             [e.target.name]: e.target.value,
         })
-        // dispatch(addFormData(formData));
+
+
+        dispatch(addFormData(formData));
     }
 
     const submitFormData = () => {
-        if (!formData.name || !formData.cost) return
+        if (!formData.name || !formData.cost ||formData.id) return
         dispatch(addCars(formData));
         dispatch(clearFormData());
+        clearFormDatas();
     }
 
     return (
 
         <div>
             <pre>
-                {JSON.stringify(storeData, null, 2)}
+                formData:{JSON.stringify(formData, null, 2)}
+                <br/>
+                StoreFormData:{JSON.stringify(storeData, null, 2)}
             </pre>
             <div className="flex flex-col space-y-2">
                 <label htmlFor="name">Name</label>
