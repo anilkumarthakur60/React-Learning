@@ -1,7 +1,15 @@
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import Button from "../../Component/Button";
+import  {store,deleteCar} from "../../store";
+
+
 
 
 function CarList() {
+
+    const dispatch=useDispatch();
+
+
     const data = useSelector((state) => {
         return state.cars.cars;
     });
@@ -28,6 +36,13 @@ function CarList() {
         return item.name;
     };
 
+    const deleteCars = (id) => {
+        if (!id) return;
+        console.log('---------data logging----delete id----',id);
+        dispatch(deleteCar(id));
+
+    }
+
 
     return (
         <div className="bg-purple-50 h-full w-full">
@@ -48,6 +63,11 @@ function CarList() {
                             <td className="border px-4 py-2">{item.id}</td>
                             <td className="border px-4 py-2">{item.name}</td>
                             <td className="border px-4 py-2">{item.cost}</td>
+                            <td className="border px-4 py-2" >
+
+                                <Button danger onClick={()=>deleteCars(item.id)}>Delete</Button>
+                            </td>
+
                         </tr>
                     )
                 })}

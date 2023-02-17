@@ -14,6 +14,8 @@ function useFormData({data}) {
 
     const clearFormDatas = () => {
         setFormData({
+            name: null,
+            cost: null,
             id:nanoid(),
         })
     }
