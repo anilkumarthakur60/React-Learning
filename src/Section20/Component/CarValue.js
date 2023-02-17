@@ -6,12 +6,20 @@ function CarValue() {
 
     const data1 = useSelector(({cars: {cars, searchTerms}}) => {
 
-        const filteredData = cars.filter((car) => {
+
+        return cars.filter((car) => {
+            if (!searchTerms) return true;
+            return car.name.toLowerCase().includes(searchTerms.toLowerCase());
+        })
+            .reduce( (previous, current)=>previous + parseInt(current.cost), 0);
+
+
+        const filteredData1 = cars.filter((car) => {
             if (!searchTerms) return true;
             return car.name.toLowerCase().includes(searchTerms.toLowerCase());
         });
 
-        return filteredData.reduce(function (previous, current) {
+        return filteredData1.reduce(function (previous, current) {
             return previous + parseInt(current.cost);
         }, 0)
     });
