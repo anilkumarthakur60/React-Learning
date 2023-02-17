@@ -18,7 +18,7 @@ const carsSlice = createSlice({
             state.cars = state.cars.filter((car) => car.id !== action.payload);
         },
         searchCarItem(state, action) {
-            state.cars = state.cars.filter((car) => car.name === action.payload);
+            state.cars  = state.cars.filter((car) => car.name === action.payload);
 
         }
     }

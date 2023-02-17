@@ -1,17 +1,19 @@
 import {useDispatch, useSelector} from "react-redux";
 import Button from "../../Component/Button";
-import  {store,deleteCar} from "../../store";
-
-
+import {deleteCar} from "../../store";
 
 
 function CarList() {
 
-    const dispatch=useDispatch();
+    const dispatch = useDispatch();
 
 
-    const data = useSelector((state) => {
-        return state.cars.cars;
+    const data = useSelector(({cars: {cars, searchTerms}}) => {
+
+        return cars.filter((car) => {
+            if (!searchTerms) return true;
+            return car.name.toLowerCase().includes(searchTerms.toLowerCase());
+        });
     });
     const columns = [
         {
@@ -38,7 +40,7 @@ function CarList() {
 
     const deleteCars = (id) => {
         if (!id) return;
-        console.log('---------data logging----delete id----',id);
+        console.log('---------data logging----delete id----', id);
         dispatch(deleteCar(id));
 
     }
@@ -57,16 +59,16 @@ function CarList() {
                 </tr>
                 </thead>
                 <tbody>
-                {data.map((item,i) => {
+                {data.map((item, i) => {
                     return (
                         <tr key={item.id}>
-                            <td className="border px-4 py-2">{i+1}</td>
+                            <td className="border px-4 py-2">{i + 1}</td>
                             <td className="border px-4 py-2">{item.id}</td>
                             <td className="border px-4 py-2">{item.name}</td>
                             <td className="border px-4 py-2">{item.cost}</td>
-                            <td className="border px-4 py-2" >
+                            <td className="border px-4 py-2">
 
-                                <Button danger onClick={()=>deleteCars(item.id)}>Delete</Button>
+                                <Button danger onClick={() => deleteCars(item.id)}>Delete</Button>
                             </td>
 
                         </tr>
@@ -77,7 +79,7 @@ function CarList() {
                 <tr>
                     <td colSpan={5} className="border px-4 py-2">
                         Total:
-                        { data.reduce(function(prev, cur) {
+                        {data.reduce(function (prev, cur) {
                             return prev + parseInt(cur.cost);
                         }, 0)
                         }
@@ -87,7 +89,7 @@ function CarList() {
                 </tfoot>
             </table>
         </div>
-)
+    )
 }
 
 export default CarList;
