@@ -1,6 +1,6 @@
 import  {configureStore} from "@reduxjs/toolkit";
 import  {carsReducer,addCars,deleteCar,searchCarItem,changeSearchTerm} from "./slice/carsSlice";
-import  {formReducer,addFormData} from "./slice/formSlice";
+import  {formReducer,addFormData,clearFormData} from "./slice/formSlice";
 
 const  store = configureStore({
     reducer: {
@@ -12,7 +12,7 @@ const  store = configureStore({
 export {
     store,
     carsReducer,addCars,deleteCar,searchCarItem,changeSearchTerm,
-    formReducer,addFormData
+    formReducer,addFormData,clearFormData
 
 
 };

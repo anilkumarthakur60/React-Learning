@@ -1,16 +1,19 @@
-import InputLabel from "../../Component/InputLabel";
-import TextInput from "../../Component/TextInput";
-import {useState} from "react";
 import useFormData from "../../Hooks/useFormData";
 import Button from "../../Component/Button";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {nanoid} from "@reduxjs/toolkit";
-import {addCars,store,addFormData} from "../../store";
+import {addCars, addFormData, clearFormData} from "../../store";
+
 function CarForm() {
 
-    const  dispatch = useDispatch();
+    const storeData = useSelector((state) => {
+        console.log('---------data logging-- store------', state?.forms?.carForm);
+        return state?.forms?.carForm;
+    });
 
-    const {formData,setFormData} = useFormData({
+    const dispatch = useDispatch();
+
+    const {formData, setFormData} = useFormData({
         data: {
             name: null,
             cost: null,
@@ -25,46 +28,43 @@ function CarForm() {
             ...formData,
             [e.target.name]: e.target.value,
         })
-        dispatch(addFormData(formData));
+        // dispatch(addFormData(formData));
     }
 
     const submitFormData = () => {
+        if (!formData.name || !formData.cost) return
         dispatch(addCars(formData));
+        dispatch(clearFormData());
     }
 
     return (
 
         <div>
             <pre>
-                {JSON.stringify(formData, null, 2)}
+                {JSON.stringify(storeData, null, 2)}
             </pre>
-            <div >
+            <div className="flex flex-col space-y-2">
+                <label htmlFor="name">Name</label>
+                <input type="text"
+                       className="px-2 py-2 border rounded-md focus:outline-none focus:border-blue-400"
+                       placeholder="Enter your full name..."
+                       value={formData.name}
+                       name="name"
+                       onChange={handleChange}
 
-                <InputLabel for="name" >Name</InputLabel>
-                <TextInput
-                    modelValue={formData.name}
-                    type="text"
-                    className="w-full"
-                    required
-                    autoFocus
-                    value="name"
-                    emit={handleChange}
-                    placeholder="Name"
-                    autoComplete="name"
+
                 />
             </div>
-            <div className="my-5">
+            <div className="flex flex-col space-y-2 my-5">
+                <label htmlFor="cost">Cost</label>
+                <input type="number"
+                       className="px-2 py-2 border rounded-md focus:outline-none focus:border-blue-400"
+                       placeholder="Enter Cost..."
+                       value={formData.cost}
+                       name="cost"
+                       onChange={handleChange}
 
-                <InputLabel for="value" >Cost</InputLabel>
-                <TextInput
-                    modelValue={formData.cost}
-                    type="number"
-                    className="w-full"
-                    required
-                    autoFocus
-                    value="cost"
-                    placeholder="Cost"
-                    emit={handleChange}
+
                 />
             </div>
             <Button primary onClick={submitFormData}>Submit</Button>

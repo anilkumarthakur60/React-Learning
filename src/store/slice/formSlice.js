@@ -14,9 +14,16 @@ const formSlice = createSlice({
         addFormData(state, action) {
             state.carForm=action.payload;
         },
+        clearFormData(state, action) {
+            state.carForm={
+                name: null,
+                cost: null,
+                id: nanoid()
+            };
+        }
     }
 });
 
-export const {addFormData} = formSlice.actions;
+export const {addFormData,clearFormData} = formSlice.actions;
 
 export const formReducer= formSlice.reducer;
