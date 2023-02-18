@@ -1,6 +1,13 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
 import axios from "axios";
 
+
+const pause = (duration) => {
+    return new Promise((resolve) => {
+        return setTimeout(resolve, duration)
+    });
+}
+
 const fetchUsers = createAsyncThunk(
     "users/fetch",
     async () => {
@@ -16,11 +23,6 @@ const fetchUsers = createAsyncThunk(
 
 
 //Dev only
-const pause = (duration) => {
-    return new Promise((resolve) => {
-        return setTimeout(resolve, duration)
-    });
-}
 
 
 export {
