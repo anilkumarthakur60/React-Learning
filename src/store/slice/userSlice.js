@@ -1,9 +1,10 @@
 import {createSlice} from "@reduxjs/toolkit";
+import  {fetchUsers} from "../thunks/fetchUsers";
 
 const userSlice = createSlice({
     name: "user",
     initialState: {
-        userLists: [
+        data: [
             {
                 name: "BMW",
                 cost: 100000,
@@ -35,6 +36,19 @@ const userSlice = createSlice({
         deleteUser(state, action) {
             // state.cars = state.cars.filter((car) => car.id !== action.payload);
         },
+    },
+    extraReducers(builder) {
+        builder.addCase(fetchUsers.pending, (state, action) => {
+            state.isLoading = true;
+        });
+        builder.addCase(fetchUsers.fulfilled, (state, action) => {
+            state.isLoading = false;
+            state.data = action.payload;
+        });
+        builder.addCase(fetchUsers.rejected, (state, action) => {
+            state.isLoading = false;
+            state.error = action.error;
+        });
     }
 });
 

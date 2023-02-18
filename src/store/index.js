@@ -15,5 +15,8 @@ export {
     store,
     carsReducer,addCars,deleteCar,searchCarItem,changeSearchTerm,
     formReducer,addFormData,clearFormData,
-    userReducer,addUser,deleteUser
+    userReducer,addUser,deleteUser,
+
 };
+
+export  * from "./thunks/fetchUsers";
