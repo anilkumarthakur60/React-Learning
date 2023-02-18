@@ -15,7 +15,6 @@ function CarSearch() {
 
     const formSubmit = (e) => {
         e.preventDefault();
-        // dispatch(searchCarItem(search));
         dispatch(changeSearchTerm(search));
 
 
