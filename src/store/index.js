@@ -3,6 +3,7 @@ import  {carsReducer,addCars,deleteCar,searchCarItem,changeSearchTerm} from "./s
 import  {formReducer,addFormData,clearFormData} from "./slice/formSlice";
 import {userReducer,addUser,deleteUser} from "./slice/userSlice";
 
+
 const  store = configureStore({
     reducer: {
         cars: carsReducer,
@@ -20,3 +21,4 @@ export {
 };
 
 export  * from "./thunks/fetchUsers";
+export  * from  "./thunks/addUsers";

@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import {useDispatch,useSelector} from "react-redux";
-import {fetchUsers} from "../store";
+import {fetchUsers,addUsers} from "../store";
 import Loading from "../Component/Loading";
 
 function UserList() {
@@ -9,6 +9,7 @@ function UserList() {
 
     useEffect(() => {
         dispatch(fetchUsers())
+        dispatch(addUsers())
     },[dispatch])
 
 
