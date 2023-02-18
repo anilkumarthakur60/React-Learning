@@ -1,6 +1,6 @@
 import React, {useState,useContext} from "react";
 import {NavigationProvider} from "../Context/navigation";
-import Section131 from "./Section13-1";
+import MainSideBar from "./MainSideBar";
 
 function Section13() {
 
@@ -11,7 +11,7 @@ function Section13() {
         <div>
 
             <NavigationProvider>
-                    <Section131></Section131>
+                    <MainSideBar></MainSideBar>
 
             </NavigationProvider>
 

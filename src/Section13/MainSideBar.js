@@ -13,8 +13,9 @@ import Section15 from "../Section15/Section15";
 import Section18 from "../Section18/Section18";
 import Section19 from "../Section19/Section19";
 import Section20 from "../Section20/Section20";
+import Section21 from "../Section21/Section21";
 
-function Section131() {
+function MainSideBar() {
     const [selection, setSelection] = useState(null);
 
     const handleSelect = (option) => {
@@ -93,9 +94,12 @@ function Section131() {
                 <Route path="/section20">
                     <Section20/>
                 </Route>
+                <Route path="/section21">
+                    <Section21/>
+                </Route>
             </div>
         </div>
     );
 }
 
-export default Section131;
+export default MainSideBar;

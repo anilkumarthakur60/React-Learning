@@ -107,8 +107,6 @@ F
 src/Component/Table.js,8/2/8272cda3b67e15248607d8268a0c91e28a993398
 J
 src/Section15/TablePage.js,d/0/d011f0820266b28b3a1efd0307127b7c92ca46de
-J
-src/Section13/Section13.js,d/3/d32d5527e1699370f02296a15eb818eabbaec0af
 :
 
 src/App.js,1/e/1e43fa63aecd2127be034b3fb9d4caa172275714
