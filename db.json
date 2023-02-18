@@ -1,52 +1,32 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Leanne Graham"
+      "name": "Gene Zieme",
+      "id": 1
     },
     {
-      "id": 2,
-      "name": "Ervin Howell"
+      "name": "Lynn Feil",
+      "id": 2
     },
     {
-      "id": 3,
-      "name": "Clementine Bauch"
+      "name": "Mindy Cronin",
+      "id": 3
     },
     {
-      "id": 4,
-      "name": "Patricia Lebsack"
+      "name": "Patricia Upton",
+      "id": 4
     },
     {
-      "id": 5,
-      "name": "Chelsey Dietrich"
+      "name": "Nora Boyle",
+      "id": 5
     },
     {
-      "id": 6,
-      "name": "Mrs. Dennis Schulist"
+      "name": "Irvin Wyman",
+      "id": 6
     },
     {
-      "id": 7,
-      "name": "Kurtis Weissnat"
-    },
-    {
-      "id": 8,
-      "name": "Nicholas Runolfsdottir V"
-    },
-    {
-      "id": 9,
-      "name": "Glenna Reichert"
-    },
-    {
-      "id": 10,
-      "name": "Clementina DuBuque"
-    },
-    {
-      "name": "Neil Kuhn",
-      "id": 11
-    },
-    {
-      "name": "Darnell Klein",
-      "id": 12
+      "name": "Monica Murazik",
+      "id": 7
     }
   ],
   "albums": [
