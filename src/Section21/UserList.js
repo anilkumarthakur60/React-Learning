@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import {useDispatch,useSelector} from "react-redux";
 import {fetchUsers} from "../store";
+import Loading from "../Component/Loading";
 
 function UserList() {
     const dispatch = useDispatch();
@@ -14,16 +15,23 @@ function UserList() {
     const {data,isLoading,error}=useSelector((state)=>state.users);
 
         if (isLoading) {
-            return <div>Loading...</div>
-        } else if (error) {
+            return (
+              <Loading times={2} className={`h-10 w-full`} />
+            )
+        } if (error) {
             return <div>{error}</div>
-        }else if (data){
-            return data.map((user, i) => {
-                        return (
-                            <li key={user.id}>{i + 1}. {user.name}</li>
-                        )
-                    })
         }
+
+
+        const renderUserList = data.map((user, i) => {
+            return <div key={user.id} className={`mb-2 border rounded`}>
+                <div className={`flex p-2 justify-between items-center cursor-pointer`}> {user.name}</div>
+            </div>
+        })
+
+    return  <div >
+        {renderUserList}
+    </div>
 
 
 
