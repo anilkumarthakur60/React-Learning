@@ -36,8 +36,6 @@ C
 src/api_instance.js,c/a/cab788c7a5e9db95ade3cc453b6cb42ffdcf4a74
 4
 .env,3/c/3c84dcdc6bbe3d7817c49dcdc327b926fea1808a
-<
-package.json,7/0/7030d0b2f71b999ff89a343de08c414af32fc93a
 \
 ,src/FormHandleSection6/Section7BookCreate.js,8/0/8055d33891f2b9ad8440d51adfaa544758b42426
 Z
