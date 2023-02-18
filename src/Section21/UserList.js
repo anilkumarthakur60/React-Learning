@@ -10,7 +10,6 @@ function UserList() {
 
     useEffect(() => {
         dispatch(fetchUsers())
-        dispatch(addUsers())
     },[dispatch])
 
 
