@@ -33,7 +33,9 @@ function Loading({times, className}) {
     const boxes = Array(times).fill(0).map((_, i) => {
         return (
            <div key={i} className={outerClassName}>
-                <div className={innerClassName}/>
+                <div className={innerClassName}>
+
+                </div>
             </div>
         )
     });
