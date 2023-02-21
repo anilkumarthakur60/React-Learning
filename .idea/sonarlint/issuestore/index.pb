@@ -34,8 +34,6 @@ I
 src/api.js,8/c/8c37372e0f85ef2d908f9d02c49f6a0d04b1f091
 C
 src/api_instance.js,c/a/cab788c7a5e9db95ade3cc453b6cb42ffdcf4a74
-4
-.env,3/c/3c84dcdc6bbe3d7817c49dcdc327b926fea1808a
 \
 ,src/FormHandleSection6/Section7BookCreate.js,8/0/8055d33891f2b9ad8440d51adfaa544758b42426
 Z
@@ -150,8 +148,6 @@ J
 src/Section13/Section13.js,d/3/d32d5527e1699370f02296a15eb818eabbaec0af
 T
 $src/Section20/Component/CarSearch.js,6/b/6bba78d4f0cbd169437be298896aa83dfdef4aaf
-<
-package.json,7/0/7030d0b2f71b999ff89a343de08c414af32fc93a
 J
 src/Section21/Section21.js,d/0/d069278eb791c4e73a5b3a21f98f49433aeb82ed
 C
