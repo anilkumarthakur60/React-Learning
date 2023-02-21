@@ -148,8 +148,6 @@ J
 src/Section13/Section13.js,d/3/d32d5527e1699370f02296a15eb818eabbaec0af
 T
 $src/Section20/Component/CarSearch.js,6/b/6bba78d4f0cbd169437be298896aa83dfdef4aaf
-J
-src/Section21/Section21.js,d/0/d069278eb791c4e73a5b3a21f98f49433aeb82ed
 C
 src/store/indexs.js,9/1/91407207e9953536bb79e0e29c6c2bfb99748bc5
 <

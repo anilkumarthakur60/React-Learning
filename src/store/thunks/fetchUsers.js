@@ -11,8 +11,8 @@ const pause = (duration) => {
 const fetchUsers = createAsyncThunk(
     "users/fetch",
     async () => {
-        const response = await axios.get("http://localhost:3005/users");
-        // await pause(1000);
+        const response = await axios.get("http://localhost:3005/ussers");
+        await pause(1000);
         return response.data;
     },
 );
