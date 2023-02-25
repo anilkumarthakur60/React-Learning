@@ -1,6 +1,6 @@
-import {createAsyncThunk} from "@reduxjs/toolkit";
+import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import  {faker} from "@faker-js/faker";
+import { faker } from "@faker-js/faker";
 
 const pause = (duration) => {
     return new Promise((resolve) => {
@@ -10,13 +10,13 @@ const pause = (duration) => {
 
 const addUsers = createAsyncThunk(
     "users/add",
-      async () => {
-        const response = await axios.post("http://localhost:8000/api/react/posts",{
-            name:faker.name.fullName(),
+    async() => {
+        const response = await axios.post("http://localhost:8000/api/posts", {
+            name: faker.name.fullName(),
         });
         // await pause(1000);
         return response.data?.data;
-      }
+    }
 
 );
 

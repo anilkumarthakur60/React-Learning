@@ -1,4 +1,4 @@
-import {createAsyncThunk} from "@reduxjs/toolkit";
+import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 
@@ -10,8 +10,8 @@ const pause = (duration) => {
 
 const editUser = createAsyncThunk(
     "users/edit",
-    async (id) => {
-        const response = await axios.put(`http://localhost:8000/api/react/posts/${id}`);
+    async(id) => {
+        const response = await axios.put(`http://localhost:8000/api/posts/${id}`);
         return response.data?.data;
     }
 
