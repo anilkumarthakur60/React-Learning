@@ -58,9 +58,13 @@ function UserList() {
             <h1 className="m-2 text-xl">
                 Users
             </h1>
-            <Button loading={isCreatingUser} primary onClick={handleAddUser}>
-                Add User
-            </Button>
+
+            {
+                isCreatingUser ? <Loading times={2} className={`h-10 w-full`}/> :
+                    <Button primary onClick={handleAddUser}>
+                        Add User
+                    </Button>
+            }
             {
                 creatingUserError && 'Error Creating User'
             }
