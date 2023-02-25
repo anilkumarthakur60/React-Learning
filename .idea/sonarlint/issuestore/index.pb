@@ -68,8 +68,6 @@ D
 L
 src/Hooks/useBooksContext.js,3/0/30d532e56ba8f3c40f5821413a401e34cb3b846d
 J
-src/Component/Accordion.js,d/0/d07ab475976a16e5f271740c4bc4e913d8625205
-J
 src/Section12/Section12.js,c/a/cacc3d0ee5cf735a67bfe6a11b36a94ddcc1c551
 S
 #src/Section12/Section12Dropdown.jsx,3/c/3ca6aa390b04ad99e832723ebce12d3435da934e
@@ -83,8 +81,6 @@ H
 src/Section5/Section5.js,8/9/8956b968284023fc16051b4f77cd9b4da7b52060
 J
 src/Section4/AnimalShow.js,6/4/64b51160a9fc81a756a43230f2a64e945468b538
-E
-src/Component/Link.js,2/5/25d7b2cd325c0c560ccb75e61432b87343132086
 I
 src/Context/navigation.js,9/f/9f678f64ce805c01d72a992d4c2b83387a1d2387
 A
