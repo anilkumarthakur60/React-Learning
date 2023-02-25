@@ -85,8 +85,6 @@ H
 src/Section5/Section5.js,8/9/8956b968284023fc16051b4f77cd9b4da7b52060
 J
 src/Section4/AnimalShow.js,6/4/64b51160a9fc81a756a43230f2a64e945468b538
-Q
-!src/Section7apiRequst/Section6.js,d/6/d6e4e031b12e6a75080d75e3d42f182c0bdf66c5
 E
 src/Component/Link.js,2/5/25d7b2cd325c0c560ccb75e61432b87343132086
 I
@@ -148,8 +146,6 @@ J
 src/Section13/Section13.js,d/3/d32d5527e1699370f02296a15eb818eabbaec0af
 T
 $src/Section20/Component/CarSearch.js,6/b/6bba78d4f0cbd169437be298896aa83dfdef4aaf
-C
-src/store/indexs.js,9/1/91407207e9953536bb79e0e29c6c2bfb99748bc5
 <
 src/index.js,f/9/f900edc44cb929c2267a16100a32851f6d5b477d
 B

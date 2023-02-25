@@ -44,7 +44,6 @@ function CarList() {
 
     const deleteCars = (id) => {
         if (!id) return;
-        console.log('---------data logging----delete id----', id);
         dispatch(deleteCar(id));
 
     }

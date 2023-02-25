@@ -1,7 +1,7 @@
 import  {configureStore} from "@reduxjs/toolkit";
 import  {carsReducer,addCars,deleteCar,searchCarItem,changeSearchTerm} from "./slice/carsSlice";
 import  {formReducer,addFormData,clearFormData} from "./slice/formSlice";
-import {userReducer,addUser,deleteUser} from "./slice/userSlice";
+import {userReducer,addUser} from "./slice/userSlice";
 
 
 const  store = configureStore({
@@ -16,9 +16,10 @@ export {
     store,
     carsReducer,addCars,deleteCar,searchCarItem,changeSearchTerm,
     formReducer,addFormData,clearFormData,
-    userReducer,addUser,deleteUser,
+    userReducer,addUser,
 
 };
 
 export  * from "./thunks/fetchUsers";
 export  * from  "./thunks/addUsers";
+export  * from  "./thunks/deleteUser";

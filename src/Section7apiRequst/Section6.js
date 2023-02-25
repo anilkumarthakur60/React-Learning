@@ -136,7 +136,7 @@ function Section6() {
                 <div className="row">
                     {books.map((book, index) => {
                         return (
-                            <div className="col-4 mt-4">
+                            <div className="col-4 mt-4" key={index}>
                                 <div className="card h-100 bg-light px-3 ">
                                     <div className="card-body">
 

@@ -5,6 +5,8 @@ import Loading from "../Component/Loading";
 import Button from "../Component/Button";
 import {useThunk} from "../Hooks/useThunk";
 
+import UserListItem from "./UserListItem";
+
 
 
 function UserList() {
@@ -28,9 +30,7 @@ function UserList() {
     }
     else{
         content=data.map((user, i) => {
-            return <div key={user.id} className={`mb-2 border rounded`}>
-                <div className={`flex p-2 justify-between items-center cursor-pointer`}> {user.name}</div>
-            </div>
+            return <UserListItem key={user.id} user={user}/>
         })
     }
 

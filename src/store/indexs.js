@@ -72,7 +72,6 @@ const store = configureStore({
 
 // const finalStates = store.getState();
 
-// console.log(JSON.stringify(finalStates));
 
 export { store };
 export const { addSong, removeSong } = songsSlice.actions;

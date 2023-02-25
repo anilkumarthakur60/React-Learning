@@ -7,7 +7,6 @@ import {addCars, addFormData, clearFormData} from "../../store";
 function CarForm() {
 
     const storeData = useSelector((state) => {
-        console.log('---------data logging-- store------', state?.forms?.carForm);
         return state?.forms?.carForm;
     });
 
