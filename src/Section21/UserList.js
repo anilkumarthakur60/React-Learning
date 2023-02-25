@@ -19,14 +19,22 @@ function UserList() {
 
     const {data} = useSelector((state) => state.users);
 
+
+    let content;
     if (isLoadingUser) {
-        return (
-            <Loading times={2} className={`h-10 w-full`}/>
-        )
+       content=<Loading times={2} className={`h-10 w-full`}/>
+    }else if (loadingUsersError) {
+        content=<div>{loadingUsersError}</div>
     }
-    if (loadingUsersError) {
-        return <div>{loadingUsersError}</div>
+    else{
+        content=data.map((user, i) => {
+            return <div key={user.id} className={`mb-2 border rounded`}>
+                <div className={`flex p-2 justify-between items-center cursor-pointer`}> {user.name}</div>
+            </div>
+        })
     }
+
+
 
     const renderAddUser = () => {
         if (isCreatingUser) {
@@ -46,15 +54,9 @@ function UserList() {
     }
 
 
-    const renderUserList = data.map((user, i) => {
-        return <div key={user.id} className={`mb-2 border rounded`}>
-            <div className={`flex p-2 justify-between items-center cursor-pointer`}> {user.name}</div>
-        </div>
-    })
-
 
     return <div>
-        <div className="flex flex-row justify-between m-3">
+        <div className="flex flex-row justify-between items-center m-3">
             <h1 className="m-2 text-xl">
                 Users
             </h1>
@@ -65,7 +67,8 @@ function UserList() {
                 creatingUserError && 'Error Creating User'
             }
         </div>
-        {renderUserList}
+
+        {content}
     </div>
 
 

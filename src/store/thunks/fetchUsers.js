@@ -23,7 +23,7 @@ const fetchUsers = createAsyncThunk(
                 descending: true
             }
         });
-        await pause(1000);
+        // await pause(1000);
         return response.data.data;
     },
 );

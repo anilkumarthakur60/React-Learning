@@ -14,8 +14,8 @@ const addUsers = createAsyncThunk(
         const response = await axios.post("http://localhost:8000/api/react/posts",{
             name:faker.name.fullName(),
         });
-        await pause(1000);
-        return response.data;
+        // await pause(1000);
+        return response.data?.data;
       }
 
 );
