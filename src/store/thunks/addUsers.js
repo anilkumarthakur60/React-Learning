@@ -11,10 +11,10 @@ const pause = (duration) => {
 const addUsers = createAsyncThunk(
     "users/add",
       async () => {
-        const response = await axios.post("http://localhost:3005/users",{
+        const response = await axios.post("http://localhost:8000/api/react/posts",{
             name:faker.name.fullName(),
         });
-        // await pause(1000);
+        await pause(1000);
         return response.data;
       }
 

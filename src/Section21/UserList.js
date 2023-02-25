@@ -10,6 +10,9 @@ function UserList() {
     const [isLoadingUsers, setIsLoadingUsers] = useState(false);
     const [loadingUsersError, setLoadingUsersError] = useState(null);
 
+    const [isCreatingUser, setIsCreatingUser] = useState(false);
+    const [creatingUserError, setCreatingUserError] = useState(null);
+
 
     useEffect(() => {
         setIsLoadingUsers(true);
@@ -31,6 +34,27 @@ function UserList() {
         return <div>{loadingUsersError}</div>
     }
 
+    const renderAddUser = () => {
+        if (isCreatingUser) {
+            return <Loading times={2} className={`h-10 w-full`}/>
+        } else {
+            return <Button primary onClick={handleAddUser}>
+                Add User
+            </Button>
+        }
+        if (creatingUserError) {
+            return <div>{creatingUserError}</div>
+        }
+    }
+
+    const handleAddUser = () => {
+        setIsCreatingUser(true);
+        dispatch(addUsers({name: "New User"}))
+            .unwrap()
+            .catch((error) => setCreatingUserError(error.message))
+            .finally(() => setIsCreatingUser(false));
+    }
+
 
     const renderUserList = data.map((user, i) => {
         return <div key={user.id} className={`mb-2 border rounded`}>
@@ -44,9 +68,16 @@ function UserList() {
             <h1 className="m-2 text-xl">
                 Users
             </h1>
-            <Button primary onClick={() => dispatch(addUsers())}>
-                Add User
-            </Button>
+
+            {
+                isCreatingUser ? <Loading times={2} className={`h-10 w-full`}/> :
+                    <Button primary onClick={handleAddUser}>
+                        Add User
+                    </Button>
+            }
+            {
+                creatingUserError && 'Error Creating User'
+            }
         </div>
         {renderUserList}
     </div>
