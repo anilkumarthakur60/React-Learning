@@ -14,6 +14,7 @@ function Sidebar() {
         { label: 'Section19', path: '/section19' },
         { label: 'Section20', path: '/section20' },
         { label: 'Section21', path: '/section21' },
+        { label: 'Section22', path: '/section22' },
     ];
 
     const renderedLinks = links.map((link) => {

@@ -124,8 +124,6 @@ J
 src/Section19/Section19.js,2/5/25a6fa5db451e1e048e6ec0bacdf47db0224293b
 L
 src/store/slice/carsSlice.js,a/c/acb23d9aa2352aa4e8f9ba6e57329a47b0f63fb5
-H
-src/Component/Sidebar.js,2/a/2a083d7f0a0a4c70bd720706ad3144b2f13f4ce8
 L
 src/store/slice/formSlice.js,b/2/b213336a79b6f79434d678d0530295f8bac501ea
 R
@@ -134,8 +132,6 @@ S
 #src/Section20/Component/CarList1.js,c/6/c689c4a317f04c6e7b87c0273ff5f69e1e9008c7
 R
 "src/Section20/Component/CarList.js,f/4/f4bb79723b4fbefcd3efc7cd63659cca2f003fb6
-L
-src/Section13/MainSideBar.js,7/d/7d0ac57a2b8ddc734fe409a840f904bfca444a5b
 J
 src/Section13/Section13.js,d/3/d32d5527e1699370f02296a15eb818eabbaec0af
 T

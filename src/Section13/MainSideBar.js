@@ -14,6 +14,7 @@ import Section18 from "../Section18/Section18";
 import Section19 from "../Section19/Section19";
 import Section20 from "../Section20/Section20";
 import Section21 from "../Section21/Section21";
+import Section22 from "../Section22/Section22";
 
 function MainSideBar() {
     const [selection, setSelection] = useState(null);
@@ -96,6 +97,9 @@ function MainSideBar() {
                 </Route>
                 <Route path="/section21">
                     <Section21/>
+                </Route>
+                <Route path="/section22">
+                    <Section22/>
                 </Route>
             </div>
         </div>
