@@ -1,8 +1,30 @@
-import {useEffect, useState} from "react";
+import {useEffect, useState,useCallback} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchUsers, addUsers} from "../store";
 import Loading from "../Component/Loading";
 import Button from "../Component/Button";
+
+function  useThunk(thunk){
+    const dispatch = useDispatch();
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState(null);
+
+
+    const runThunk = useCallback (() => {
+        setIsLoading(true);
+         dispatch(thunk())
+            .unwrap()
+            .catch((error) => setError(error.message))
+            .finally(() => setIsLoading(false));
+    },[dispatch, thunk])
+
+    return {
+        isLoading,
+        error
+    }
+}
+
+
 
 function UserList() {
     const dispatch = useDispatch();

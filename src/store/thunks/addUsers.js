@@ -20,14 +20,6 @@ const addUsers = createAsyncThunk(
 
 );
 
-// fetchUsers.pending
-// fetchUsers.fulfilled
-// fetchUsers.rejected
-
-
-//Dev only
-
-
 export {
     addUsers
 }
