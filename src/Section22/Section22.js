@@ -1,10 +1,10 @@
-import UserList from "./UserList";
+import PostList from "./PostList";
 
 function  Section22(){
 
     return (
         <div className="section21">
-         <UserList />
+         <PostList />
         </div>
     )
 

@@ -1,31 +1,37 @@
-function AlbumList({albums, children, ...rest}) {
+import {useFetchAlbumsQuery, useFetchAllAlbumsQuery} from "../store";
+import Loading from "../Component/Loading";
+import ExpandablePanel from "../Component/ExpandablePanel";
+import Button from "../Component/Button";
+
+function AlbumList({post, children, ...rest}) {
+    const {data, error, isLoading} = useFetchAlbumsQuery(post);
+
+
+    let content;
+    if (isLoading) {
+        content = <Loading times={2} className={`h-10 w-full`}/>
+    } else if (error) {
+        content = <div>{error}</div>
+
+    } else {
+        content = data.data.map((album, i) => {
+
+
+            const header = <div>{album?.name} </div>
+
+            return <ExpandablePanel key={album?.id} header={header}>
+                List of photos in this album
+            </ExpandablePanel>
+
+        })
+    }
+
+
     return (
         <div>
-            {
-                albums.map((album, i) => {
-                    return <div key={album.id} className={`mb-2 border rounded`}>
-                        <div className={`flex p-2 justify-between items-center cursor-pointer`}>
-                            <div className="flex flex-row justify-between items-center">
-                                {album.name}
-                                <div className="">
-
-                                    {
-                                        album.media.map((image) => {
-
-                                            return <img src={image.path} alt={image.title}
-                                                        className={`h-10 w-10 `}/>
-
-                                        })
-                                    }
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                })
-            }
+            {content}
         </div>
     );
 }
 
-    export default AlbumList
+export default AlbumList

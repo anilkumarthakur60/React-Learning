@@ -5,11 +5,11 @@ import Loading from "../Component/Loading";
 import Button from "../Component/Button";
 import {useThunk} from "../Hooks/useThunk";
 
-import UserListItem from "./UserListItem";
+import Post from "./Post";
 
 
 
-function UserList() {
+function PostList() {
     const [doFetchUsers, isLoadingUser,loadingUsersError] = useThunk(fetchUsers);
     const [doAddUser, isCreatingUser,creatingUserError] = useThunk(addUsers);
 
@@ -29,8 +29,8 @@ function UserList() {
         content=<div>{loadingUsersError}</div>
     }
     else{
-        content=data.map((user, i) => {
-            return <UserListItem key={user.id} user={user}/>
+        content=data.map((post, i) => {
+            return <Post key={post.id} post={post}/>
         })
     }
 
@@ -74,4 +74,4 @@ function UserList() {
 
 }
 
-export default UserList;
+export default PostList;

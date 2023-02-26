@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import classNames from "classnames";
 import {GoChevronDown, GoChevronLeft} from "react-icons/go";
-import AlbumList from "../Section21/AlbumList";
+import AlbumList from "../Section22/AlbumList";
 
 function ExpandablePanel({header, children,post, ...rest}) {
 
@@ -25,7 +25,8 @@ function ExpandablePanel({header, children,post, ...rest}) {
             <div className="p-2 border-t">
                 {expanded && <div className="p-2 border-t" >
                     {children}
-                    <AlbumList albums={post.albums}/>
+                    {/*<AlbumList albums={post.albums}/>*/}
+                    <AlbumList post={post}/>
 
                 </div>}
             </div>

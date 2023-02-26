@@ -142,8 +142,6 @@ B
 tailwind.config.js,0/9/0918cbb76f2c44f223706cec9d31a32cd1177ce4
 M
 src/store/slice/albumSlice.js,b/d/bd94ea46a542e430b395bf90489807d1a9ccb1da
-H
-src/Component/Loading.js,c/9/c937f1a1b897d9455b0495b06cee182bdcdbb2a4
 <
 package.json,7/0/7030d0b2f71b999ff89a343de08c414af32fc93a
 4
