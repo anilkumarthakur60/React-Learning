@@ -1,5 +1,5 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import  {faker} from "@faker-js/faker";
+import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
+import {faker} from "@faker-js/faker";
 
 const albumsApi = createApi({
     reducerPath: 'albums',
@@ -44,5 +44,10 @@ const albumsApi = createApi({
     },
 });
 
-export const { useFetchAlbumsQuery,useFetchAllAlbumsQuery } = albumsApi;
-export { albumsApi };
+export const {
+    useFetchAlbumsQuery,
+    useFetchAllAlbumsQuery,
+    useCreateAlbumMutation,
+
+} = albumsApi;
+export {albumsApi};

@@ -25,7 +25,6 @@ function ExpandablePanel({header, children,post, ...rest}) {
             <div className="p-2 border-t">
                 {expanded && <div className="p-2 border-t" >
                     {children}
-                    {/*<AlbumList albums={post.albums}/>*/}
                     <AlbumList post={post}/>
 
                 </div>}

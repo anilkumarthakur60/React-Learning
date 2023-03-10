@@ -41,7 +41,7 @@ function PostList() {
             return <Loading times={2} className={`h-10 w-full`}/>
         } else {
             return <Button primary onClick={handleAddUser}>
-                Add User
+                Add Post
             </Button>
         }
         if (creatingUserError) {
@@ -58,10 +58,10 @@ function PostList() {
     return <div>
         <div className="flex flex-row justify-between items-center m-3">
             <h1 className="m-2 text-xl">
-                Users
+                Posts
             </h1>
             <Button loading={isCreatingUser} primary onClick={handleAddUser}>
-                Add User
+                Add Post
             </Button>
             {
                 creatingUserError && 'Error Creating User'
