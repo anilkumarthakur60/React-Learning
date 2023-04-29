@@ -1,6 +1,6 @@
-import {useEffect, useState,useCallback,useRef,useMemo} from 'react'
-import {useDispatch, useSelector} from "react-redux";
-import {fetchPosts} from "./redux/slice/postsSlice.js";
+import { useEffect, useState, useRef, useMemo } from 'react'
+import { useDispatch, useSelector } from "react-redux";
+import { fetchPosts } from "./redux/slice/postsSlice.js";
 import { debounce } from "lodash";
 
 
@@ -8,8 +8,11 @@ function App() {
     const dispatch = useDispatch();
     const [filters, setFilters] = useState({});
     const { data } = useSelector((state) => state.posts);
+
+
     const debouncedFilters = useRef(debounce((filters) =>
         dispatch(fetchPosts(filters)), 500)).current;
+
 
     useEffect(() => {
         debouncedFilters(filters);
