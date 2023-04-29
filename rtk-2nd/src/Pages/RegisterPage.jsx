@@ -1,18 +1,11 @@
 import { Button, Card, Form } from "react-bootstrap";
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { registerUserAction } from "../redux/slice/userSlice";
+import useFormData from "../hooks/useFormData";
 
 function RegisterPage() {
-    const [formData, setFormData] = useState({});
 
-    const handleChanges = ({ target }) => {
-        const { name, value } = target;
-        setFormData((pre) => ({
-            ...pre,
-            [name]: value
-        }))
-    }
+    const { form, setForm, handleChanges } = useFormData({})
 
     const dispatch = useDispatch()
 
@@ -22,15 +15,15 @@ function RegisterPage() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(formData);
-        dispatch(registerUserAction(formData))
+        console.log(form);
+        dispatch(registerUserAction(form))
 
     }
 
 
     return (<>
         <pre>
-            {JSON.stringify(formData, null, 2)}
+            {JSON.stringify(form, null, 2)}
         </pre>
         <Card className="text-center">
             <Card.Body >
@@ -41,7 +34,7 @@ function RegisterPage() {
                         <Form.Control
                             type="text"
                             placeholder="Enter username"
-                            value={formData.name}
+                            value={form.name}
                             name={"name"}
                             onChange={handleChanges}
                         />
@@ -53,7 +46,7 @@ function RegisterPage() {
                             type="email"
                             placeholder="Email"
                             name={"email"}
-                            value={formData.email}
+                            value={form.email}
                             onChange={handleChanges}
                         />
                     </Form.Group>
@@ -63,7 +56,7 @@ function RegisterPage() {
                             type="password"
                             placeholder="Password"
                             name={"password"}
-                            value={formData.password}
+                            value={form.password}
                             onChange={handleChanges}
                         />
                     </Form.Group>
@@ -73,7 +66,7 @@ function RegisterPage() {
                             type="password"
                             placeholder="Password Confirmation"
                             name={"password_confirmation"}
-                            value={formData.password_confirmation}
+                            value={form.password_confirmation}
                             onChange={handleChanges}
                         />
                     </Form.Group>
