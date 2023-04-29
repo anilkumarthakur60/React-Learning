@@ -87,6 +87,10 @@ const userSlice = createSlice({
     setFormData(state, action) {
       state.formData = action.payload;
     },
+    clearError(state, action) {
+      const { fieldName } = action.payload;
+      delete state.error[fieldName];
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchUsers.pending, (state) => {
@@ -97,24 +101,22 @@ const userSlice = createSlice({
       state.data = action.payload.data;
     });
     builder.addCase(fetchUsers.rejected, (state, action) => {
-      console.log("---------data logging--------", action.payload);
       state.loading = false;
+      state.error = action.payload.data.errors;
     });
 
     builder.addCase(registerUserAction.pending, (state) => {
       state.authUser.loading = true;
     });
     builder.addCase(registerUserAction.fulfilled, (state, action) => {
-      console.log("----------logging data----------", action.payload);
-
       state.authUser.loading = false;
       state.authUser.userInfo = action.payload.data;
       localStorage.setItem("access_token", action.payload.data.access_token);
     });
     builder.addCase(registerUserAction.rejected, (state, action) => {
-      console.log("---------data logging--------", action.payload);
+      console.log("----------logging data----------", action.payload);
       state.authUser.loading = false;
-      state.authUser.error = action.payload;
+      state.error = action.payload.data.errors;
     });
   },
 });
@@ -124,3 +126,5 @@ const userReducer = userSlice.reducer;
 export default userReducer;
 
 export { fetchUsers, registerUserAction };
+
+export const { clearError } = userSlice.actions;

@@ -1,6 +1,9 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 
-function useFormData(initalForm) {
+function useFormData(props) {
+  const dispatch = useDispatch();
+  const { initalForm, clearError } = props;
   const [form, setForm] = useState(initalForm);
 
   const handleChanges = ({ target }) => {
@@ -9,7 +12,9 @@ function useFormData(initalForm) {
       ...pre,
       [name]: value,
     }));
+    dispatch(clearError({ fieldName: name }));
   };
+
   return {
     form,
     setForm,

@@ -1,15 +1,18 @@
 import { Button, Card, Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { registerUserAction } from "../redux/slice/userSlice";
+import { clearError, registerUserAction } from "../redux/slice/userSlice";
 import useFormData from "../hooks/useFormData";
+import ErrorList from "../hooks/ErrorList";
+import { useEffect, useState } from "react";
 
 function RegisterPage() {
 
-    const { form, setForm, handleChanges } = useFormData({})
 
     const dispatch = useDispatch()
+    const { form, setForm, handleChanges } = useFormData({ initalForm: {}, clearError })
 
-    const { authUser } = useSelector((state) => state.users)
+    const { authUser, error } = useSelector((state) => state.users)
+
 
 
 
@@ -19,8 +22,6 @@ function RegisterPage() {
         dispatch(registerUserAction(form))
 
     }
-
-
     return (<>
         <pre>
             {JSON.stringify(form, null, 2)}
@@ -40,6 +41,9 @@ function RegisterPage() {
                         />
                     </Form.Group>
 
+                    <ErrorList error={error.name} />
+
+
                     <Form.Group controlId="formBasicPassword">
                         <Form.Label>Email</Form.Label>
                         <Form.Control
@@ -50,6 +54,8 @@ function RegisterPage() {
                             onChange={handleChanges}
                         />
                     </Form.Group>
+
+                    <ErrorList error={error.email} />
                     <Form.Group controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
                         <Form.Control
@@ -60,6 +66,8 @@ function RegisterPage() {
                             onChange={handleChanges}
                         />
                     </Form.Group>
+
+                    <ErrorList error={error.password} />
                     <Form.Group controlId="formBasicPassword">
                         <Form.Label>Password Confirmation</Form.Label>
                         <Form.Control
@@ -70,6 +78,8 @@ function RegisterPage() {
                             onChange={handleChanges}
                         />
                     </Form.Group>
+
+                    <ErrorList error={error.password_confirmation} />
                     <div className="d-grid">
 
                         <Button variant="primary" className="my-2  justify-content-center align-content-center"
