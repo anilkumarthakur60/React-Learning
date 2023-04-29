@@ -72,8 +72,8 @@ function RegisterPage() {
                         <Form.Control
                             type="password"
                             placeholder="Password Confirmation"
-                            name={"password_comfirmation"}
-                            value={formData.password_comfirmation}
+                            name={"password_confirmation"}
+                            value={formData.password_confirmation}
                             onChange={handleChanges}
                         />
                     </Form.Group>

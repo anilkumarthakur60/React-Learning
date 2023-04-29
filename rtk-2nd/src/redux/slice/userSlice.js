@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { apiUrl } from "../../utils/api.js";
 import axios from "axios";
+import { axiosInstance } from "../../utils/axiosInstance.js";
 
 const initialState = {
   data: [],
@@ -50,7 +51,7 @@ const registerUserAction = createAsyncThunk(
     { rejectWithValue }
   ) => {
     try {
-      const res = await axios.post(`${apiUrl}/users/auth/register`, {
+      const res = await axiosInstance.post(`${apiUrl}/auth/register`, {
         name,
         email,
         password,
@@ -104,8 +105,11 @@ const userSlice = createSlice({
       state.authUser.loading = true;
     });
     builder.addCase(registerUserAction.fulfilled, (state, action) => {
+      console.log("----------logging data----------", action.payload);
+
       state.authUser.loading = false;
-      state.authUser.userInfo = action.payload;
+      state.authUser.userInfo = action.payload.data;
+      localStorage.setItem("access_token", action.payload.data.access_token);
     });
     builder.addCase(registerUserAction.rejected, (state, action) => {
       console.log("---------data logging--------", action.payload);
