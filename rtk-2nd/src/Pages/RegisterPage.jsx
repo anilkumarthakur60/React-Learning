@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { clearError, registerUserAction } from "../redux/slice/userSlice";
 import useFormData from "../hooks/useFormData";
 import ErrorList from "../hooks/ErrorList";
-import { useEffect, useState } from "react";
 
 function RegisterPage() {
 
@@ -14,6 +13,7 @@ function RegisterPage() {
     const { authUser, error } = useSelector((state) => state.users)
 
 
+    const isDisabled = Object.keys(error).length > 0;
 
 
     const handleSubmit = (e) => {
@@ -22,6 +22,7 @@ function RegisterPage() {
         dispatch(registerUserAction(form))
 
     }
+
     return (<>
         <pre>
             {JSON.stringify(form, null, 2)}
@@ -82,7 +83,7 @@ function RegisterPage() {
                     <ErrorList error={error.password_confirmation} />
                     <div className="d-grid">
 
-                        <Button variant="primary" className="my-2  justify-content-center align-content-center"
+                        <Button variant="primary" disabled={isDisabled} className="my-2  justify-content-center align-content-center"
                             type="submit">
                             Login
                         </Button>

@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { apiUrl } from "../../utils/api.js";
 import axios from "axios";
 import { axiosInstance } from "../../utils/axiosInstance.js";
+import { useSelector } from "react-redux";
 
 const initialState = {
   data: [],
@@ -127,4 +128,16 @@ export default userReducer;
 
 export { fetchUsers, registerUserAction };
 
-export const { clearError } = userSlice.actions;
+// export const isDisabled = (state) => {
+//   return Object.keys(state.users.error).length > 0;
+// };
+
+export const {
+  setPage,
+  setRowsPerPage,
+  setSortBy,
+  setDescending,
+  setFilters,
+  setFormData,
+  clearError,
+} = userSlice.actions;
