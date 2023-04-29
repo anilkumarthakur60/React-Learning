@@ -11,7 +11,7 @@ const api="https://jsonplaceholder.typicode.com/posts"
 
 
 
-const fetchPosts=createAsyncThunk("posts/fetchPosts",
+const fetchPostsss=createAsyncThunk("posts/fetchPostsss",
     async () => {
         const response = await fetch(api);
         return  await response.json();
@@ -24,15 +24,15 @@ const postSlice= createSlice({
     reducers: {
     },
     extraReducers:(builder)=>{
-        builder.addCase(fetchPosts.pending,(state)=>{
+        builder.addCase(fetchPostsss.pending,(state)=>{
             state.loading = true;
         })
-        builder.addCase(fetchPosts.fulfilled,(state, action)=>{
+        builder.addCase(fetchPostsss.fulfilled,(state, action)=>{
             state.posts = action.payload;
             state.loading = false;
             state.error = {};
         })
-        builder.addCase(fetchPosts.rejected,(state,action)=>{
+        builder.addCase(fetchPostsss.rejected,(state,action)=>{
 
             state.posts = [];
             state.loading = false;
@@ -54,4 +54,4 @@ const  store = configureStore({
 store.subscribe(()=>{
     console.log(store.getState())
 })
-store.dispatch(fetchPosts())
+store.dispatch(fetchPostsss())
