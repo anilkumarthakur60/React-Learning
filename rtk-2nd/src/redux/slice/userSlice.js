@@ -2,7 +2,6 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { apiUrl } from "../../utils/api.js";
 import axios from "axios";
 import { axiosInstance } from "../../utils/axiosInstance.js";
-import { useSelector } from "react-redux";
 
 const initialState = {
   data: [],
@@ -66,6 +65,23 @@ const registerUserAction = createAsyncThunk(
   }
 );
 
+const loginUser = createAsyncThunk(
+  "users/login",
+  async ({ email, password }, { rejectWithValue, getState }) => {
+    console.log("----------logging data----------", getState().users);
+    try {
+      const res = await axiosInstance.post(`${apiUrl}/auth/login`, {
+        email,
+        password,
+      });
+      return res.data;
+    } catch (error) {
+      console.log("---------data logging--------", error);
+      return rejectWithValue(error.response);
+    }
+  }
+);
+
 const userSlice = createSlice({
   name: "users",
   initialState,
@@ -107,7 +123,7 @@ const userSlice = createSlice({
     });
 
     builder.addCase(registerUserAction.pending, (state) => {
-      state.authUser.loading = true;
+      state.loading = true;
     });
     builder.addCase(registerUserAction.fulfilled, (state, action) => {
       state.authUser.loading = false;
@@ -115,8 +131,19 @@ const userSlice = createSlice({
       localStorage.setItem("access_token", action.payload.data.access_token);
     });
     builder.addCase(registerUserAction.rejected, (state, action) => {
-      console.log("----------logging data----------", action.payload);
-      state.authUser.loading = false;
+      state.loading = false;
+      state.error = action.payload.data.errors;
+    });
+
+    builder.addCase(loginUser.pending, (state) => {
+      state.loading = true;
+    });
+    builder.addCase(loginUser.fulfilled, (state, action) => {
+      state.loading = false;
+      state.authUser.userInfo = action.payload.data;
+      localStorage.setItem("access_token", action.payload.data.access_token);
+    });
+    builder.addCase(loginUser.rejected, (state, action) => {
       state.error = action.payload.data.errors;
     });
   },
@@ -126,12 +153,7 @@ const userReducer = userSlice.reducer;
 
 export default userReducer;
 
-export { fetchUsers, registerUserAction };
-
-// export const isDisabled = (state) => {
-//   return Object.keys(state.users.error).length > 0;
-// };
-
+export { fetchUsers, registerUserAction, loginUser };
 export const {
   setPage,
   setRowsPerPage,

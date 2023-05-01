@@ -8,9 +8,9 @@ function RegisterPage() {
 
 
     const dispatch = useDispatch()
-    const { form, setForm, handleChanges } = useFormData({ initalForm: {}, clearError })
+    const { form, handleChanges } = useFormData({ initalForm: {}, clearError })
 
-    const { authUser, error } = useSelector((state) => state.users)
+    const { error } = useSelector((state) => state.users)
 
 
     const isDisabled = Object.keys(error).length > 0;
