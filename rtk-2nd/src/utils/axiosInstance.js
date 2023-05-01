@@ -2,11 +2,10 @@ import axios from "axios";
 import { apiUrl } from "./api";
 import qs from "qs";
 
-
 const token = localStorage.getItem("access_token");
 
 const axiosInstance = axios.create({
-  paramsSerializer: params => {
+  paramsSerializer: (params) => {
     return qs.stringify(params, { arrayFormat: "repeat" });
   },
 

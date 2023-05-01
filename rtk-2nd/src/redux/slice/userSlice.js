@@ -208,7 +208,7 @@ const userSlice = createSlice({
       state.authUser = {};
       localStorage.clear();
 
-      window.location.href = "/";
+      window.location.href = "/login";
     });
     builder.addCase(logoutUser.rejected, (state, action) => {
       state.loading = false;
@@ -228,7 +228,7 @@ const userSlice = createSlice({
       state.loading = false;
       state.authUser = {};
       localStorage.clear();
-      window.location.href = "/";
+      window.location.href = "/login";
     });
   },
 });

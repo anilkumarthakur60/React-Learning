@@ -2,12 +2,14 @@ import Container from "react-bootstrap/Container";
 import logo from "../assets/react.svg";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Nav from "react-bootstrap/Nav";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import { useState } from "react";
 import { Image } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutUser } from "../redux/slice/userSlice";
+
+// import './style.css'
 
 function NavbarComponent() {
 
@@ -22,10 +24,15 @@ function NavbarComponent() {
     const TopNavItems = () => {
         return (
             <>
-                {id && <Link className="text-white mx-4 text-decoration-none my-auto fs-6 fw-bold" to="/dashboard">Dashboard</Link>}
-                {!id && <Link className="text-white mx-4 text-decoration-none my-auto fs-6 fw-bold" to="/register">Register</Link>}
-                {!id && <Link className="text-white mx-4 text-decoration-none my-auto fs-6 fw-bold" to="/login">Login</Link>}
-                <Link className="text-white mx-4 text-decoration-none my-auto fs-6 fw-bold" to="/about">About</Link>
+                {<NavLink className="text-white mx-4 text-decoration-none my-auto fs-6 fw-bold" to="/dashboard">Dashboard</NavLink>}
+
+                {id && <NavLink className="text-white mx-4 text-decoration-none my-auto fs-6 fw-bold" to="/dashboard/profile">Profile</NavLink>}
+
+                {id && <NavLink className="text-white mx-4 text-decoration-none my-auto fs-6 fw-bold" to="/dashboard/profile/setting">Setting</NavLink>}
+
+                {!id && <NavLink className="text-white mx-4 text-decoration-none my-auto fs-6 fw-bold" to="/register">Register</NavLink>}
+                {!id && <NavLink className="text-white mx-4 text-decoration-none my-auto fs-6 fw-bold" to="/login">Login</NavLink>}
+                <NavLink className="text-white mx-4 text-decoration-none my-auto fs-6 fw-bold" to="/about">About</NavLink>
             </>
         );
     };
