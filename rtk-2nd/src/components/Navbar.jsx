@@ -7,7 +7,7 @@ import Navbar from "react-bootstrap/Navbar";
 import { useState } from "react";
 import { Image } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../redux/slice/userSlice";
+import { logoutUser } from "../redux/slice/userSlice";
 
 function NavbarComponent() {
 
@@ -32,7 +32,7 @@ function NavbarComponent() {
 
 
     const handleLogout = () => {
-        dispatch(logout())
+        dispatch(logoutUser())
     }
 
     return (

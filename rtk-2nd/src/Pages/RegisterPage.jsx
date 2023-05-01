@@ -2,7 +2,7 @@ import { Button, Card, Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { clearError, registerUserAction } from "../redux/slice/userSlice";
 import useFormData from "../hooks/useFormData";
-import ErrorList from "../hooks/ErrorList";
+import ErrorList from "../form/ErrorList";
 
 function RegisterPage() {
 

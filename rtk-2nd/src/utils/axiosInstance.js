@@ -14,5 +14,6 @@ const axiosInstance = axios.create({
   },
   baseURL: apiUrl,
 });
+console.log("----------logging data--------axiosInstance--", token);
 
 export { axiosInstance };

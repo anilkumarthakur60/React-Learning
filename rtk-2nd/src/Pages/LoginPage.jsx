@@ -1,9 +1,9 @@
 import { Button, Card, Form, Spinner } from "react-bootstrap";
 import { useCallback, useEffect } from "react";
-import { clearError, loginUser, setFormData } from "../redux/slice/userSlice";
+import { clearError, loginUser } from "../redux/slice/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import useFormData from "../hooks/useFormData";
-import ErrorList from "../hooks/ErrorList";
+import ErrorList from "../form/ErrorList";
 
 
 function LoginPage() {
@@ -37,7 +37,8 @@ function LoginPage() {
 
 
 
-    const isDisabled = Object.keys(error).length > 0;
+    // const isDisabled = Object.keys(error ?? null).length > 0;
+
     const handleSubmit = (e) => {
         e.preventDefault();
         setTimeout(() => {
@@ -76,7 +77,9 @@ function LoginPage() {
                             name={"email"}
                             onChange={handleChanges}
                         />
-                        <ErrorList error={error.email} />
+
+                        {error && <ErrorList error={error.email} />}
+
                     </Form.Group>
 
                     <Form.Group controlId="formBasicPassword">
@@ -88,8 +91,8 @@ function LoginPage() {
                             value={form.password}
                             onChange={handleChanges}
                         />
+                        {error && <ErrorList error={error.password} />}
 
-                        <ErrorList error={error.password} />
                     </Form.Group>
                     <div className="d-grid">
 

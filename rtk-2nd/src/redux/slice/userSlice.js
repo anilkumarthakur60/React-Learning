@@ -79,6 +79,18 @@ const loginUser = createAsyncThunk(
   }
 );
 
+const logoutUser = createAsyncThunk(
+  "users/logout",
+  async (payload, { rejectWithValue }) => {
+    try {
+      const res = await axiosInstance.post(`${apiUrl}/auth/logout`);
+      return res.data;
+    } catch (error) {
+      return rejectWithValue(error.response);
+    }
+  }
+);
+
 const userSlice = createSlice({
   name: "users",
   initialState,
@@ -129,9 +141,22 @@ const userSlice = createSlice({
       state.loading = true;
     });
     builder.addCase(registerUserAction.fulfilled, (state, action) => {
-      state.authUser.loading = false;
-      state.authUser.userInfo = action.payload.data;
+      state.loading = false;
+      state.authUser = action.payload.data;
+
+      localStorage.clear();
+
       localStorage.setItem("access_token", action.payload.data.access_token);
+      localStorage.setItem(
+        "authUser",
+        JSON.stringify({
+          id: action.payload.data.id,
+          name: action.payload.data.name,
+          email: action.payload.data.email,
+        })
+      );
+
+      window.location.href = "/dashboard";
     });
     builder.addCase(registerUserAction.rejected, (state, action) => {
       state.loading = false;
@@ -145,6 +170,8 @@ const userSlice = createSlice({
       state.loading = false;
       state.authUser = action.payload.data;
 
+      localStorage.clear();
+
       localStorage.setItem("access_token", action.payload.data.access_token);
       localStorage.setItem(
         "authUser",
@@ -154,8 +181,25 @@ const userSlice = createSlice({
           email: action.payload.data.email,
         })
       );
+
+      window.location.href = "/dashboard";
     });
     builder.addCase(loginUser.rejected, (state, action) => {
+      state.error = action.payload.data.errors;
+    });
+
+    builder.addCase(logoutUser.pending, (state) => {
+      state.loading = true;
+    });
+    builder.addCase(logoutUser.fulfilled, (state) => {
+      state.loading = false;
+      state.authUser = {};
+      localStorage.clear();
+
+      window.location.href = "/";
+    });
+    builder.addCase(logoutUser.rejected, (state, action) => {
+      state.loading = false;
       state.error = action.payload.data.errors;
     });
   },
@@ -165,7 +209,7 @@ const userReducer = userSlice.reducer;
 
 export default userReducer;
 
-export { fetchUsers, registerUserAction, loginUser };
+export { fetchUsers, registerUserAction, loginUser, logoutUser };
 export const {
   setPage,
   setRowsPerPage,
@@ -174,5 +218,4 @@ export const {
   setFilters,
   setFormData,
   clearError,
-  logout,
 } = userSlice.actions;
