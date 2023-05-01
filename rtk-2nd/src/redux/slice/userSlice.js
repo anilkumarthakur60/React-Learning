@@ -5,7 +5,10 @@ import { axiosInstance } from "../../utils/axiosInstance.js";
 
 const initialState = {
   data: [],
-  formData: {},
+  formData: {
+    email: "admin@gmail.com",
+    password: "password",
+  },
   loading: false,
   error: {},
   pagination: {
@@ -36,7 +39,6 @@ const fetchUsers = createAsyncThunk(
       });
       return res.data;
     } catch (error) {
-      console.log("---------data logging--------", error);
       return rejectWithValue(error.response);
     }
   }
@@ -57,7 +59,6 @@ const registerUserAction = createAsyncThunk(
       });
       return res.data;
     } catch (error) {
-      console.log("---------data logging--------", error);
       return rejectWithValue(error.response);
     }
   }
@@ -66,7 +67,6 @@ const registerUserAction = createAsyncThunk(
 const loginUser = createAsyncThunk(
   "users/login",
   async ({ email, password }, { rejectWithValue, getState }) => {
-    console.log("----------logging data----------", getState().users);
     try {
       const res = await axiosInstance.post(`${apiUrl}/auth/login`, {
         email,
@@ -74,7 +74,6 @@ const loginUser = createAsyncThunk(
       });
       return res.data;
     } catch (error) {
-      console.log("---------data logging--------", error);
       return rejectWithValue(error.response);
     }
   }
@@ -105,6 +104,12 @@ const userSlice = createSlice({
     clearError(state, action) {
       const { fieldName } = action.payload;
       delete state.error[fieldName];
+    },
+
+    logout(state) {
+      state.authUser = {};
+      localStorage.removeItem("access_token");
+      localStorage.removeItem("authUser");
     },
   },
   extraReducers: (builder) => {
@@ -141,7 +146,6 @@ const userSlice = createSlice({
       state.authUser = action.payload.data;
 
       localStorage.setItem("access_token", action.payload.data.access_token);
-      console.log("----------logging data----------", action.payload.data);
       localStorage.setItem(
         "authUser",
         JSON.stringify({
@@ -170,4 +174,5 @@ export const {
   setFilters,
   setFormData,
   clearError,
+  logout,
 } = userSlice.actions;

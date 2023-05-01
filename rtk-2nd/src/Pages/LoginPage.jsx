@@ -1,38 +1,55 @@
 import { Button, Card, Form, Spinner } from "react-bootstrap";
-import { } from "react";
-import { clearError, loginUser } from "../redux/slice/userSlice";
+import { useCallback, useEffect } from "react";
+import { clearError, loginUser, setFormData } from "../redux/slice/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import useFormData from "../hooks/useFormData";
 import ErrorList from "../hooks/ErrorList";
 
 
 function LoginPage() {
+    const { error, loading, formData } = useSelector((state) => state.users)
 
     const dispatch = useDispatch()
     const { form, handleChanges } = useFormData({
-        initalForm: {
-
-            email: "admin@gmail.com",
-            password: "password",
-
-        }, clearError
+        initalForm: formData, clearError
     })
 
-    const { error, loading } = useSelector((state) => state.users)
+    // const storeFormData = useSelector(state => state.users.formData);
+    // useEffect(() => {
+    //     setFormData(storeFormData);
+    // }, [storeFormData]);
+
+
+    // const updateFormData = useCallback((key, value) => {
+    //     setFormData(prevState => ({
+    //         ...prevState,
+    //         [key]: value
+    //     }));
+    // }, []);
+
+    // const handleInputChange = useCallback((event) => {
+    //     const { name, value } = event.target;
+    //     updateFormData(name, value);
+    // }, [updateFormData]);
+
+
+
+
 
 
     const isDisabled = Object.keys(error).length > 0;
-
-
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(form);
         setTimeout(() => {
             dispatch(loginUser(form))
-
         }, 1000)
-
     }
+
+
+    //memorize the formData on change form  update formData from store
+
+
+
 
     return (<>
 
