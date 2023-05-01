@@ -66,7 +66,7 @@ const registerUserAction = createAsyncThunk(
 
 const loginUser = createAsyncThunk(
   "users/login",
-  async ({ email, password }, { rejectWithValue, getState }) => {
+  async ({ email, password }, { rejectWithValue }) => {
     try {
       const res = await axiosInstance.post(`${apiUrl}/auth/login`, {
         email,
@@ -84,6 +84,17 @@ const logoutUser = createAsyncThunk(
   async (payload, { rejectWithValue }) => {
     try {
       const res = await axiosInstance.post(`${apiUrl}/auth/logout`);
+      return res.data;
+    } catch (error) {
+      return rejectWithValue(error.response);
+    }
+  }
+);
+const userDetail = createAsyncThunk(
+  "users/detail",
+  async (payload, { rejectWithValue }) => {
+    try {
+      const res = await axiosInstance.get(`${apiUrl}/auth/detail`);
       return res.data;
     } catch (error) {
       return rejectWithValue(error.response);
@@ -202,6 +213,19 @@ const userSlice = createSlice({
       state.loading = false;
       state.error = action.payload.data.errors;
     });
+
+    builder.addCase(userDetail.pending, (state) => {
+      state.loading = true;
+    });
+    builder.addCase(userDetail.fulfilled, (state, action) => {
+      state.loading = false;
+
+      localStorage.setItem("authUser", JSON.stringify(action.payload.data));
+    });
+    builder.addCase(userDetail.rejected, (state, action) => {
+      state.loading = false;
+      state.error = action.payload.data.errors;
+    });
   },
 });
 
@@ -209,7 +233,7 @@ const userReducer = userSlice.reducer;
 
 export default userReducer;
 
-export { fetchUsers, registerUserAction, loginUser, logoutUser };
+export { fetchUsers, registerUserAction, loginUser, logoutUser, userDetail };
 export const {
   setPage,
   setRowsPerPage,
