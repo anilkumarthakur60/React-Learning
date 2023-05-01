@@ -94,8 +94,8 @@ const userDetail = createAsyncThunk(
   "users/detail",
   async (payload, { rejectWithValue }) => {
     try {
-      const res = await axiosInstance.get(`${apiUrl}/auth/detail`);
-      return res.data;
+      const { data } = await axiosInstance.get(`${apiUrl}/auth/detail`);
+      return data;
     } catch (error) {
       return rejectWithValue(error.response);
     }
@@ -178,6 +178,7 @@ const userSlice = createSlice({
       state.loading = true;
     });
     builder.addCase(loginUser.fulfilled, (state, action) => {
+      console.log("----------logging data----------", action.payload);
       state.loading = false;
       state.authUser = action.payload.data;
 
@@ -219,12 +220,15 @@ const userSlice = createSlice({
     });
     builder.addCase(userDetail.fulfilled, (state, action) => {
       state.loading = false;
-
       localStorage.setItem("authUser", JSON.stringify(action.payload.data));
     });
     builder.addCase(userDetail.rejected, (state, action) => {
       state.loading = false;
       state.error = action.payload.data.errors;
+      state.loading = false;
+      state.authUser = {};
+      localStorage.clear();
+      window.location.href = "/";
     });
   },
 });

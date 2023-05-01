@@ -41,9 +41,7 @@ function LoginPage() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setTimeout(() => {
-            dispatch(loginUser(form))
-        }, 1000)
+        dispatch(loginUser(form))
     }
 
 
@@ -99,6 +97,9 @@ function LoginPage() {
                         <Button variant="primary" disabled={loading} type="submit">
                             {loading ? (<><Spinner animation="border" size="sm" variant="light" /> <span>Loaing</span> </>) : "Login"}
                         </Button>
+                        {/* <Button variant="primary" disabled={loading} type="submit">
+                            <Spinner animation="border" size="sm" variant="light" /> <span>Loaing</span>
+                        </Button> */}
 
                     </div>
                 </Form>

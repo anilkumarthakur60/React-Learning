@@ -1,56 +1,25 @@
-import NavbarComponent from "./components/Navbar.jsx";
-import { useRoutes } from "react-router-dom";
-import LoginPage from "./Pages/LoginPage.jsx";
-import RegisterPage from "./Pages/RegisterPage.jsx";
-import About from "./Pages/About.jsx";
+import { Route, Routes } from "react-router-dom";
 import Dashboard from "./Pages/Dashboard.jsx";
 import Index from "./Pages/Index.jsx";
 import { NotFound } from "./Pages/NotFound.jsx";
-import Container from "react-bootstrap/Container";
+import FrontendLayout from "./layout/FrontendLayout.jsx";
+import BackendLayout from "./layout/BackendLayout.jsx";
+import About from "./Pages/About.jsx";
 
 
 function App() {
-
-    const routes = useRoutes([
-        {
-            path: '/',
-            element: <Index />,
-            name: 'Home'
-        },
-        {
-            path: '/login',
-            element: <LoginPage />,
-            name: 'Login'
-        },
-        {
-            path: '/register',
-            element: <RegisterPage />,
-            name: 'Register'
-        },
-        {
-            path: '/about',
-            element: <About />,
-            name: 'About'
-        },
-        {
-            path: '/dashboard',
-            element: <Dashboard />,
-            name: 'Dashboard'
-        },
-        {
-            path: '*',
-            element: <NotFound />,
-            name: '404'
-        }
-    ])
-
     return (
         <>
-            <NavbarComponent />
-            <Container fluid>
-                {routes}
-            </Container>
-
+            <Routes>
+                <Route path="/" element={<FrontendLayout />}>
+                    <Route index element={<Index />} />
+                    <Route path="/about" element={<About />} />
+                </Route>
+                <Route path="/dashboard" element={<BackendLayout />} >
+                    <Route index element={<Dashboard />} />
+                </Route>
+                <Route path="*" element={<NotFound />} />
+            </Routes>
         </>
     );
 }

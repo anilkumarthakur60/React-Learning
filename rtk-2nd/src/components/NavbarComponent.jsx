@@ -2,7 +2,7 @@ import Container from "react-bootstrap/Container";
 import logo from "../assets/react.svg";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Nav from "react-bootstrap/Nav";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import { useState } from "react";
 import { Image } from "react-bootstrap";
@@ -35,11 +35,14 @@ function NavbarComponent() {
         dispatch(logoutUser())
     }
 
+
+    const navigate = useNavigate()
+
     return (
         <>
             <Navbar bg="dark" expand="lg" className="mb-3" variant="dark">
                 <Container fluid>
-                    <Navbar.Brand className="text-white">
+                    <Navbar.Brand className="text-white" onClick={() => { navigate('/') }}>
                         <Image src={logo} />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
