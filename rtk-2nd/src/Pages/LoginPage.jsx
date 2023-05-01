@@ -35,10 +35,17 @@ function LoginPage() {
     }
 
     return (<>
-        <pre>
-            {JSON.stringify(form, null, 2)}
-            {JSON.stringify(loading, null, 2)}
-        </pre>
+
+        <div className="">
+            <pre>
+                {JSON.stringify(form, null, 2)}
+                <br />
+                {JSON.stringify(loading, null, 2)}
+                <br />
+                {JSON.stringify(error, null, 2)}
+            </pre>
+        </div>
+
         <Card className="text-center">
             <Card.Body >
 

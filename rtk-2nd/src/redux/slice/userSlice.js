@@ -17,11 +17,9 @@ const initialState = {
   filters: {},
   user: {},
   profile: {},
-  authUser: {
-    loading: false,
-    error: {},
-    userInfo: {},
-  },
+  authUser: localStorage.getItem("authUser")
+    ? JSON.parse(localStorage.getItem("authUser"))
+    : {},
 };
 
 const fetchUsers = createAsyncThunk(
@@ -140,8 +138,18 @@ const userSlice = createSlice({
     });
     builder.addCase(loginUser.fulfilled, (state, action) => {
       state.loading = false;
-      state.authUser.userInfo = action.payload.data;
+      state.authUser = action.payload.data;
+
       localStorage.setItem("access_token", action.payload.data.access_token);
+      console.log("----------logging data----------", action.payload.data);
+      localStorage.setItem(
+        "authUser",
+        JSON.stringify({
+          id: action.payload.data.id,
+          name: action.payload.data.name,
+          email: action.payload.data.email,
+        })
+      );
     });
     builder.addCase(loginUser.rejected, (state, action) => {
       state.error = action.payload.data.errors;
