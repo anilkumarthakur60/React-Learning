@@ -17,6 +17,7 @@ function About() {
                 <label htmlFor="email">Email:</label>
                 <input type="email" id="email" name="email" value={formData.email || ""} onChange={handleChange} />
 
+                <input type="email" id="email" name="phone" value={formData.phone || ""} onChange={handleChange} />
                 <label htmlFor="password">Password:</label>
                 <input type="text" id="password" name="password" value={formData.password || ""} onChange={handleChange} />
 

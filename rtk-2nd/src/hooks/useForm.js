@@ -12,7 +12,6 @@ function useForm({ formData, setFormData, clearError }) {
     dispatch(setFormData(newFormData));
     dispatch(clearError({ fieldName: name }));
   };
-
   return {
     handleChange,
   };
