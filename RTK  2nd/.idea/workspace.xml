@@ -5,8 +5,61 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d99b355-8771-4e69-800d-60d7757cf59a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rtk-2nd/src/redux/slice/userSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/../rtk-2nd/src/redux/slice/userSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RTK 1st/.eslintrc.cjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RTK 1st/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RTK 1st/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RTK 1st/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RTK 1st/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RTK 1st/public/vite.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RTK 1st/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RTK 1st/src/App.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RTK 1st/src/Apps.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RTK 1st/src/assets/react.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RTK 1st/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RTK 1st/src/main.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RTK 1st/src/redux/slice/postsSlice.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RTK 1st/src/redux/store/store.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RTK 1st/src/store/counterSlice.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RTK 1st/src/store/note.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RTK 1st/src/store/postSlice.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RTK 1st/src/utils/api.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RTK 1st/vite.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-2nd/.eslintrc.cjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-2nd/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-2nd/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-2nd/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-2nd/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-2nd/public/vite.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-2nd/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-2nd/src/App.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-2nd/src/Pages/About.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-2nd/src/Pages/Dashboard.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-2nd/src/Pages/Index.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-2nd/src/Pages/LoginPage.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-2nd/src/Pages/NotFound.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-2nd/src/Pages/Profile.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-2nd/src/Pages/RegisterPage.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-2nd/src/Pages/Setting.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-2nd/src/assets/react.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-2nd/src/components/AutohideExample.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-2nd/src/components/NavbarComponent.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-2nd/src/components/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-2nd/src/form/ErrorList.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-2nd/src/hooks/useForm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-2nd/src/hooks/useFormData.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-2nd/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-2nd/src/layout/BackendLayout.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-2nd/src/layout/FrontendLayout.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-2nd/src/main.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-2nd/src/redux/slice/postsSlice.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-2nd/src/redux/slice/userSlice.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-2nd/src/redux/store/store.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-2nd/src/store/note.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-2nd/src/utils/api.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-2nd/src/utils/axiosInstance.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-2nd/src/utils/helper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-2nd/vite.config.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,23 +82,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "reduxCore",
-    "last_opened_file_path": "/home/anil/Desktop/Learning/React/jsx/rtk-2nd/src/redux/slice",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "/home/anil/.nvm/versions/node/v18.6.0/bin/node",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.nodejs",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;reduxCore&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/anil/Desktop/Learning/React/jsx/rtk-2nd/src/redux/slice&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;/home/anil/.nvm/versions/node/v18.6.0/bin/node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.nodejs&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -70,6 +123,7 @@
       <updated>1682776350077</updated>
       <workItem from="1682776352556" duration="12303000" />
       <workItem from="1682870581148" duration="745000" />
+      <workItem from="1682960961908" duration="738000" />
     </task>
     <servers />
   </component>
