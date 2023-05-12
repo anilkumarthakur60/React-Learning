@@ -33,8 +33,8 @@ const fetchPosts = createAsyncThunk(
         return res.data;
     }
 );
-const fetchPostsDetail = createAsyncThunk("posts/fetchDetail", async () => {
-    const res = await axios.get(`${apiUrl}/posts`);
+const fetchPostsDetail = createAsyncThunk("posts/fetchDetail", async (id) => {
+const res = await axios.get(`${apiUrl}/posts/${id}`);
     return res.data;
 });
 

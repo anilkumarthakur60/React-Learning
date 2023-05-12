@@ -1,6 +1,7 @@
-import {useEffect, useState} from "react";
-import {fetchPosts} from "../redux/postSlice.js";
-import {useDispatch} from "react-redux";
+import { useEffect, useState } from "react";
+import { fetchPosts } from "../redux/postSlice.js";
+import { useDispatch } from "react-redux";
+import { Link, NavLink } from "react-router-dom";
 
 
 export function Index() {
@@ -14,34 +15,43 @@ export function Index() {
 
     useEffect(() => {
 
-
-        dipatch(fetchPosts()).then(({meta, payload, type}) => {
+        dipatch(fetchPosts()).then(({ meta, payload, type }) => {
             setIsFetched(true)
             return payload
-        }).then(({data}) => {
+        }).then(({ data }) => {
             setPosts(data)
             setIsFetched(true)
         })
-
             .catch((err) => {
                 console.log(err)
                 setIsFetched(false)
             })
-
-
     }, [dipatch]);
 
 
 
-    const  singlePost=(post)=>{
-        const {id, name, slug} = post
+    const searchParams = new URLSearchParams({
+        username: 'ali',
+        name: 'ali',
+        'filter[name]': 'ali',
+        'filter[email]': 'emails'
+    })
+
+
+
+
+    const singlePost = (post) => {
+        const { id, name, slug } = post
         return (
             <div className="col-sm-6 mb-3 mb-sm-0" key={id}>
                 <div className="card">
                     <div className="card-body">
                         <h5 className="card-title">{name}</h5>
                         <p className="card-text">{slug}</p>
-                        <a href={id} className="btn btn-primary">Go somewhere</a>
+                        <Link to={{
+                            pathname: `${id}`,
+                            search: searchParams.toString(),
+                        }} className="btn btn-primary">Go somewhere</Link>
                     </div>
                 </div>
             </div>

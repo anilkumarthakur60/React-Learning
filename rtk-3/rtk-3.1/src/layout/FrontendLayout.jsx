@@ -1,15 +1,20 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import {NavLink, Outlet} from "react-router-dom";
+import {NavLink, Outlet, useNavigate} from "react-router-dom";
 import {Dropdown, DropdownButton, Offcanvas} from "react-bootstrap";
 
 function FrontendLayout() {
+
+    const navigate=useNavigate()
+    const  handleClick=()=>{
+        navigate('/')
+    }
     return (
         <>
             <Navbar bg="secondary" variant={"dark"} expand="lg" className="mb-3">
                 <Container fluid>
-                    <Navbar.Brand href="#">Navbar Offcanvas</Navbar.Brand>
+                    <Navbar.Brand onClick={handleClick} >Home</Navbar.Brand>
                     <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-lg`}/>
                     <Navbar.Offcanvas
                         id={`offcanvasNavbar-expand-lg`}
