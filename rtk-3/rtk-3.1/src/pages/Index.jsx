@@ -1,32 +1,25 @@
 import { useEffect, useState } from "react";
-import { fetchPosts } from "../redux/postSlice.js";
-import { useDispatch } from "react-redux";
-import { Link, NavLink } from "react-router-dom";
+import { deleteItem, fetchPosts } from "../redux/postSlice.js";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 
 export function Index() {
 
 
-    const [isFetched, setIsFetched] = useState(false)
 
     const [posts, setPosts] = useState([])
-
-    const dipatch = useDispatch()
-
+    const dispatch = useDispatch()
     useEffect(() => {
-
-        dipatch(fetchPosts()).then(({ meta, payload, type }) => {
-            setIsFetched(true)
+        dispatch(fetchPosts()).then(({ meta, payload, type }) => {
             return payload
         }).then(({ data }) => {
             setPosts(data)
-            setIsFetched(true)
         })
             .catch((err) => {
                 console.log(err)
-                setIsFetched(false)
             })
-    }, [dipatch]);
+    }, [dispatch]);
 
 
 
@@ -38,6 +31,8 @@ export function Index() {
     })
 
 
+    const { data } = useSelector(state => state['posts'])
+
 
 
     const singlePost = (post) => {
@@ -48,25 +43,33 @@ export function Index() {
                     <div className="card-body">
                         <h5 className="card-title">{name}</h5>
                         <p className="card-text">{slug}</p>
-                        <Link to={{
-                            pathname: `${id}`,
-                            search: searchParams.toString(),
-                        }} className="btn btn-primary">Go somewhere</Link>
+
+                        <div className="d-flex ">
+
+                            <Link to={{
+                                pathname: `${id}`,
+                                search: searchParams.toString(),
+                            }} className="btn btn-primary ms-auto">Go somewhere</Link>
+
+                            <button onClick={() => { dispatch(deleteItem(id)) }} className="btn btn-primary mx-2">Delete</button>
+
+                        </div>
                     </div>
                 </div>
             </div>
         )
     }
 
-    return <div>
+    return (<div>
 
         <div className="row g-4">
             {
-                posts.map((post) => {
+                data.map((post) => {
                     return singlePost(post)
                 })
             }
         </div>
 
     </div>
+    );
 }
