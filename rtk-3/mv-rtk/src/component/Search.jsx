@@ -1,7 +1,7 @@
 import { TextField, makeStyles } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getMovie } from '../redux/feature/movieSlice'
+import {getMovie, getMovies} from '../redux/feature/movieSlice'
 
 
 const Search = () => {
@@ -12,7 +12,7 @@ const Search = () => {
 
     useEffect(() => {
 
-        dispatch(getMovie(search));
+        dispatch(getMovies(search));
     }, [dispatch, search])
 
 

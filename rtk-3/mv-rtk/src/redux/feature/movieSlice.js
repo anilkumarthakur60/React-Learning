@@ -56,12 +56,17 @@ const movieSlice = createSlice({
       delete state.error[fieldName];
     },
 
-    getMovie(name) {
+    getMovies(name) {
       return name;
     },
     setMovie(state, action) {
       state.data =  action.payload.Search;
     },
+
+    getMovie(id){
+        return id;
+    }
+
   },
   extraReducers: (builder) => {
     builder.addCase(fetchMovies.pending, (state) => {
@@ -93,6 +98,7 @@ export const {
   clearError,
   logout,
 
-  getMovie,
+  getMovies,
+    getMovie,
   setMovie,
 } = movieSlice.actions;
