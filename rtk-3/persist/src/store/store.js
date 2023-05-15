@@ -6,7 +6,7 @@ import cartReducer from "../redux/cartSlice.js";
 
 const store = configureStore({
     reducer: {
-        movies: cartReducer
+        cart: cartReducer
     },
 });
 export default store;
