@@ -13,6 +13,9 @@ const initialState = {
         descending: true,
     },
     filters: {},
+    totalAmount: 0,
+    totalCount: 0,
+
 };
 
 
@@ -42,6 +45,52 @@ const cartSlice = createSlice({
             const { fieldName } = action.payload;
             delete state.error[fieldName];
         },
+        getCartTotal: (state) => {
+            let { totalAmount, totalCount } = state.data.reduce(
+                (cartTotal, cartItem) => {
+                    const { price, amount } = cartItem;
+                    const itemTotal = price * amount;
+
+                    cartTotal.totalAmount += itemTotal;
+                    cartTotal.totalCount += amount;
+                    return cartTotal;
+                },
+                {
+                    totalAmount: 0,
+                    totalCount: 0,
+                }
+            );
+            state.totalAmount = parseInt(totalAmount.toFixed(2));
+            state.totalCount = totalCount;
+        },
+        remove: (state, action) => {
+            state.data = state.data.filter((item) => item.id !== action.payload);
+        },
+        increase: (state, action) => {
+            state.data = state.data.map((item) => {
+                if (item.id === action.payload) {
+                    return { ...item, amount: item.amount + 1 };
+                }
+                return item;
+            });
+        },
+        decrease: (state, action) => {
+            state.data = state.data
+                .map((item) => {
+                    if (item.id === action.payload) {
+                        return { ...item, amount: item.amount - 1 };
+                    }
+                    return item;
+                })
+                .filter((item) => item.amount !== 0);
+        },
+        clearCart: (state) => {
+            state.data = [];
+        },
+        getCartItems: (state) => {
+            state.data = data;
+        },
+
 
 
     },
@@ -61,5 +110,10 @@ export const {
     setFilters,
     setFormData,
     clearError,
-    logout
+    clearCart,
+    getCartItems,
+    getCartTotal,
+    remove,
+    increase,
+    decrease,
 } = cartSlice.actions;

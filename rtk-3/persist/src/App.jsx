@@ -1,11 +1,16 @@
 import { useState } from 'react'
+import {useSelector} from "react-redux";
+import NavbarComponent from "./component/NavbarComponent.jsx";
+import {CartContainer} from "./component/CartContainer.jsx";
 
 function App() {
-  const [count, setCount] = useState(0)
+
+    const  {data}=useSelector((state)=>state.cart)
 
   return (
     <>
-        <h1>Count: {count}</h1>
+      <NavbarComponent/>
+        <CartContainer/>
     </>
   )
 }
