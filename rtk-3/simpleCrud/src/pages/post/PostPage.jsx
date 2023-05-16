@@ -23,32 +23,24 @@ const PostPage = () => {
         refetch();
     }, [pagination, filters, refetch]);
     const handleSort = (column, sortDirection) => {
-
         if (column.sortField) {
             dispatch(setSortBy(column.sortField))
         }
         if (sortDirection) {
             dispatch(setDescending(sortDirection === 'desc' ? true : false))
         }
-
     }
 
 
     const handlePerRowsChange = (newPerPage, page) => {
-
         dispatch(setRowsPerPage(newPerPage))
         dispatch(setPage(page))
-
     }
     const handlePageChange = (page) => {
-
         dispatch(setPage(page))
-
     }
     const handleRowSelected = ({ selectedRows }) => {
     }
-
-
     const CustomLoader = () => {
         return <>
             <Box sx={{ width: '100%' }}>
