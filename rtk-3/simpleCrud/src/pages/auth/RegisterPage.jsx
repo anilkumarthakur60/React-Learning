@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -13,9 +13,10 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import useForm from "../../hooks/useForm.js";
-import {useSelector} from "react-redux";
+import { useSelector } from "react-redux";
 
-import {setFormData,clearError} from '../../redux/post/postSlice.js'
+import { setFormData, clearError } from '../../redux/post/postSlice.js'
+import { useFetchPostsQuery } from "../../redux/post/postApi.js";
 
 function Copyright(props) {
     return (
@@ -35,21 +36,17 @@ const theme = createTheme();
 function RegisterPage() {
 
 
-    const {formData}=useSelector((state)=>state.posts)
-    const {handleChange}=useForm({formData,setFormData, clearError})
+    const { formData } = useSelector((state) => state.posts)
+    const { handleChange } = useForm({ formData, setFormData, clearError })
 
+    const { data, error, isLoading } = useFetchPostsQuery()
     const handleSubmit = (event) => {
         event.preventDefault();
-        const data = new FormData(event.currentTarget);
-        console.log({
-            email: data.get('email'),
-            password: data.get('password'),
-        });
     };
 
     return (
         <ThemeProvider theme={theme}>
-            <Grid container  sx={{ height: '100vh' }}>
+            <Grid container sx={{ height: '100vh' }}>
                 <CssBaseline />
                 <Grid
                     item
@@ -82,6 +79,7 @@ function RegisterPage() {
                             Sign in
                         </Typography>
                         <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
+
                             <TextField
                                 margin="normal"
                                 required
