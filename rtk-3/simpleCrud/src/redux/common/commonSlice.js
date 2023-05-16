@@ -1,4 +1,3 @@
-// commonSlice.js
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -46,12 +45,14 @@ const commonSlice = createSlice({
 
 export const commonInitialState = initialState; // Exporting the common initial state
 export const commonReducer = commonSlice.reducer;
+
 export const {
-    setPage,
-    setRowsPerPage,
-    setSortBy,
-    setDescending,
-    setFilters,
-    setFormData,
-    clearError,
+    setPage: setPageAction,
+    setRowsPerPage: setRowsPerPageAction,
+    setSortBy: setSortByAction,
+    setDescending: setDescendingAction,
+    setFilters: setFiltersAction,
+    setFormData: setFormDataAction,
+    clearError: clearErrorAction,
 } = commonSlice.actions;
+

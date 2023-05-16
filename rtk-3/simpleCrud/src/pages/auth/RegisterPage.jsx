@@ -12,6 +12,10 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import useForm from "../../hooks/useForm.js";
+import {useSelector} from "react-redux";
+
+import {setFormData,clearError} from '../../redux/post/postSlice.js'
 
 function Copyright(props) {
     return (
@@ -29,6 +33,11 @@ function Copyright(props) {
 const theme = createTheme();
 
 function RegisterPage() {
+
+
+    const {formData}=useSelector((state)=>state.posts)
+    const {handleChange}=useForm({formData,setFormData, clearError})
+
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
@@ -80,6 +89,8 @@ function RegisterPage() {
                                 id="email"
                                 label="Email Address"
                                 name="email"
+                                value={formData.email}
+                                onChange={handleChange}
                                 autoComplete="email"
                                 autoFocus
                             />
@@ -90,6 +101,8 @@ function RegisterPage() {
                                 name="password"
                                 label="Password"
                                 type="password"
+                                value={formData.password}
+                                onChange={handleChange}
                                 id="password"
                                 autoComplete="current-password"
                             />
