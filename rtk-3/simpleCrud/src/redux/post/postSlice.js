@@ -1,40 +1,41 @@
 import {createSlice} from "@reduxjs/toolkit";
 import {
-    clearErrorAction, commonInitialState,
-    setDescendingAction,
-    setFiltersAction, setFormDataAction,
-    setPageAction,
-    setRowsPerPageAction,
-    setSortByAction
-} from "../common/commonSlice.js";
+    initialCommonState,
+    setCommonPage,
+    setCommonRowsPerPage,
+    setCommonSortBy,
+    setCommonDescending,
+    setCommonFilters,
+    setCommonFormData,
+    clearCommonError,
+} from "../common/common.js";
 
 
 const postSlice = createSlice({
     name: "posts",
-
-    initialState:commonInitialState,
+    initialState: initialCommonState,
     reducers: {
-        setPage: setPageAction,
-        setRowsPerPage: setRowsPerPageAction,
-        setSortBy: setSortByAction,
-        setDescending: setDescendingAction,
-        setFilters: setFiltersAction,
-        setFormData: setFormDataAction,
-        clearError: clearErrorAction,
-    }
+        setPage: setCommonPage,
+        setRowsPerPage: setCommonRowsPerPage,
+        setSortBy: setCommonSortBy,
+        setDescending: setCommonDescending,
+        setFilters: setCommonFilters,
+        setFormData: setCommonFormData,
+        clearError: clearCommonError,
 
-
+    },
 });
 
 const postReducer = postSlice.reducer;
 
 export default postReducer;
 export const {
-    setPage,
-    setRowsPerPage,
-    setSortBy,
-    setDescending,
-    setFilters,
-    setFormData,
-    clearError,
+
+        setPage,
+        setRowsPerPage,
+        setSortBy,
+        setDescending,
+        setFilters,
+        setFormData,
+        clearError,
 } = postSlice.actions;

@@ -1,30 +1,38 @@
+
+
 import {createSlice} from "@reduxjs/toolkit";
 import {
-    commonInitialState,
-    setPageAction,
-    setRowsPerPageAction,
-    setSortByAction, setDescendingAction, setFiltersAction, setFormDataAction, clearErrorAction
-} from "../common/commonSlice.js";
+    initialCommonState,
+    setCommonPage,
+    setCommonRowsPerPage,
+    setCommonSortBy,
+    setCommonDescending,
+    setCommonFilters,
+    setCommonFormData,
+    clearCommonError,
+} from "../common/common.js";
 
 
 const userSlice = createSlice({
     name: "users",
-    initialState:commonInitialState,
+    initialState: initialCommonState,
     reducers: {
-        setPage: setPageAction,
-        setRowsPerPage: setRowsPerPageAction,
-        setSortBy: setSortByAction,
-        setDescending: setDescendingAction,
-        setFilters: setFiltersAction,
-        setFormData: setFormDataAction,
-        clearError: clearErrorAction,
-    }
+        setPage: setCommonPage,
+        setRowsPerPage: setCommonRowsPerPage,
+        setSortBy: setCommonSortBy,
+        setDescending: setCommonDescending,
+        setFilters: setCommonFilters,
+        setFormData: setCommonFormData,
+        clearError: clearCommonError,
+
+    },
 });
 
 const userReducer = userSlice.reducer;
 
 export default userReducer;
 export const {
+
     setPage,
     setRowsPerPage,
     setSortBy,
