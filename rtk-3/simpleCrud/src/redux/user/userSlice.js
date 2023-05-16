@@ -1,22 +1,10 @@
 import {createSlice} from "@reduxjs/toolkit";
+import {commonReducer,commonInitialState} from "../common/commonSlice.js";
 
 
-const initialState = {
-    data: [],
-    formData: {},
-    loading: false,
-    error: {},
-    pagination: {
-        page: 1,
-        rowsPerPage: 20,
-        sortBy: "id",
-        descending: true,
-    },
-    filters: {},
-};
 const postsSlice = createSlice({
     name: "posts",
-    initialState,
+    initialState:commonInitialState,
     reducers: {
         setPage(state, action) {
             state.pagination.page = action.payload;
@@ -56,5 +44,4 @@ export const {
     setFilters,
     setFormData,
     clearError,
-    logout,
 } = postsSlice.actions;

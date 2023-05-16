@@ -1,5 +1,5 @@
-import {createSlice} from "@reduxjs/toolkit";
-
+// commonSlice.js
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     data: [],
@@ -14,8 +14,9 @@ const initialState = {
     },
     filters: {},
 };
-const userSlice = createSlice({
-    name: "users",
+
+const commonSlice = createSlice({
+    name: "common",
     initialState,
     reducers: {
         setPage(state, action) {
@@ -40,14 +41,11 @@ const userSlice = createSlice({
             const { fieldName } = action.payload;
             delete state.error[fieldName];
         },
-    }
-
-
+    },
 });
 
-const userReducer = userSlice.reducer;
-
-export default userReducer;
+export const commonInitialState = initialState; // Exporting the common initial state
+export const commonReducer = commonSlice.reducer;
 export const {
     setPage,
     setRowsPerPage,
@@ -56,4 +54,4 @@ export const {
     setFilters,
     setFormData,
     clearError,
-} = userSlice.actions;
+} = commonSlice.actions;
