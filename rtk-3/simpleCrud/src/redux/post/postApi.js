@@ -3,7 +3,16 @@ import { apiBaseUrl } from "../common/commonApi";
 
 export const postApi = createApi({
   reducerPath: "postApi",
-  baseQuery: fetchBaseQuery({ baseUrl: `${apiBaseUrl}/posts` }),
+  baseQuery: fetchBaseQuery({
+    baseUrl: `${apiBaseUrl}/posts`,
+    prepareHeaders: (header) => {
+      const token = localStorage.getItem("token");
+      if (token) {
+        header.set("Authorization", `Bearer ${token}`);
+      }
+      return header;
+    },
+  }),
   endpoints: (builder) => ({
     fetchPosts: builder.query({
       query: () => "",

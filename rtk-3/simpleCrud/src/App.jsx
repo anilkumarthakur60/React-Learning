@@ -6,6 +6,7 @@ import {Index} from "./pages/Index.jsx";
 import LoginPage from "./pages/auth/LoginPage.jsx";
 import RegisterPage from "./pages/auth/RegisterPage.jsx";
 import {Dashboard} from "./pages/Dashboard.jsx";
+import PostPage from "./pages/post/PostPage.jsx";
 
 function App() {
     let router = createBrowserRouter(
@@ -19,7 +20,7 @@ function App() {
                 </Route>
                 <Route path="/dashboard" element={<BackendLayout />} >
                     <Route index element={<Dashboard />} />
-
+                    <Route path="posts" element={<PostPage />} />
                 </Route>
                 <Route path="*" element={<NotFound />} />
             </>

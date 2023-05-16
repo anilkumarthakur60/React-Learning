@@ -39,6 +39,10 @@ function BackendLayout(props) {
         {
             name: 'Dashboard',
             path: '/dashboard'
+        },
+        {
+            name: 'Posts',
+            path: '/posts'
         }
     ]
 
