@@ -1,5 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { apiBaseUrl } from "../common/commonApi";
+import {useSelector} from "react-redux";
 
 export const postApi = createApi({
   reducerPath: "postApi",
@@ -15,7 +16,13 @@ export const postApi = createApi({
   }),
   endpoints: (builder) => ({
     fetchPosts: builder.query({
-      query: () => "",
+      query: ({ pagination, filters }) => ({
+        url: "",
+        params: {
+          ...pagination,
+          filters: JSON.stringify(filters),
+        },
+      }),
     }),
     createPost: builder.mutation({
       query: (post) => ({

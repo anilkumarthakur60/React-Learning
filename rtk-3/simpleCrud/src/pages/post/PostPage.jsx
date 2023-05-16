@@ -1,19 +1,22 @@
-import React from 'react'
-import {useFetchPostsQuery} from "../../redux/post/postApi.js";
+import React, {useEffect} from 'react'
+import { useFetchPostsQuery } from "../../redux/post/postApi.js";
 import DataTable from 'react-data-table-component';
-import {useDispatch, useSelector} from 'react-redux';
-import {setDescending, setPage, setRowsPerPage, setSortBy} from "../../redux/post/postSlice.js";
+import { useDispatch, useSelector } from 'react-redux';
+import { setDescending, setPage, setRowsPerPage, setSortBy } from "../../redux/post/postSlice.js";
 import Box from "@mui/material/Box";
-import {LinearProgress} from "@mui/material";
-import {useTableColumn} from "../../hooks/useTableColumn.jsx";
+import { LinearProgress } from "@mui/material";
+import { useTableColumn } from "../../hooks/useTableColumn.jsx";
 
 const PostPage = () => {
 
-    const {data, error, isLoading} = useFetchPostsQuery()
-    const {pagination, paginationComponentOptions, progress} = useSelector((state) => state.posts)
+    const { pagination, paginationComponentOptions, progress, filters } = useSelector((state) => state.posts)
+    const { data, error, isLoading, refetch } = useFetchPostsQuery({ pagination, filters })
     const dispatch = useDispatch()
-    const {postsColumn} = useTableColumn()
+    const { postsColumn } = useTableColumn()
 
+    useEffect(() => {
+        refetch();
+    }, [pagination, filters,refetch]);
     const handleSort = (column, sortDirection) => {
 
         if (column.sortField) {
@@ -22,6 +25,7 @@ const PostPage = () => {
         if (sortDirection) {
             dispatch(setDescending(sortDirection === 'desc' ? true : false))
         }
+
     }
 
 
@@ -29,19 +33,21 @@ const PostPage = () => {
 
         dispatch(setRowsPerPage(newPerPage))
         dispatch(setPage(page))
+
     }
     const handlePageChange = (page) => {
-        console.log('---------data logging-------page-', page);
+
+        dispatch(setPage(page))
+
     }
-    const handleRowSelected = ({selectedRows}) => {
-        console.log('---------data logging-------selectedRows-', selectedRows);
+    const handleRowSelected = ({ selectedRows }) => {
     }
 
 
     const CustomLoader = () => {
         return <>
-            <Box sx={{width: '100%'}}>
-                <LinearProgress variant="determinate" value={progress}/>
+            <Box sx={{ width: '100%' }}>
+                <LinearProgress variant="determinate" value={progress} />
             </Box>
         </>
     }
@@ -59,31 +65,26 @@ const PostPage = () => {
 
 
         return (<div className="">
-
-            <pre>
-                {JSON.stringify(pagination, null, 3)}
-                {JSON.stringify(error, null, 3)}
-            </pre>
-                <DataTable
-                    title="Posts"
-                    columns={postsColumn}
-                    data={data.data}
-                    progressPending={isLoading}
-                    progressComponent={<CustomLoader/>}
-                    sortServer
-                    onSort={handleSort}
-                    selectableRows
-                    onSelectedRowsChange={handleRowSelected}
-                    pagination
-                    paginationServer
-                    paginationTotalRows={data.meta.total}
-                    onChangeRowsPerPage={handlePerRowsChange}
-                    onChangePage={handlePageChange}
-                    paginationComponentOptions={paginationComponentOptions}
-                    highlightOnHover
-                    pointerOnHover
-                />
-            </div>
+            <DataTable
+                title="Posts"
+                columns={postsColumn}
+                data={data.data}
+                progressPending={isLoading}
+                progressComponent={<CustomLoader />}
+                sortServer
+                onSort={handleSort}
+                selectableRows
+                onSelectedRowsChange={handleRowSelected}
+                pagination
+                paginationServer
+                paginationTotalRows={data.meta.total}
+                onChangeRowsPerPage={handlePerRowsChange}
+                onChangePage={handlePageChange}
+                paginationComponentOptions={paginationComponentOptions}
+                highlightOnHover
+                pointerOnHover
+            />
+        </div>
         )
     }
 }
