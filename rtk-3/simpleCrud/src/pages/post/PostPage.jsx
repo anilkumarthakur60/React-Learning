@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import { useFetchPostsQuery } from "../../redux/post/postApi.js";
 import DataTable from 'react-data-table-component';
 import { useDispatch, useSelector } from 'react-redux';
@@ -6,6 +6,7 @@ import { setDescending, setPage, setRowsPerPage, setSortBy } from "../../redux/p
 import Box from "@mui/material/Box";
 import { LinearProgress } from "@mui/material";
 import { useTableColumn } from "../../hooks/useTableColumn.jsx";
+import { testFunction } from '../../redux/common/commonApi.js';
 
 const PostPage = () => {
 
@@ -14,9 +15,13 @@ const PostPage = () => {
     const dispatch = useDispatch()
     const { postsColumn } = useTableColumn()
 
+
+    const { postStoreData } = testFunction('posts')
+
+
     useEffect(() => {
         refetch();
-    }, [pagination, filters,refetch]);
+    }, [pagination, filters, refetch]);
     const handleSort = (column, sortDirection) => {
 
         if (column.sortField) {
@@ -65,6 +70,10 @@ const PostPage = () => {
 
 
         return (<div className="">
+
+            <pre>
+                {JSON.stringify(postStoreData, null, 2)}
+            </pre>
             <DataTable
                 title="Posts"
                 columns={postsColumn}
