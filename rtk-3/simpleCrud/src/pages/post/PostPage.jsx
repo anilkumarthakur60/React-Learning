@@ -2,11 +2,11 @@ import React, { useEffect } from 'react'
 import { useFetchPostsQuery } from "../../redux/post/postApi.js";
 import DataTable from 'react-data-table-component';
 import { useDispatch, useSelector } from 'react-redux';
-import { setDescending, setPage, setRowsPerPage, setSortBy } from "../../redux/post/postSlice.js";
 import Box from "@mui/material/Box";
 import { LinearProgress } from "@mui/material";
 import { useTableColumn } from "../../hooks/useTableColumn.jsx";
 import { testFunction } from '../../redux/common/commonApi.js';
+import {useTable} from "../../hooks/useTable.js";
 
 const PostPage = () => {
 
@@ -18,29 +18,10 @@ const PostPage = () => {
 
     const { postStoreData } = testFunction('posts')
 
-
-    useEffect(() => {
-        refetch();
-    }, [pagination, filters, refetch]);
-    const handleSort = (column, sortDirection) => {
-        if (column.sortField) {
-            dispatch(setSortBy(column.sortField))
-        }
-        if (sortDirection) {
-            dispatch(setDescending(sortDirection === 'desc' ? true : false))
-        }
-    }
+    const  {handleSort,handlePerRowsChange,handlePageChange,handleRowSelected}= useTable({refetch:refetch,storeName:'posts'})
 
 
-    const handlePerRowsChange = (newPerPage, page) => {
-        dispatch(setRowsPerPage(newPerPage))
-        dispatch(setPage(page))
-    }
-    const handlePageChange = (page) => {
-        dispatch(setPage(page))
-    }
-    const handleRowSelected = ({ selectedRows }) => {
-    }
+
     const CustomLoader = () => {
         return <>
             <Box sx={{ width: '100%' }}>
