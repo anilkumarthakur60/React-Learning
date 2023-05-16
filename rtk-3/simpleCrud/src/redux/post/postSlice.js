@@ -8,7 +8,7 @@ import {
     setCommonFilters,
     setCommonFormData,
     clearCommonError,
-} from "../common/common.js";
+} from "../common/commonSliceHook.js";
 
 
 const postSlice = createSlice({
