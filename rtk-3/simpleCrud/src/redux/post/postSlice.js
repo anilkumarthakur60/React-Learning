@@ -8,6 +8,8 @@ import {
     setCommonFilters,
     setCommonFormData,
     clearCommonError,
+
+    setCommonProgress
 } from "../common/commonSliceHook.js";
 
 
@@ -22,6 +24,7 @@ const postSlice = createSlice({
         setFilters: setCommonFilters,
         setFormData: setCommonFormData,
         clearError: clearCommonError,
+        setProgress: setCommonProgress
 
     },
 });
@@ -38,4 +41,5 @@ export const {
         setFilters,
         setFormData,
         clearError,
+        setProgress
 } = postSlice.actions;

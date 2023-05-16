@@ -8,8 +8,16 @@ const initialCommonState = {
         rowsPerPage: 20,
         sortBy: "id",
         descending: true,
+        total: 0,
     },
     filters: {},
+    progress: 0,
+    paginationComponentOptions:{
+        rowsPerPageText: 'Rows per page:',
+        rangeSeparatorText: 'of',
+        selectAllRowsItem: true,
+        selectAllRowsItemText: 'All'
+    }
 };
 
 
@@ -35,6 +43,11 @@ const clearCommonError = (state, action) => {
     const {fieldName} = action.payload;
     delete state.error[fieldName];
 }
+
+const setCommonProgress = (state, action) => {
+    state.progress = action.payload;
+}
+
 export {
     initialCommonState,
     setCommonPage,
@@ -44,5 +57,6 @@ export {
     setCommonFilters,
     setCommonFormData,
     clearCommonError,
+    setCommonProgress
 };
 
