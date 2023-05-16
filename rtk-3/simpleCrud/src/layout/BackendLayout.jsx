@@ -42,7 +42,7 @@ function BackendLayout(props) {
         },
         {
             name: 'Posts',
-            path: '/posts'
+            path: '/dashboard/posts'
         }
     ]
 

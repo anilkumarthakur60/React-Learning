@@ -3,11 +3,23 @@ function  useTableColumn(){
 
     const postsColumn=[
         {
-            field: 'age',
-            headerName: 'Age',
-            type: 'number',
-            width: 90,
-        }
+            name: 'id',
+            selector: row => row.id,
+            sortable: true,
+            sortField: 'id',
+        },
+        {
+            name: 'name',
+            selector: row => row.name,
+            sortable: true,
+            sortField: 'name',
+        },
+        {
+            name: 'slug',
+            selector: row => row.slug,
+            sortable: true,
+            sortField: 'slug',
+        },
     ]
 
     return {
