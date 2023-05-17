@@ -9,7 +9,6 @@ export function  useTableColumn(){
             selector: row => row.id,
             sortable: true,
             sortField: 'id',
-            right: true,
             reorder: true,
         },
         {
@@ -17,33 +16,22 @@ export function  useTableColumn(){
             selector: row => row.name,
             sortable: true,
             sortField: 'name',
-            right: true,
             reorder: true,
         },
         {
             name: 'slug',
-            selector: row => row.slug,
+            selector: row => row?.slug,
             sortable: true,
             sortField: 'slug',
-            format: row => `${row.slug.slice(0, 200)}...`,
-            wrap: true,
-            right: true,
+            format: row => `${row?.slug?.slice(0, 200)}...`,
             reorder: true,
         },
+
         {
-            name: 'action',
-            sortable: false,
-            wrap: true,
-            right: true,
-            allowOverflow: true,
-            button: true,
-            width: '56px',
-        },
-        {
+            name: 'actions',
             cell: row => <CustomMaterialMenu size="small" row={row} onDeleteRow={(val)=>{logDat(val)}}  />,
             allowOverflow: true,
             button: true,
-            width: '56px',
         },
     ]
 

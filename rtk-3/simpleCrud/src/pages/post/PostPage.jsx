@@ -1,23 +1,30 @@
-import React, { useEffect } from 'react'
+import { useMemo } from 'react'
 import { useFetchPostsQuery } from "../../redux/post/postApi.js";
 import DataTable from 'react-data-table-component';
 import { useSelector } from 'react-redux';
 import Box from "@mui/material/Box";
 import { LinearProgress } from "@mui/material";
 import { useTableColumn } from "../../hooks/useTableColumn.jsx";
-import { testFunction } from '../../redux/common/commonApi.js';
 import { useTable } from "../../hooks/useTable.js";
+
+import TextField from '@mui/material/TextField';
+import Grid from "@mui/material/Grid";
+import { selectData, selectPagination } from '../../redux/post/postSlice.js';
 
 const PostPage = () => {
 
+
+    const { postsColumn } = useTableColumn()
     const { pagination, paginationComponentOptions, progress, filters } = useSelector((state) => state.posts)
     const { data, error, isLoading, refetch } = useFetchPostsQuery({ pagination, filters })
-    const { postsColumn } = useTableColumn()
-
-
-    const { postStoreData } = testFunction('posts')
-
-    const { handleSort, handlePerRowsChange, handlePageChange, handleRowSelected } = useTable({ refetch: refetch, storeName: 'posts' })
+    const {
+        handleSort,
+        handlePerRowsChange,
+        handlePageChange,
+        handleRowSelected,
+        customStyles,
+        handleFilters,
+    } = useTable({ refetch: refetch, storeName: 'posts' })
 
 
 
@@ -28,6 +35,37 @@ const PostPage = () => {
             </Box>
         </>
     }
+
+    const subHeaderComponent = useMemo(() => {
+        return (
+            <Box>
+                <Grid container direction="row" paddingY={2} justifyContent="flex-start" alignItems="start">
+                    <Grid item xs="12" paddingRight={1} marginY={1} md="3"  >
+                        <TextField name='id' value={filters.name} onChange={handleFilters} fullWidth size='small' id="outlined-basic" label="Outlined" variant="filled" />
+                    </Grid>
+                    <Grid item xs="12" paddingRight={1} marginY={1} md="3"  >
+                        <TextField fullWidth size='small' id="outlined-basic" label="Outlined" variant="filled" />
+                    </Grid>
+                    <Grid item xs="12" paddingRight={1} marginY={1} md="3"  >
+                        <TextField fullWidth size='small' id="outlined-basic" label="Outlined" variant="filled" />
+                    </Grid>
+                    <Grid item xs="12" paddingRight={1} marginY={1} md="3"  >
+                        <TextField fullWidth size='small' id="outlined-basic" label="Outlined" variant="filled" />
+                    </Grid>
+                    <Grid item xs="12" paddingRight={1} marginY={1} md="3"  >
+                        <TextField fullWidth size='small' id="outlined-basic" label="Outlined" variant="filled" />
+                    </Grid>
+                    <Grid item xs="12" paddingRight={1} marginY={1} md="3"  >
+                        <TextField fullWidth size='small' id="outlined-basic" label="Outlined" variant="filled" />
+                    </Grid>
+                    <Grid item xs="12" paddingRight={1} marginY={1} md="3"  >
+
+                    </Grid>
+
+                </Grid>
+            </Box>
+        )
+    }, [])
 
 
     if (isLoading) {
@@ -40,14 +78,16 @@ const PostPage = () => {
         </div>
     } else {
 
+        console.log(selectPagination)
 
         return (<div className="">
-
+            {subHeaderComponent}
             <pre>
-                {JSON.stringify(postStoreData, null, 2)}
+                {JSON.stringify(selectPagination, null, 2)}
             </pre>
+
             <DataTable
-                title="Posts"
+                customStyles={customStyles}
                 columns={postsColumn}
                 data={data.data}
                 progressPending={isLoading}
@@ -64,6 +104,8 @@ const PostPage = () => {
                 paginationComponentOptions={paginationComponentOptions}
                 highlightOnHover
                 pointerOnHover
+                fixedHeader
+                persistTableHead
             />
         </div>
         )
