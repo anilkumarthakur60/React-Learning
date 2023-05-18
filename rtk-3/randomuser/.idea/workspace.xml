@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2edfe3ba-4f72-485d-be88-eea8893c14b2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../rtk-3.1/src/pages/RtkQueryPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-3.1/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../rtk-3.1/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-3.1/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../rtk-3.1/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-3.1/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../rtk-3.1/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-3.1/src/layout/FrontendLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../rtk-3.1/src/layout/FrontendLayout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-3.1/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../rtk-3.1/src/main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-3.1/src/pages/Index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../rtk-3.1/src/pages/Index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rtk-3.1/src/redux/postSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/../rtk-3.1/src/redux/postSlice.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2PhhZzvPGHXmEnTnF0KmO4jN9H8" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "reduxCore",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "/home/anil/.nvm/versions/node/v18.6.0/bin/node",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "settings.nodejs",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="ReactDesignerToolWindowState">
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.rcb.reactComponents" value="false" />
+        <entry key="com.haulmont.rcb.reactInspector" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2edfe3ba-4f72-485d-be88-eea8893c14b2" name="Changes" comment="" />
+      <created>1683915282011</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1683915282011</updated>
+      <workItem from="1683915284751" duration="1431000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

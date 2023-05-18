@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b39e1fc5-bed8-4b58-8e0d-31d36a9377a2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/git_toolbox_prj.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/jsx.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/php.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/sonarlint/issuestore/0/0/00dacf6e999021c21c83c977a7ce8b127f1dcd56" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/sonarlint/issuestore/1/b/1b7987f55401c74a6c6ab74e2207eb4e92e3ea7e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/sonarlint/issuestore/1/c/1c00c1dd6c086b2f003212298f074b92f5aa0ba2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/sonarlint/issuestore/3/2/326507ecaacde93f0acb9ea2869c266994590fcf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/sonarlint/issuestore/4/6/4674bfa1b12f5b5de4475a77170bad178a1218b5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/sonarlint/issuestore/4/7/47e2e3328b802ba9453b32f523648a3a01095163" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/sonarlint/issuestore/4/f/4f829e572fb0934afe53224520f6f53f3443d1c4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/sonarlint/issuestore/5/3/53585a096fe3a3b96321113856ae62602995a33b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/sonarlint/issuestore/6/9/694c295b5353b4294acf9698ddc51807c1c95933" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/sonarlint/issuestore/6/a/6afe34dbc4fb4d080bfb84fc87a9c3670f8bef48" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/sonarlint/issuestore/7/5/7591892fa26e5a2f96f03ca14df6f570a5efc21c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/sonarlint/issuestore/8/0/8055d33891f2b9ad8440d51adfaa544758b42426" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/sonarlint/issuestore/8/5/85f1c76cdcb8183cba5f80dbedcfab17e7db956d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/sonarlint/issuestore/8/c/8c37372e0f85ef2d908f9d02c49f6a0d04b1f091" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/sonarlint/issuestore/8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/sonarlint/issuestore/9/f/9fe84ebb15faf917b7def6236dba604453cc61e0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/sonarlint/issuestore/a/0/a0edea362c06c693d604f3480b4acc56745672db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/sonarlint/issuestore/a/3/a3e71b49133fdb236ba4201e83e82f9ca0707a77" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/sonarlint/issuestore/a/d/ad6ef5096fccfd633064c0023178a016fe24c8d8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/sonarlint/issuestore/c/7/c799b57d38f46dd6ac88ca257a1847207e4f24b3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/sonarlint/issuestore/c/a/cab788c7a5e9db95ade3cc453b6cb42ffdcf4a74" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/sonarlint/issuestore/index.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api.http" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../db.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/App1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Assets/Css/Table.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Assets/images/Svg/bird.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Assets/images/Svg/cat.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Assets/images/Svg/cow.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Assets/images/Svg/dog.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Assets/images/Svg/gator.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Assets/images/Svg/heart.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Assets/images/Svg/horse.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Assets/images/a1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Assets/images/a2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Assets/images/a3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Component/Accordion.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Component/Button.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Component/Button.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Component/Dropdown.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Component/ExpandablePanel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Component/InputLabel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Component/Link.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Component/Loading.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Component/Modal.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Component/Panel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Component/Route.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Component/Sidebar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Component/SortableTable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Component/SortableTable1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Component/Table.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Component/TextInput.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Component/sort.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Context/books.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Context/books1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Context/navigation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/FormHandleSection6/Section7ApiRelated.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/FormHandleSection6/Section7BookCreate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/FormHandleSection6/Section7BookEdit.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/FormHandleSection6/Section7BookList.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/FormHandleSection6/Section7BookShow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Hooks/useBooksContext.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Hooks/useCounterHook.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Hooks/useFormData.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Hooks/useNavigation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Hooks/useSort.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Hooks/useThunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/ProfileCard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section10/Section10.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section11/Section11.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section12/Section12.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section12/Section12Dropdown.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section13/MainSideBar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section13/Section13.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section14/ModalPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section14/Section14.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section15/Section15.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section15/TablePage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section16/Section16.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section16/TablePage16.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section17/CounterPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section17/Section17.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section17/TablePage17.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section18/CounterPage18.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section18/CounterPage181.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section18/Section18.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section19/CounterPage19.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section19/CounterPage191.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section19/Section19.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section20/Component/CarForm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section20/Component/CarList.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section20/Component/CarList1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section20/Component/CarSearch.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section20/Component/CarValue.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section20/Section20.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section21/AlbumList.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section21/Section21.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section21/UserList.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section21/UserList1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section21/UserList2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section21/UserListItem.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section22/AlbumList.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section22/Post.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section22/PostList.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section22/Section22.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section4/AnimalShow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section4/Section41.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section4/animalShow.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section5/ImageList.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section5/ImageShow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section5/SearchBar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section5/Section5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section7apiRequst/Section6.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section7apiRequst/Section6BookCreate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section7apiRequst/Section6BookEdit.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section7apiRequst/Section6BookList.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section7apiRequst/Section6BookShow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section8/Section8.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section8/Section81.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section8/Section81MainFile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section8/Section8BookCreate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section8/Section8BookEdit.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section8/Section8BookList.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section8/Section8BookShow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section8/Section8Content.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Section8/Section8Content1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/api.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/api_instance.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/store/apis/albumApi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/store/apis/albumApi1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/store/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/store/indexs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/store/slice/albumSlice.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/store/slice/carsSlice.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/store/slice/formSlice.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/store/slice/userSlice.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/store/thunks/addUsers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/store/thunks/deleteUser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/store/thunks/editUser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/store/thunks/fetchUsers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tailwind.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yarn.lock" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2P44LnQVKoV1nqu6rNgkS5m0uUZ" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "reduxCore",
+    "last_opened_file_path": "/home/anil/Desktop/Learning/React/jsx/redux core 1/src",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "/home/anil/.nvm/versions/node/v18.6.0/bin/node",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "settings.nodejs",
+    "ts.external.directory.path": "/snap/webstorm/315/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="ReactDesignerToolWindowState">
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.rcb.reactComponents" value="false" />
+        <entry key="com.haulmont.rcb.reactInspector" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/redux" />
+      <recent name="$PROJECT_DIR$/src/store" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b39e1fc5-bed8-4b58-8e0d-31d36a9377a2" name="Changes" comment="" />
+      <created>1682702968099</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1682702968099</updated>
+      <workItem from="1682702970664" duration="22349000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
