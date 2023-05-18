@@ -1,6 +1,10 @@
 import {useDispatch, useSelector} from "react-redux";
+import {indigo} from "@mui/material/colors";
 
 function useStore(storeName) {
+
+
+    const dispatch = useDispatch();
     const {
         data,
         formData,
@@ -11,9 +15,87 @@ function useStore(storeName) {
         progress,
         paginationComponentOptions,
     } = useSelector((state) => state[storeName]);
-  return {
 
-  };
+    const {} = pagination
+
+
+    const handleSort = (column, sortDirection) => {
+        const sortByAction = {
+            type: `${storeName}/setSortBy`,
+            payload: column.sortField,
+        };
+        dispatch(sortByAction);
+
+        const descendingAction = {
+            type: `${storeName}/setDescending`,
+            payload: sortDirection === "desc",
+        };
+        dispatch(descendingAction);
+    };
+
+    const handlePerRowsChange = (newPerPage, page) => {
+        const rowsPerPageAction = {
+            type: `${storeName}/setRowsPerPage`,
+            payload: newPerPage,
+        };
+        dispatch(rowsPerPageAction);
+
+        const pageAction = {type: `${storeName}/setPage`, payload: page};
+        dispatch(pageAction);
+    };
+    const handlePageChange = (page) => {
+        const pageAction = {type: `${storeName}/setPage`, payload: page};
+        dispatch(pageAction);
+    };
+
+    const handleRowSelected = ({selectedRows}) => {
+        console.log("---------data logging--------", selectedRows);
+    };
+
+    const customStyles = {
+        headCells: {
+            style: {
+                fontSize: "16px",
+                fontWeight: "bold",
+                backgroundColor: indigo[500],
+                color: "#fff",
+            },
+        },
+    };
+    const handleFilters = ({target}) => {
+        const {name, value} = target;
+        const filterAction = {
+            type: `${storeName}/setFilters`,
+            payload: {name, value},
+        };
+        dispatch(filterAction);
+    };
+    return {
+        //state variables
+        data,
+        formData,
+        loading,
+        error,
+        pagination,
+        filters,
+        progress,
+        paginationComponentOptions,
+
+        //functions
+        handleSort,
+        handlePerRowsChange,
+        handlePageChange,
+        handleRowSelected,
+        customStyles,
+        handleFilters,
+
+
+    };
 }
 
-export  default useStore;
+export default useStore;
+export const storeName = {
+    posts: 'posts',
+    users: 'users',
+    roles: 'roles',
+}

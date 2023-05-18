@@ -13,7 +13,9 @@ import {
 
 const postSlice = createSlice({
   name: "posts",
-  initialState: initialCommonState,
+  initialState: {
+    ...initialCommonState,
+  },
   reducers: {
     setPage: setCommonPage,
     setRowsPerPage: setCommonRowsPerPage,
