@@ -45,6 +45,7 @@ export const selectData = (state) => state.posts.data;
 export const selectLoading = (state) => state.posts.loading;
 export const selectError = (state) => state.posts.error;
 export const selectPagination = (state) => state.posts.pagination;
+console.log('---------data logging- post slice-------',selectPagination);
 export const selectFilters = (state) => state.posts.filters;
 export const selectSortBy = (state) => state.posts.sortBy;
 export const selectDescending = (state) => state.posts.descending;
