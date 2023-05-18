@@ -9,7 +9,7 @@ import { useTable } from "../../hooks/useTable.js";
 
 import TextField from '@mui/material/TextField';
 import Grid from "@mui/material/Grid";
-import { selectData, selectPagination } from '../../redux/post/postSlice.js';
+import { selectPagination } from '../../redux/post/postSlice.js';
 
 const PostPage = () => {
 
@@ -46,25 +46,11 @@ const PostPage = () => {
                     <Grid item xs="12" paddingRight={1} marginY={1} md="3"  >
                         <TextField name='names' value={filters.names} onChange={handleFilters} fullWidth size='small' id="outlined-basic" label="Outlined" variant="filled" />
                     </Grid>
-                    <Grid item xs="12" paddingRight={1} marginY={1} md="3"  >
-                        <TextField fullWidth size='small' id="outlined-basic" label="Outlined" variant="filled" />
-                    </Grid>
-                    <Grid item xs="12" paddingRight={1} marginY={1} md="3"  >
-                        <TextField fullWidth size='small' id="outlined-basic" label="Outlined" variant="filled" />
-                    </Grid>
-                    <Grid item xs="12" paddingRight={1} marginY={1} md="3"  >
-                        <TextField fullWidth size='small' id="outlined-basic" label="Outlined" variant="filled" />
-                    </Grid>
-                    <Grid item xs="12" paddingRight={1} marginY={1} md="3"  >
-                        <TextField fullWidth size='small' id="outlined-basic" label="Outlined" variant="filled" />
-                    </Grid>
-                    <Grid item xs="12" paddingRight={1} marginY={1} md="3"  >
-
-
+                   
                 </Grid>
             </Box>
-        )
-    }, [])
+        );
+    }, []);
 
 
     if (isLoading) {
