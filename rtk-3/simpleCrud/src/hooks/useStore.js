@@ -16,7 +16,13 @@ function useStore(storeName) {
         paginationComponentOptions,
     } = useSelector((state) => state[storeName]);
 
-    const {} = pagination
+    const {
+        page,
+        rowsPerPage,
+        sortBy,
+        descending,
+        total
+    } = pagination
 
 
     const handleSort = (column, sortDirection) => {
@@ -80,6 +86,12 @@ function useStore(storeName) {
         filters,
         progress,
         paginationComponentOptions,
+        page,
+        rowsPerPage,
+        sortBy,
+        descending,
+        total,
+
 
         //functions
         handleSort,
