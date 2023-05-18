@@ -23,6 +23,7 @@ function RegisterPage() {
 
     }
 
+
     return (<>
         <pre>
             {JSON.stringify(form, null, 2)}

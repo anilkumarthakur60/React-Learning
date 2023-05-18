@@ -247,3 +247,5 @@ export const {
   setFormData,
   clearError,
 } = userSlice.actions;
+
+export const selectAuthUser = (state) => state.users.authUser;

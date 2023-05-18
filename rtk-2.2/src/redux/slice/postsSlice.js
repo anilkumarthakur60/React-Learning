@@ -103,3 +103,16 @@ export const {
   clearError,
   logout,
 } = postsSlice.actions;
+
+export const selectFormData = (state) => state.posts.formData;
+export const selectData = (state) => state.posts.data;
+export const selectLoading = (state) => state.posts.loading;
+export const selectError = (state) => state.posts.error;
+export const selectPagination = (state) => state.posts.pagination;
+export const selectFilters = (state) => state.posts.filters;
+export const selectSortBy = (state) => state.posts.sortBy;
+export const selectDescending = (state) => state.posts.descending;
+export const selectPage = (state) => state.posts.page;
+export const selectRowsPerPage = (state) => state.posts.rowsPerPage;
+export const selectTotal = (state) => state.posts.total;
+export const selectPostStore = (state) => state.posts;
