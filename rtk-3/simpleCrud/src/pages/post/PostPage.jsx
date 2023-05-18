@@ -44,7 +44,7 @@ const PostPage = () => {
                         <TextField name='id' value={filters.name} onChange={handleFilters} fullWidth size='small' id="outlined-basic" label="Outlined" variant="filled" />
                     </Grid>
                     <Grid item xs="12" paddingRight={1} marginY={1} md="3"  >
-                        <TextField fullWidth size='small' id="outlined-basic" label="Outlined" variant="filled" />
+                        <TextField name='names' value={filters.names} onChange={handleFilters} fullWidth size='small' id="outlined-basic" label="Outlined" variant="filled" />
                     </Grid>
                     <Grid item xs="12" paddingRight={1} marginY={1} md="3"  >
                         <TextField fullWidth size='small' id="outlined-basic" label="Outlined" variant="filled" />
@@ -60,7 +60,6 @@ const PostPage = () => {
                     </Grid>
                     <Grid item xs="12" paddingRight={1} marginY={1} md="3"  >
 
-                    </Grid>
 
                 </Grid>
             </Box>
