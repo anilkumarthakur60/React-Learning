@@ -4,7 +4,19 @@ import Box from "@mui/material/Box";
 import { LinearProgress } from "@mui/material";
 
 
-function listComponent({ data, error, isLoading, storeName, subHeaderComponent, columns }) {
+function listComponent({
+    data,
+    error,
+    refetch,
+    status,
+    isUninitialized,
+    isLoading,
+    isSuccess,
+    isError,
+    columns,
+    storeName,
+    subHeaderComponent,
+}) {
 
 
     const { paginationComponentOptions, progress, handleSort,
@@ -33,6 +45,7 @@ function listComponent({ data, error, isLoading, storeName, subHeaderComponent, 
         return (<div className="">
             {subHeaderComponent ?? null}
             <DataTable
+
                 customStyles={customStyles}
                 columns={columns}
                 data={data.data}

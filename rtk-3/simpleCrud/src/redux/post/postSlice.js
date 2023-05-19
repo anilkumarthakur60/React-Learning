@@ -11,6 +11,7 @@ import {
   setCommonProgress,
   deleteFilterKeys,
   allReset,
+  setCommonData,
 } from "../common/commonSliceHook.js";
 
 const postSlice = createSlice({
@@ -28,7 +29,8 @@ const postSlice = createSlice({
     clearError: clearCommonError,
     setProgress: setCommonProgress,
     deleteFilterKeys: deleteFilterKeys,
-    allReset:allReset
+    allReset: allReset,
+    setData: setCommonData,
   },
 });
 
@@ -44,6 +46,7 @@ export const {
   setFormData,
   clearError,
   setProgress,
+  setData,
 } = postSlice.actions;
 
 export const selectFormData = (state) => state.posts.formData;

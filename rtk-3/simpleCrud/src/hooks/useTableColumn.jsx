@@ -6,10 +6,7 @@ export function  useTableColumn(){
     const postsColumn=[
         {
             name: 'id',
-            selector: row => row.id,
-            sortable: true,
-            sortField: 'id',
-            reorder: true,
+            cell: (row,index) => index+1,
         },
         {
             name: 'name',

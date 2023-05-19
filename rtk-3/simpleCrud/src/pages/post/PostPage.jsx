@@ -9,11 +9,7 @@ import ListComponent from "../../component/frontend/crud/ListComponent.jsx";
 import IconButton from "@mui/material/IconButton";
 import ClearIcon from '@mui/icons-material/Clear';
 import { useSelector } from "react-redux";
-import Button from "@mui/material/Button";
 import { Fab } from '@mui/material';
-
-import AddIcon from '@mui/icons-material/Add';
-import EditIcon from '@mui/icons-material/Edit';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import FilterAltOffIcon from '@mui/icons-material/FilterAltOff';
 
@@ -25,7 +21,7 @@ const PostPage = () => {
     const { postsColumn } = useTableColumn()
     const { pagination, handleFilters, clearFilterKeys, allReset } = useStore(storeName.posts)
 
-    const { data, error, isLoading, refetch } = useFetchPostsQuery({ pagination, filters }, {
+    const { data, error, refetch, status, isUninitialized, isLoading, isSuccess, isError, } = useFetchPostsQuery({ pagination, filters }, {
         refetchOnMountOrArgChange: true,
         refetchOnFocus: true,
         refetchOnReconnect: true,
@@ -48,9 +44,9 @@ const PostPage = () => {
                     <Grid item>
                         <TextField name='id' value={filters.id} onChange={handleFilters} fullWidth size='small' id="outlined-basic" label="Outlined" variant="filled" />
                     </Grid>
-                    <Grid item>
+                    <Grid item   >
 
-                        <Grid item container direction='row' alignItems="flex-start" spacing={1}>
+                        <Grid item container direction='row' alignItems="flex-end" spacing={1} justify="flex-end">
                             <Grid item>
                                 <Fab size='small' color="primary" aria-label="add" onClick={refetch}>
                                     <FilterAltOffIcon />
@@ -65,7 +61,6 @@ const PostPage = () => {
                     </Grid>
                 </Grid>
             </Box>
-
         );
     }, []);
 
@@ -86,9 +81,13 @@ const PostPage = () => {
             <ListComponent
                 data={data}
                 error={error}
-                isLoading={isLoading}
-                columns={postsColumn}
                 refetch={refetch}
+                status={status}
+                isUninitialized={isUninitialized}
+                isLoading={isLoading}
+                isSuccess={isSuccess}
+                isError={isError}
+                columns={postsColumn}
                 storeName={storeName.posts}
                 subHeaderComponent={subHeaderComponent}
             />

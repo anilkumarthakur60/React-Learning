@@ -45,6 +45,11 @@ function BackendLayout(props) {
         {
             name: 'Posts',
             path: '/dashboard/posts'
+        },
+
+        {
+            name: 'Blog',
+            path: '/dashboard/blogs'
         }
     ]
 
@@ -130,7 +135,7 @@ function BackendLayout(props) {
 
                     <Toolbar />
                     <Card raised>
-                        <CardContent>
+                        <CardContent style={{ maxHeight: '95vh', overflow: 'auto' }}>
 
                             <Outlet />
                         </CardContent>

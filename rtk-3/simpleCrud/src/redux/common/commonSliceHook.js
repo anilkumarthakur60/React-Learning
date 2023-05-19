@@ -1,5 +1,3 @@
-
-
 const initialCommonState = {
   data: [],
   formData: {},
@@ -36,26 +34,22 @@ const setCommonDescending = (state, action) => {
   state.pagination.descending = action.payload;
 };
 const setCommonFilters = (state, action) => {
-
   const { name, value } = action.payload;
-  const updatedFilters = {
+  // const updatedFilters = {
+  //   ...state.filters,
+  //   [name]: value,
+  // };
+
+  // return {
+  //   ...state,
+  //   filters: updatedFilters,
+  // };
+  state.filters = {
     ...state.filters,
     [name]: value,
   };
-
-  return {
-    ...state,
-    filters: updatedFilters,
-  };
-  // state.filters = {
-  //   ...state.filters,
-  //   [action.payload.name]: action.payload.value,
-  // };
 };
 
-const setCommonFormData = (state, action) => {
-  state.formData = action.payload;
-};
 const clearCommonError = (state, action) => {
   const { fieldName } = action.payload;
   delete state.error[fieldName];
@@ -66,14 +60,25 @@ const setCommonProgress = (state, action) => {
 };
 
 const deleteFilterKeys = (state, action) => {
-
   delete state.filters[action.payload.keyName];
 };
 
-const  allReset = (state) => {
-    state = initialCommonState;
-    return state;
-}
+const allReset = (state) => {
+  state = initialCommonState;
+  return state;
+};
+
+const setCommonData = (state, action) => {
+  state.data = action.payload;
+};
+
+const setCommonFormData = (state, action) => {
+  const { name, value } = action.payload;
+  state.formData = {
+    ...state.formData,
+    [name]: value,
+  };
+};
 
 export {
   initialCommonState,
@@ -87,4 +92,5 @@ export {
   setCommonProgress,
   deleteFilterKeys,
   allReset,
+  setCommonData,
 };

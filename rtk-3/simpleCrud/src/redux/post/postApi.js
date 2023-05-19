@@ -1,6 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { apiBaseUrl } from "../common/commonApi";
-import {useSelector} from "react-redux";
 
 export const postApi = createApi({
   reducerPath: "postApi",
