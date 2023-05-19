@@ -1,6 +1,7 @@
 const initialCommonState = {
   data: [],
   formData: {},
+  showModal: false,
   loading: false,
   error: {},
   pagination: {
@@ -80,6 +81,16 @@ const setCommonFormData = (state, action) => {
   };
 };
 
+const setCommonShowModalFalse = (state) => {
+  state.showModal = false;
+};
+const setCommonShowModalTrue = (state) => {
+  state.showModal = true;
+};
+const setCommonShowModal = (state, action) => {
+  state.showModal = action.payload;
+};
+
 export {
   initialCommonState,
   setCommonPage,
@@ -93,4 +104,7 @@ export {
   deleteFilterKeys,
   allReset,
   setCommonData,
+  setCommonShowModalFalse,
+  setCommonShowModalTrue,
+  setCommonShowModal,
 };

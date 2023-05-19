@@ -1,54 +1,53 @@
 
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { createBlog, readBlog, updateBlog, deleteBlog } from '../../redux/blog/blogSlice';
+// import { createBlog, readBlog, updateBlog, deleteBlog } from '../../redux/blog/blogSlice';
 
 function BlogPage() {
 
 
 
-    const dispatch = useDispatch();
-    const { data, loading, error } = useSelector((state) => state.blogs);
-    const [formData, setFormData] = useState({
-        title: '',
-        content: '',
-    });
+    // const dispatch = useDispatch();
+    // const { data, loading, error } = useSelector((state) => state.blogs);
+    // const [formData, setFormData] = useState({
+    //     title: '',
+    //     content: '',
+    // });
 
-    // Fetch blogs on component mount
-    useEffect(() => {
-        dispatch(readBlog());
-    }, [dispatch]);
+    // // Fetch blogs on component mount
+    // useEffect(() => {
+    //     dispatch(readBlog());
+    // }, [dispatch]);
 
-    // Create
-    const handleCreate = () => {
-        dispatch(createBlog(formData));
-        setFormData({ title: '', content: '' });
-    };
+    // // Create
+    // const handleCreate = () => {
+    //     dispatch(createBlog(formData));
+    //     setFormData({ title: '', content: '' });
+    // };
 
-    // Read
-    const handleRead = (blogId) => {
-        dispatch(readBlog(blogId));
-    };
+    // // Read
+    // const handleRead = (blogId) => {
+    //     dispatch(readBlog(blogId));
+    // };
 
-    // Update
-    const handleUpdate = (blogId) => {
-        dispatch(updateBlog({ id: blogId, ...formData }));
-        setFormData({ title: '', content: '' });
-    };
+    // // Update
+    // const handleUpdate = (blogId) => {
+    //     dispatch(updateBlog({ id: blogId, ...formData }));
+    //     setFormData({ title: '', content: '' });
+    // };
 
-    // Delete
-    const handleDelete = (blogId) => {
-        dispatch(deleteBlog(blogId));
-    };
+    // // Delete
+    // const handleDelete = (blogId) => {
+    //     dispatch(deleteBlog(blogId));
+    // };
 
-    // Handle form input change
-    const handleInputChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
+    // // Handle form input change
+    // const handleInputChange = (e) => {
+    //     setFormData({ ...formData, [e.target.name]: e.target.value });
+    // };
     return (
         <div>
-            {/* Blog Form */}
-            <form>
+            {/* <form>
                 <input
                     type="text"
                     name="title"
@@ -67,7 +66,6 @@ function BlogPage() {
                 </button>
             </form>
 
-            {/* Blog Table */}
             {loading ? (
                 <div>Loading...</div>
             ) : error ? (
@@ -95,7 +93,7 @@ function BlogPage() {
                         ))}
                     </tbody>
                 </table>
-            )}
+            )} */}
         </div>
     )
 }

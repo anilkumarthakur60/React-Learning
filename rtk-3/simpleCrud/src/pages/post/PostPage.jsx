@@ -68,13 +68,13 @@ const PostPage = () => {
 
 
 
+
+
+
+
+
     return (<div className="">
 
-        {/* <pre>
-            {JSON.stringify(filters, null, 2)}
-            {JSON.stringify(pagination, null, 2)}
-
-        </pre> */}
 
 
         {data?.data &&

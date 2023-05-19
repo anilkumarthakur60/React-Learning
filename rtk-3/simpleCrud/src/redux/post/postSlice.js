@@ -12,6 +12,9 @@ import {
   deleteFilterKeys,
   allReset,
   setCommonData,
+  setCommonShowModalFalse,
+  setCommonShowModalTrue,
+  setCommonShowModal,
 } from "../common/commonSliceHook.js";
 
 const postSlice = createSlice({
@@ -31,6 +34,9 @@ const postSlice = createSlice({
     deleteFilterKeys: deleteFilterKeys,
     allReset: allReset,
     setData: setCommonData,
+    setModalFalse: setCommonShowModalFalse,
+    setModalTrue: setCommonShowModalTrue,
+    setShowModal: setCommonShowModal,
   },
 });
 
@@ -47,21 +53,23 @@ export const {
   clearError,
   setProgress,
   setData,
+  setModalFalse,
+  setModalTrue,
+  setShowModal,
 } = postSlice.actions;
 
-export const selectFormData = (state) => state.posts.formData;
-export const selectData = (state) => state.posts.data;
-export const selectLoading = (state) => state.posts.loading;
-export const selectError = (state) => state.posts.error;
-export const selectPagination = (state) => state.posts.pagination;
-console.log("---------data logging- post slice-------", selectPagination);
-export const selectFilters = (state) => state.posts.filters;
-export const selectSortBy = (state) => state.posts.sortBy;
-export const selectDescending = (state) => state.posts.descending;
-export const selectPage = (state) => state.posts.page;
-export const selectRowsPerPage = (state) => state.posts.rowsPerPage;
-export const selectTotal = (state) => state.posts.total;
-export const selectPostStore = (state) => state.posts;
-export const selectProgress = (state) => state.posts.progress;
-export const selectRowsPerPageOptions = (state) =>
+export const selectPostFormData = (state) => state.posts.formData;
+export const selectPostData = (state) => state.posts.data;
+export const selectPostLoading = (state) => state.posts.loading;
+export const selectPostError = (state) => state.posts.error;
+export const selectPostPagination = (state) => state.posts.pagination;
+export const selectPostFilters = (state) => state.posts.filters;
+export const selectPostSortBy = (state) => state.posts.sortBy;
+export const selectPostDescending = (state) => state.posts.descending;
+export const selectPostPage = (state) => state.posts.page;
+export const selectPostRowsPerPage = (state) => state.posts.rowsPerPage;
+export const selectPostTotal = (state) => state.posts.total;
+export const selectPostPostStore = (state) => state.posts;
+export const selectPostProgress = (state) => state.posts.progress;
+export const selectPostRowsPerPageOptions = (state) =>
   state.posts.rowsPerPageOptions;
