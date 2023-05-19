@@ -1,3 +1,4 @@
+import { debounce } from "lodash";
 import { useSelector } from "react-redux";
 
 const initialCommonState = {
@@ -40,6 +41,7 @@ const setCommonFilters = (state, action) => {
     [action.payload.name]: action.payload.value,
   };
 };
+
 const setCommonFormData = (state, action) => {
   state.formData = action.payload;
 };
@@ -52,6 +54,11 @@ const setCommonProgress = (state, action) => {
   state.progress = action.payload;
 };
 
+const deleteFilterKeys = (state, action) => {
+
+  delete state.filters[action.payload.keyName];
+};
+
 export {
   initialCommonState,
   setCommonPage,
@@ -62,4 +69,5 @@ export {
   setCommonFormData,
   clearCommonError,
   setCommonProgress,
+  deleteFilterKeys,
 };

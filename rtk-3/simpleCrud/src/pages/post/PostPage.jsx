@@ -1,48 +1,66 @@
-import {useMemo} from 'react'
-import {useFetchPostsQuery} from "../../redux/post/postApi.js";
-import DataTable from 'react-data-table-component';
+import { useMemo } from 'react'
+import { useFetchPostsQuery } from "../../redux/post/postApi.js";
 import Box from "@mui/material/Box";
-import {LinearProgress} from "@mui/material";
-import {useTableColumn} from "../../hooks/useTableColumn.jsx";
-import {useTable} from "../../hooks/useTable.js";
+import { useTableColumn } from "../../hooks/useTableColumn.jsx";
 import TextField from '@mui/material/TextField';
 import Grid from "@mui/material/Grid";
-import useStore, {storeName} from "../../hooks/useStore.js";
-
+import useStore, { storeName } from "../../hooks/useStore.js";
+import ListComponent from "../../component/frontend/crud/ListComponent.jsx";
+import { InputAdornment } from "@mui/material";
+import IconButton from "@mui/material/IconButton";
+import ClearIcon from '@mui/icons-material/Clear';
 const PostPage = () => {
 
-    const {postsColumn} = useTableColumn()//no
-    const {pagination, paginationComponentOptions, progress, filters, handleSort,
-        handlePerRowsChange,
-        handlePageChange,
-        handleRowSelected,
-        customStyles,
-        handleFilters,} = useStore(storeName.posts)
+    const { postsColumn } = useTableColumn()
+    const { pagination, filters, handleFilters,deleteFilterKeys } = useStore(storeName.posts)
 
-    const {data, error, isLoading, refetch} = useFetchPostsQuery({pagination, filters})//no
+    const { data, error, isLoading, refetch } = useFetchPostsQuery({ pagination, filters }, {
+        refetchOnMountOrArgChange: true,
+        refetchOnFocus: true,
+        refetchOnReconnect: true,
 
-    const {} = useTable({refetch, storeName: storeName.posts})
-
-
-    const CustomLoader = () => {
-        return <>
-            <Box sx={{width: '100%'}}>
-                <LinearProgress variant="determinate" value={progress}/>
-            </Box>
-        </>
-    }
+    })
 
     const subHeaderComponent = useMemo(() => {
         return (
             <Box>
                 <Grid container direction="row" paddingY={2} justifyContent="flex-start" alignItems="start">
                     <Grid item paddingRight={1} marginY={1}>
-                        <TextField name='id' value={filters.name} onChange={handleFilters} fullWidth size='small'
-                                   id="outlined-basic" label="Outlined" variant="filled"/>
+                        <TextField name='queryFilter' value={filters.queryFilter} onChange={handleFilters} fullWidth size='small'
+                            id="outlined-basic" label="Outlined" variant="filled"
+
+                            InputProps={{
+                                endAdornment: (
+                                    <IconButton
+                                        onClick={deleteFilterKeys('queryFilter')}
+                                    >
+                                        <ClearIcon />
+                                    </IconButton>
+                                ),
+                            }}
+                        />
                     </Grid>
                     <Grid item paddingRight={1} marginY={1}>
-                        <TextField name='names' value={filters.names} onChange={handleFilters} fullWidth size='small'
-                                   id="outlined-basic" label="Outlined" variant="filled"/>
+                        <TextField name='id' value={filters.id} onChange={handleFilters} fullWidth size='small'
+                            id="outlined-basic" label="Outlined" variant="filled" />
+                    </Grid>
+                    <Grid item paddingRight={1} marginY={1}>
+                        <TextField
+                            label="Clearable Input"
+                            value={filters.queryFilter}
+                            onChange={handleFilters}
+                            InputProps={{
+                                endAdornment: (
+                                    <InputAdornment position="end">
+                                        {filters.queryFilter && (
+                                            <IconButton onClick={handleFilters}>
+                                                <ClearIcon />
+                                            </IconButton>
+                                        )}
+                                    </InputAdornment>
+                                ),
+                            }}
+                        />
                     </Grid>
                 </Grid>
             </Box>
@@ -50,43 +68,24 @@ const PostPage = () => {
     }, []);
 
 
-    if (isLoading) {
-        return <div>Loading...</div>
-    } else if (error) {
-        return <div>
-            <pre>
-                {JSON.stringify(error, null, 3)}
-            </pre>
-        </div>
-    } else {
 
 
-        return (<div className="">
-                {subHeaderComponent}
-                <DataTable
-                    customStyles={customStyles}
-                    columns={postsColumn}
-                    data={data.data}
-                    progressPending={isLoading}
-                    progressComponent={<CustomLoader/>}
-                    sortServer
-                    onSort={handleSort}
-                    selectableRows
-                    onSelectedRowsChange={handleRowSelected}
-                    pagination
-                    paginationServer
-                    paginationTotalRows={data.meta.total}
-                    onChangeRowsPerPage={handlePerRowsChange}
-                    onChangePage={handlePageChange}
-                    paginationComponentOptions={paginationComponentOptions}
-                    highlightOnHover
-                    pointerOnHover
-                    fixedHeader
-                    persistTableHead
-                />
-            </div>
-        )
-    }
+
+    return (<div className="">
+        {data?.data &&
+            <ListComponent
+                data={data}
+                error={error}
+                isLoading={isLoading}
+                columns={postsColumn}
+                refetch={refetch}
+                storeName={storeName.posts}
+                subHeaderComponent={subHeaderComponent}
+            />
+        }
+    </div>
+    )
+
 }
 
 export default PostPage
