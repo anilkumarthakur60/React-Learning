@@ -76,6 +76,21 @@ function useStore(storeName) {
     };
     dispatch(filterAction);
   };
+  const clearFilterKeys = (keyName)=>() => {
+    const filterAction = {
+      type: `${storeName}/setFilters`,
+      payload: { name:keyName, value: null },
+    };
+    dispatch(filterAction);
+  };
+
+  const  allReset = () => {
+    const filterAction = {
+      type: `${storeName}/allReset`,
+      payload: {},
+    };
+    dispatch(filterAction);
+  }
 
   return {
     //state variables
@@ -101,6 +116,8 @@ function useStore(storeName) {
     customStyles,
     handleFilters,
     deleteFilterKeys,
+    clearFilterKeys,
+    allReset
   };
 }
 

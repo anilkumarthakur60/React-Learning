@@ -6,13 +6,24 @@ import TextField from '@mui/material/TextField';
 import Grid from "@mui/material/Grid";
 import useStore, { storeName } from "../../hooks/useStore.js";
 import ListComponent from "../../component/frontend/crud/ListComponent.jsx";
-import { InputAdornment } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import ClearIcon from '@mui/icons-material/Clear';
+import { useSelector } from "react-redux";
+import Button from "@mui/material/Button";
+import { Fab } from '@mui/material';
+
+import AddIcon from '@mui/icons-material/Add';
+import EditIcon from '@mui/icons-material/Edit';
+import RefreshIcon from '@mui/icons-material/Refresh';
+import FilterAltOffIcon from '@mui/icons-material/FilterAltOff';
+
+
 const PostPage = () => {
 
+
+    const { filters } = useSelector(state => state.posts)
     const { postsColumn } = useTableColumn()
-    const { pagination, filters, handleFilters,deleteFilterKeys } = useStore(storeName.posts)
+    const { pagination, handleFilters, clearFilterKeys, allReset } = useStore(storeName.posts)
 
     const { data, error, isLoading, refetch } = useFetchPostsQuery({ pagination, filters }, {
         refetchOnMountOrArgChange: true,
@@ -24,46 +35,37 @@ const PostPage = () => {
     const subHeaderComponent = useMemo(() => {
         return (
             <Box>
-                <Grid container direction="row" paddingY={2} justifyContent="flex-start" alignItems="start">
-                    <Grid item paddingRight={1} marginY={1}>
-                        <TextField name='queryFilter' value={filters.queryFilter} onChange={handleFilters} fullWidth size='small'
-                            id="outlined-basic" label="Outlined" variant="filled"
+                <Grid container direction="row" paddingY={2} justifyContent="flex-start" alignItems="start" spacing={2}>
+                    <Grid item>
+                        <TextField name='queryFilter' value={filters.queryFilter} onChange={handleFilters} fullWidth size='small' id="outlined-basic" label="Outlined" variant="filled" InputProps={{
+                            endAdornment: (
+                                <IconButton onClick={clearFilterKeys('queryFilter')}>
+                                    <ClearIcon />
+                                </IconButton>
+                            ),
+                        }} />
+                    </Grid>
+                    <Grid item>
+                        <TextField name='id' value={filters.id} onChange={handleFilters} fullWidth size='small' id="outlined-basic" label="Outlined" variant="filled" />
+                    </Grid>
+                    <Grid item>
 
-                            InputProps={{
-                                endAdornment: (
-                                    <IconButton
-                                        onClick={deleteFilterKeys('queryFilter')}
-                                    >
-                                        <ClearIcon />
-                                    </IconButton>
-                                ),
-                            }}
-                        />
-                    </Grid>
-                    <Grid item paddingRight={1} marginY={1}>
-                        <TextField name='id' value={filters.id} onChange={handleFilters} fullWidth size='small'
-                            id="outlined-basic" label="Outlined" variant="filled" />
-                    </Grid>
-                    <Grid item paddingRight={1} marginY={1}>
-                        <TextField
-                            label="Clearable Input"
-                            value={filters.queryFilter}
-                            onChange={handleFilters}
-                            InputProps={{
-                                endAdornment: (
-                                    <InputAdornment position="end">
-                                        {filters.queryFilter && (
-                                            <IconButton onClick={handleFilters}>
-                                                <ClearIcon />
-                                            </IconButton>
-                                        )}
-                                    </InputAdornment>
-                                ),
-                            }}
-                        />
+                        <Grid item container direction='row' alignItems="flex-start" spacing={1}>
+                            <Grid item>
+                                <Fab size='small' color="primary" aria-label="add" onClick={refetch}>
+                                    <FilterAltOffIcon />
+                                </Fab>
+                            </Grid>
+                            <Grid item>
+                                <Fab size='small' color="secondary" aria-label="edit" onClick={allReset}>
+                                    <RefreshIcon />
+                                </Fab>
+                            </Grid>
+                        </Grid>
                     </Grid>
                 </Grid>
             </Box>
+
         );
     }, []);
 
@@ -72,6 +74,14 @@ const PostPage = () => {
 
 
     return (<div className="">
+
+        {/* <pre>
+            {JSON.stringify(filters, null, 2)}
+            {JSON.stringify(pagination, null, 2)}
+
+        </pre> */}
+
+
         {data?.data &&
             <ListComponent
                 data={data}

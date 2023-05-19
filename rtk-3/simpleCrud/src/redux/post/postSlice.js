@@ -10,6 +10,7 @@ import {
   clearCommonError,
   setCommonProgress,
   deleteFilterKeys,
+  allReset,
 } from "../common/commonSliceHook.js";
 
 const postSlice = createSlice({
@@ -27,6 +28,7 @@ const postSlice = createSlice({
     clearError: clearCommonError,
     setProgress: setCommonProgress,
     deleteFilterKeys: deleteFilterKeys,
+    allReset:allReset
   },
 });
 

@@ -1,5 +1,4 @@
-import { debounce } from "lodash";
-import { useSelector } from "react-redux";
+
 
 const initialCommonState = {
   data: [],
@@ -21,6 +20,7 @@ const initialCommonState = {
     selectAllRowsItem: true,
     selectAllRowsItemText: "All",
   },
+  url: "",
 };
 
 const setCommonPage = (state, action) => {
@@ -36,10 +36,21 @@ const setCommonDescending = (state, action) => {
   state.pagination.descending = action.payload;
 };
 const setCommonFilters = (state, action) => {
-  state.filters = {
+
+  const { name, value } = action.payload;
+  const updatedFilters = {
     ...state.filters,
-    [action.payload.name]: action.payload.value,
+    [name]: value,
   };
+
+  return {
+    ...state,
+    filters: updatedFilters,
+  };
+  // state.filters = {
+  //   ...state.filters,
+  //   [action.payload.name]: action.payload.value,
+  // };
 };
 
 const setCommonFormData = (state, action) => {
@@ -59,6 +70,11 @@ const deleteFilterKeys = (state, action) => {
   delete state.filters[action.payload.keyName];
 };
 
+const  allReset = (state) => {
+    state = initialCommonState;
+    return state;
+}
+
 export {
   initialCommonState,
   setCommonPage,
@@ -70,4 +86,5 @@ export {
   clearCommonError,
   setCommonProgress,
   deleteFilterKeys,
+  allReset,
 };
