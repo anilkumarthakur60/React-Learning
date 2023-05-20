@@ -10,6 +10,8 @@ export const postApi = createApi({
       if (token) {
         header.set("Authorization", `Bearer ${token}`);
       }
+      header.set("Content-Type", "application/json")
+      header.set("Accept", "application/json")
       return header;
     },
   }),
@@ -22,20 +24,24 @@ export const postApi = createApi({
           filters: JSON.stringify(filters),
         },
       }),
+      providesTags: ["Post"],
     }),
     createPost: builder.mutation({
-      query: (post) => ({
+      query: (formData) => ({
         url: "",
         method: "POST",
-        data: post,
+        body: formData,
       }),
+      invalidatesTags: ["Post"],
     }),
     updatePost: builder.mutation({
       query: ({ id, ...post }) => ({
         url: `${id}`,
         method: "PUT",
-        data: post,
+        body: post,
       }),
+
+      invalidatesTags: ["Post"],
     }),
     deletePost: builder.mutation({
       query: ({ id }) => ({
@@ -43,6 +49,8 @@ export const postApi = createApi({
         method: "DELETE",
       }),
     }),
+
+    invalidatesTags: ["Post"],
   }),
 });
 

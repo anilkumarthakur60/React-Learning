@@ -104,11 +104,11 @@ function useStore(storeName) {
 
   const setFormData = ({ target }) => {
     const { name, value } = target;
-    const filterAction = {
+    const formAction = {
       type: `${storeName}/setFormData`,
       payload: { name, value },
     };
-    dispatch(filterAction);
+    dispatch(formAction);
   };
 
   const setShowModal = (val) => {

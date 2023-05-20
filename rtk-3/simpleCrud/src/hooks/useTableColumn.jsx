@@ -14,7 +14,7 @@ import RefreshIcon from "@mui/icons-material/Refresh.js";
 export function useTableColumn({ ...rest }) {
 
     const { handleDelete, refetch } = rest
-    const { handleEditFormData, handleFilters, filters, clearFilterKeys, allReset } = useStore(storeName.posts)
+    const { handleEditFormData, handleFilters, filters, clearFilterKeys, allReset,setShowModal } = useStore(storeName.posts)
 
     const postsColumn = [
         {
@@ -50,6 +50,7 @@ export function useTableColumn({ ...rest }) {
 
     const handleEdit = (val) => {
         handleEditFormData(val)
+        setShowModal(true)
     }
 
 

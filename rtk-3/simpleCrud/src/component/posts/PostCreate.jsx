@@ -30,12 +30,20 @@ const PostCreate = () => {
         setShowModal(false)
     };
 
-    const [createPost] = useCreatePostMutation()
+    const [createPost,{error}] = useCreatePostMutation()
 
 
     const handleSubmit = () => {
 
         createPost(formData)
+            .unwrap()
+            .then((response) => {
+                console.log("Post created:", response);
+                setShowModal(false)
+            })
+            .catch((error) => {
+                console.error("Error creating post:", error);
+            });
     }
 
 
@@ -62,7 +70,7 @@ const PostCreate = () => {
                             <CloseIcon />
                         </IconButton>
                         <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
-                            Sound
+                            Post Form
                         </Typography>
                         <Button autoFocus color="inherit" onClick={handleSubmit}>
                             save
@@ -72,14 +80,12 @@ const PostCreate = () => {
                 <Box>
                     <pre>
                         {JSON.stringify(formData)}
+                        {JSON.stringify(error)}
                     </pre>
                     <Grid container direction="row" paddingY={2} justifyContent="flex-start" alignItems="start" spacing={2}>
 
-                        <Grid item md={6}>
-                            <TextField name='name' value={formData.name ?? null} onChange={setFormData} fullWidth size='small' id="outlined-basic" label="Outlined" variant="filled" />
-                        </Grid>
-                        <Grid item md={6}>
-                            <TextField name='slug' value={formData.slug ?? null} onChange={setFormData} fullWidth size='small' id="outlined-basic" label="Outlined" variant="filled" />
+                        <Grid item >
+                            <TextField name="name" value={formData.name||""} onChange={setFormData} fullWidth size='small' id="outlined-basic" label="Outlined" variant="filled" />
                         </Grid>
 
                     </Grid>
