@@ -38,7 +38,7 @@ export const postApi = createApi({
       }),
     }),
     deletePost: builder.mutation({
-      query: (id) => ({
+      query: ({ id }) => ({
         url: `${id}`,
         method: "DELETE",
       }),

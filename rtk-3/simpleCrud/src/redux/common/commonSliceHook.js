@@ -91,6 +91,10 @@ const setCommonShowModal = (state, action) => {
   state.showModal = action.payload;
 };
 
+const setCommonEditFormData = (state, action) => {
+  state.formData = action.payload;
+};
+
 export {
   initialCommonState,
   setCommonPage,
@@ -107,4 +111,5 @@ export {
   setCommonShowModalFalse,
   setCommonShowModalTrue,
   setCommonShowModal,
+  setCommonEditFormData,
 };

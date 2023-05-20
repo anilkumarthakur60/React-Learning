@@ -6,7 +6,8 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import EditIcon from '@mui/icons-material/Edit';
 // eslint-disable-next-line react/prop-types
-export const CustomMaterialMenu = ({ row, onDeleteRow,onEditRow, size }) => {
+export const CustomMaterialMenu = ({ row, onDeleteRow, onEditRow, size }) => {
+
     const [anchorEl, setAnchorEl] = React.useState(null);
 
     const handleClick = (event) => {
@@ -20,11 +21,15 @@ export const CustomMaterialMenu = ({ row, onDeleteRow,onEditRow, size }) => {
         if (onDeleteRow) {
             onDeleteRow(row);
         }
+        setAnchorEl(false)
     };
-   const editRow = () => {
+
+    const editRow = () => {
         if (onEditRow) {
             onEditRow(row);
         }
+
+        setAnchorEl(false)
     };
 
 

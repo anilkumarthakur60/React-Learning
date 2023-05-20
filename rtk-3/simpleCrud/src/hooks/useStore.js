@@ -13,6 +13,7 @@ function useStore(storeName) {
     filters,
     progress,
     paginationComponentOptions,
+    showModal,
   } = useSelector((state) => state[storeName]);
 
   const { page, rowsPerPage, sortBy, descending, total } = pagination;
@@ -69,28 +70,54 @@ function useStore(storeName) {
     dispatch(filterAction);
   }, 500);
 
-  const deleteFilterKeys = (keyName)=>() => {
+  const deleteFilterKeys = (keyName) => () => {
     const filterAction = {
       type: `${storeName}/deleteFilterKeys`,
       payload: { keyName },
     };
     dispatch(filterAction);
   };
-  const clearFilterKeys = (keyName)=>() => {
+  const clearFilterKeys = (keyName) => () => {
     const filterAction = {
       type: `${storeName}/setFilters`,
-      payload: { name:keyName, value: null },
+      payload: { name: keyName, value: null },
     };
     dispatch(filterAction);
   };
 
-  const  allReset = () => {
+  const allReset = () => {
     const filterAction = {
       type: `${storeName}/allReset`,
       payload: {},
     };
     dispatch(filterAction);
-  }
+  };
+
+  const handleEditFormData = (data) => {
+    console.log("handleEditFormData---------------", data);
+    const formDataAction = {
+      type: `${storeName}/setEditFormData`,
+      payload: data,
+    };
+    dispatch(formDataAction);
+  };
+
+  const setFormData = ({ target }) => {
+    const { name, value } = target;
+    const filterAction = {
+      type: `${storeName}/setFormData`,
+      payload: { name, value },
+    };
+    dispatch(filterAction);
+  };
+
+  const setShowModal = (val) => {
+    const filterAction = {
+      type: `${storeName}/setShowModal`,
+      payload: val,
+    };
+    dispatch(filterAction);
+  };
 
   return {
     //state variables
@@ -107,6 +134,7 @@ function useStore(storeName) {
     sortBy,
     descending,
     total,
+    showModal,
 
     //functions
     handleSort,
@@ -117,7 +145,10 @@ function useStore(storeName) {
     handleFilters,
     deleteFilterKeys,
     clearFilterKeys,
-    allReset
+    allReset,
+    handleEditFormData,
+    setFormData,
+    setShowModal,
   };
 }
 
