@@ -50,9 +50,6 @@ const PostCreate = () => {
     return (<>
 
         <div className="">
-            <Button variant="outlined" onClick={handleClickOpen}>
-                Open full-screen dialog
-            </Button>
             <Dialog
                 fullScreen
                 open={showModal}

@@ -95,6 +95,14 @@ const setCommonEditFormData = (state, action) => {
   state.formData = action.payload;
 };
 
+
+const  setCommonFilterNull = (state) => {
+    state.filters = {};
+}
+const setCommonFormDataNull = (state) => {
+    state.formData = {};
+}
+
 export {
   initialCommonState,
   setCommonPage,
@@ -112,4 +120,6 @@ export {
   setCommonShowModalTrue,
   setCommonShowModal,
   setCommonEditFormData,
+  setCommonFilterNull,
+  setCommonFormDataNull
 };

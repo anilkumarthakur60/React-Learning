@@ -4,13 +4,13 @@ import { useTableColumn } from "../../hooks/useTableColumn.jsx";
 import useStore, { storeName } from "../../hooks/useStore.js";
 import ListComponent from "../../component/frontend/crud/ListComponent.jsx";
 import { useSelector } from "react-redux";
+import PostCreate from "./PostCreate.jsx";
 
 function PostComponent() {
-    const { filters } = useSelector(state => state.posts)
 
     const [deletePost] = useDeletePostMutation()
 
-    const { pagination, formData } = useStore(storeName.posts)
+    const { pagination,filters } = useStore(storeName.posts)
     const { data, error, refetch, status, isUninitialized, isLoading, isSuccess, isError, } = useFetchPostsQuery({ pagination, filters }, {
         refetchOnMountOrArgChange: true,
         refetchOnFocus: true,
@@ -31,10 +31,6 @@ function PostComponent() {
     return (<div className="">
 
 
-        <pre>
-            {JSON.stringify(formData, null, 2)}
-        </pre>
-
         {data?.data &&
             <ListComponent
                 data={data}
@@ -50,6 +46,8 @@ function PostComponent() {
                 subHeaderComponent={subHeaderComponent}
             />
         }
+
+            <PostCreate />
     </div>
     )
 }

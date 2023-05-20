@@ -16,6 +16,8 @@ import {
   setCommonShowModalTrue,
   setCommonShowModal,
   setCommonEditFormData,
+  setCommonFilterNull,
+  setCommonFormDataNull
 } from "../common/commonSliceHook.js";
 
 const postSlice = createSlice({
@@ -39,6 +41,10 @@ const postSlice = createSlice({
     setModalTrue: setCommonShowModalTrue,
     setShowModal: setCommonShowModal,
     setEditFormData: setCommonEditFormData,
+    setFormDataNull:setCommonFormDataNull,
+    setFilterNull:setCommonFilterNull,
+
+
   },
 });
 
@@ -59,6 +65,7 @@ export const {
   setModalTrue,
   setShowModal,
   setEditFormData,
+  setFormDataNull,
 } = postSlice.actions;
 
 export const selectPostFormData = (state) => state.posts.formData;

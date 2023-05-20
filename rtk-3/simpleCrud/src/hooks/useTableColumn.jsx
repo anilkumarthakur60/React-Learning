@@ -9,12 +9,12 @@ import ClearIcon from "@mui/icons-material/Clear.js";
 import { Fab } from "@mui/material";
 import FilterAltOffIcon from "@mui/icons-material/FilterAltOff.js";
 import RefreshIcon from "@mui/icons-material/Refresh.js";
-
+import AddIcon from '@mui/icons-material/Add';
 
 export function useTableColumn({ ...rest }) {
 
     const { handleDelete, refetch } = rest
-    const { handleEditFormData, handleFilters, filters, clearFilterKeys, allReset,setShowModal } = useStore(storeName.posts)
+    const { handleEditFormData, handleFilters, filters, clearFilterKeys, allReset, setShowModal,setFormDataNull } = useStore(storeName.posts)
 
     const postsColumn = [
         {
@@ -53,6 +53,11 @@ export function useTableColumn({ ...rest }) {
         setShowModal(true)
     }
 
+    const showFormDialogue = () => {
+        setFormDataNull()
+        setShowModal(true)
+    }
+
 
 
     const subHeaderComponent = useMemo(() => {
@@ -82,6 +87,11 @@ export function useTableColumn({ ...rest }) {
                             <Grid item>
                                 <Fab size='small' color="secondary" aria-label="edit" onClick={allReset}>
                                     <RefreshIcon />
+                                </Fab>
+                            </Grid>
+                            <Grid item>
+                                <Fab size='small' color="secondary" aria-label="edit" onClick={showFormDialogue}>
+                                    <AddIcon />
                                 </Fab>
                             </Grid>
 
