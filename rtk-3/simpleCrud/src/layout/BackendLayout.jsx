@@ -28,7 +28,9 @@ import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-
+import RssFeedIcon from '@mui/icons-material/RssFeed';
+import SignpostIcon from '@mui/icons-material/Signpost';
+import DynamicFeedIcon from '@mui/icons-material/DynamicFeed';
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -149,16 +151,19 @@ export default function BackendLayout() {
         },
         {
             name: 'Dashboard',
-            path: '/dashboard'
+            path: '/dashboard',
+            icon: <RssFeedIcon />
         },
         {
             name: 'Posts',
-            path: '/dashboard/posts'
+            path: '/dashboard/posts',
+            icon: <SignpostIcon />
         },
 
         {
             name: 'Blog',
-            path: '/dashboard/blogs'
+            path: '/dashboard/blogs',
+            icon: <DynamicFeedIcon />
         }
     ]
 
@@ -195,6 +200,8 @@ export default function BackendLayout() {
     const handleNavigate = text => {
         navigate(text)
     }
+
+
 
 
 
@@ -352,7 +359,7 @@ export default function BackendLayout() {
 
             {renderMobileMenu}
             {renderMenu}
-            <Drawer variant="permanent" open={open} >
+            <Drawer variant="permanent" open={open} onMouseLeave={() => setOpen(false)} onMouseEnter={() => setOpen(true)} >
                 <DrawerHeader>
                     <IconButton onClick={handleDrawerClose}>
                         {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}

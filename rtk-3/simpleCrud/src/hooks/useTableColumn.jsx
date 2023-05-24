@@ -14,7 +14,7 @@ import AddIcon from '@mui/icons-material/Add';
 export function useTableColumn({ ...rest }) {
 
     const { handleDelete, refetch } = rest
-    const { handleEditFormData, handleFilters, filters, clearFilterKeys, allReset, setShowModal,setFormDataNull } = useStore(storeName.posts)
+    const { handleEditFormData, handleFilters, filters, clearFilterKeys, allReset, setShowModal, setFormDataNull } = useStore(storeName.posts)
 
     const postsColumn = [
         {
