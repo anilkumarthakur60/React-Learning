@@ -361,6 +361,7 @@ export default function BackendLayout() {
             {renderMenu}
             <Drawer variant="permanent" open={open}  onMouseEnter={() => setOpen(true)} >
                 <DrawerHeader>
+                    Admin
                     <IconButton onClick={handleDrawerClose}>
                         {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
                     </IconButton>
