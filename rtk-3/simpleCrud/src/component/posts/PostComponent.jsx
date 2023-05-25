@@ -10,10 +10,9 @@ function PostComponent() {
 
     const [deletePost] = useDeletePostMutation()
 
-    const { pagination,filters } = useStore(storeName.posts)
+    const { pagination, filters } = useStore(storeName.posts)
     const { data, error, refetch, status, isUninitialized, isLoading, isSuccess, isError, } = useFetchPostsQuery({ pagination, filters }, {
         refetchOnMountOrArgChange: true,
-        refetchOnFocus: true,
         refetchOnReconnect: true,
     })
 
@@ -47,7 +46,7 @@ function PostComponent() {
             />
         }
 
-            <PostCreate />
+        <PostCreate />
     </div>
     )
 }

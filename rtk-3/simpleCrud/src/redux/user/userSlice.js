@@ -20,13 +20,14 @@ import {
   setCommonFormDataNull,
 } from "../common/commonSliceHook.js";
 
-console.log(`initialCommonState`, initialCommonState);
-
 const userSlice = createSlice({
   name: "users",
   initialState: {
     ...initialCommonState,
-    formData: {},
+    formData: {
+      email: "admin@gmail.com",
+        password: "password",
+    },
   },
   reducers: {
     setPage: setCommonPage,

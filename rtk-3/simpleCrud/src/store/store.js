@@ -7,7 +7,7 @@ import { userApi } from "../redux/user/userApi.js";
 
 const rootReducer = combineReducers({
   posts: postReducer,
-  user: userReducer,
+  users: userReducer,
   [postApi.reducerPath]: postApi.reducer,
   [userApi.reducerPath]: userApi.reducer,
 });

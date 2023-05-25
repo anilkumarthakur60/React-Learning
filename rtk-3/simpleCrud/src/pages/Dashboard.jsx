@@ -1,4 +1,3 @@
-import ProfileMenu from "../layout/ProfileMenu";
 
 export function Dashboard() {
 	return (

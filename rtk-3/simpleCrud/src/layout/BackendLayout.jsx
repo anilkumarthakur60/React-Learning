@@ -16,9 +16,8 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-import { Outlet, useNavigate } from 'react-router-dom';
+import {Navigate, Outlet, useNavigate} from 'react-router-dom';
 
 import MoreIcon from '@mui/icons-material/MoreVert';
 import SearchIcon from '@mui/icons-material/Search';
@@ -28,7 +27,6 @@ import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import RssFeedIcon from '@mui/icons-material/RssFeed';
 import SignpostIcon from '@mui/icons-material/Signpost';
 import DynamicFeedIcon from '@mui/icons-material/DynamicFeed';
 import ProfileMenu from './ProfileMenu';
@@ -37,8 +35,9 @@ import PropTypes from 'prop-types';
 
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { Fab, Fade, useScrollTrigger } from '@mui/material';
-import { red } from '@mui/material/colors';
 import HomeIcon from '@mui/icons-material/Home';
+import {useProfileDetailQuery} from "../redux/user/userApi.js";
+import {useEffect} from "react";
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -151,6 +150,21 @@ export default function BackendLayout() {
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
 
+
+    const navigate = useNavigate();
+    const {data}=useProfileDetailQuery();
+
+    useEffect(()=>{
+        setTimeout(()=>{
+            if(!data?.data?.id){
+                navigate('/login')
+            }
+        },1000)
+        console.log('layout page',data)
+    },[data])
+
+
+
     const navItemsData = [
         {
             name: 'Home',
@@ -199,7 +213,6 @@ export default function BackendLayout() {
     const handleMobileMenuOpen = (event) => {
         setMobileMoreAnchorEl(event.currentTarget);
     };
-    const navigate = useNavigate()
 
     const handleNavigate = text => {
         navigate(text)
@@ -285,6 +298,9 @@ export default function BackendLayout() {
             </MenuItem>
         </Menu>
     );
+
+
+
 
     return (
         <Box sx={{ display: 'flex' }}>
@@ -422,8 +438,14 @@ export default function BackendLayout() {
             </Drawer>
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
                 <DrawerHeader id="back-to-top-anchor" />
+
                 <Outlet />
 
+                {
+                    data?.data?.id? <Outlet /> : (
+                        <Navigate to="/login" replace={true} />
+                    )
+                }
                 <ScrollTop >
                     <Fab size="small" aria-label="scroll back to top">
                         <KeyboardArrowUpIcon />

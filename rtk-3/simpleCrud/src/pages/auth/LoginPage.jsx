@@ -16,8 +16,7 @@ import { useNavigate } from 'react-router-dom'
 
 import loginPageImage from '../../assets/loginPageImage.png'
 import useStore, { storeName } from '../../hooks/useStore';
-import { useSelector } from 'react-redux';
-import { selectUserFormData } from '../../redux/user/userSlice';
+import { useLoginMutation } from '../../redux/user/userApi';
 
 function Copyright(props) {
     return (
@@ -37,21 +36,35 @@ const defaultTheme = createTheme();
 
 function LoginPage() {
 
+
+    const navigate = useNavigate();
+    const [login, { error }] = useLoginMutation()
+
+
+    console.log(`page re render`);
+
     const handleSubmit = (event) => {
         event.preventDefault();
-        const data = new FormData(event.currentTarget);
-        console.log({
-            email: data.get('email'),
-            password: data.get('password'),
-        });
+        // const data = new FormData(event.currentTarget);
+        // console.log({
+        //     email: data.get('email'),
+        //     password: data.get('password'),
+        // });
+        console.log(formData);
+        login(formData)
+            .unwrap()
+            .then(({ data }) => {
+                const {access_token } = data
+                localStorage.setItem('access_token', access_token)
+                navigate('/dashboard')
+            })
+            .catch((error) => {
+                console.error("Error creating post:", error);
+            });
+
     };
-    const navigate = useNavigate();
 
-    // const { formData } = useSelector((state) => state.posts);
-
-    // const formDatas = useSelector(selectUserFormData)
-
-
+    const { formData, setFormData } = useStore(storeName.users)
 
     return (<ThemeProvider theme={defaultTheme}>
         <Grid container component="main" sx={{ height: '100vh' }}>
@@ -87,7 +100,13 @@ function LoginPage() {
                     <Typography component="h1" variant="h5">
                         Sign in
                     </Typography>
-                    <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
+                    <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
+
+                        <pre>
+                            {JSON.stringify(error)}
+
+                            {JSON.stringify(formData)}
+                        </pre>
 
                         <TextField
                             margin="normal"
@@ -97,6 +116,8 @@ function LoginPage() {
                             label="Email Address"
                             name="email"
                             autoComplete="email"
+                            value={formData.email || ""}
+                            onChange={setFormData}
                             autoFocus
                         />
                         <TextField
@@ -104,9 +125,11 @@ function LoginPage() {
                             required
                             fullWidth
                             name="password"
+                            value={formData.password || ""}
                             label="Password"
                             type="password"
                             id="password"
+                            onChange={setFormData}
                             autoComplete="current-password"
                         />
                         <FormControlLabel
@@ -114,7 +137,8 @@ function LoginPage() {
                             label="Remember me"
                         />
                         <Button
-                            type="submit"
+
+                            onClick={handleSubmit}
                             fullWidth
                             variant="contained"
                             sx={{ mt: 3, mb: 2 }}

@@ -1,7 +1,10 @@
 export function Index() {
 	return (
 		<>
-			Index
+			<div className="">
+
+				{JSON.stringify(import.meta.env, null, 2)}
+			</div>
 		</>
 	)
 }
