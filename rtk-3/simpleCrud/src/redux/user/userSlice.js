@@ -20,9 +20,14 @@ import {
   setCommonFormDataNull,
 } from "../common/commonSliceHook.js";
 
+console.log(`initialCommonState`, initialCommonState);
+
 const userSlice = createSlice({
   name: "users",
-  initialState: initialCommonState,
+  initialState: {
+    ...initialCommonState,
+    formData: {},
+  },
   reducers: {
     setPage: setCommonPage,
     setRowsPerPage: setCommonRowsPerPage,
@@ -63,3 +68,19 @@ export const {
   setEditFormData,
   setFormDataNull,
 } = userSlice.actions;
+
+export const selectUserFormData = (state) => state.users.formData;
+export const selectUserData = (state) => state.users.data;
+export const selectUserLoading = (state) => state.users.loading;
+export const selectUserError = (state) => state.users.error;
+export const selectUserPagination = (state) => state.users.pagination;
+export const selectUserFilters = (state) => state.users.filters;
+export const selectUserSortBy = (state) => state.users.sortBy;
+export const selectUserDescending = (state) => state.users.descending;
+export const selectUserPage = (state) => state.users.page;
+export const selectUserRowsPerPage = (state) => state.users.rowsPerPage;
+export const selectUserTotal = (state) => state.users.total;
+export const selectUserPostStore = (state) => state.posts;
+export const selectUserProgress = (state) => state.users.progress;
+export const selectUserRowsPerPageOptions = (state) =>
+  state.users.rowsPerPageOptions;

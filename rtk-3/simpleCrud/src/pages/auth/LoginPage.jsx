@@ -16,6 +16,8 @@ import { useNavigate } from 'react-router-dom'
 
 import loginPageImage from '../../assets/loginPageImage.png'
 import useStore, { storeName } from '../../hooks/useStore';
+import { useSelector } from 'react-redux';
+import { selectUserFormData } from '../../redux/user/userSlice';
 
 function Copyright(props) {
     return (
@@ -45,7 +47,9 @@ function LoginPage() {
     };
     const navigate = useNavigate();
 
-    const { formData } = useStore(storeName.posts)
+    // const { formData } = useSelector((state) => state.posts);
+
+    // const formDatas = useSelector(selectUserFormData)
 
 
 
@@ -84,9 +88,7 @@ function LoginPage() {
                         Sign in
                     </Typography>
                     <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
-                        <pre>
-                            {JSON.stringify(formData, null, 2)}
-                        </pre>
+
                         <TextField
                             margin="normal"
                             required

@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { indigo } from "@mui/material/colors";
 import { debounce } from "lodash";
 
-function useStore(storeName) {
+function useStore(store_name) {
   const dispatch = useDispatch();
   const {
     data,
@@ -14,19 +14,19 @@ function useStore(storeName) {
     progress,
     paginationComponentOptions,
     showModal,
-  } = useSelector((state) => state[storeName]);
+  } = useSelector((state) => state[store_name]);
 
   const { page, rowsPerPage, sortBy, descending, total } = pagination;
 
   const handleSort = (column, sortDirection) => {
     const sortByAction = {
-      type: `${storeName}/setSortBy`,
+      type: `${store_name}/setSortBy`,
       payload: column.sortField,
     };
     dispatch(sortByAction);
 
     const descendingAction = {
-      type: `${storeName}/setDescending`,
+      type: `${store_name}/setDescending`,
       payload: sortDirection === "desc",
     };
     dispatch(descendingAction);
@@ -34,16 +34,16 @@ function useStore(storeName) {
 
   const handlePerRowsChange = (newPerPage, page) => {
     const rowsPerPageAction = {
-      type: `${storeName}/setRowsPerPage`,
+      type: `${store_name}/setRowsPerPage`,
       payload: newPerPage,
     };
     dispatch(rowsPerPageAction);
 
-    const pageAction = { type: `${storeName}/setPage`, payload: page };
+    const pageAction = { type: `${store_name}/setPage`, payload: page };
     dispatch(pageAction);
   };
   const handlePageChange = (page) => {
-    const pageAction = { type: `${storeName}/setPage`, payload: page };
+    const pageAction = { type: `${store_name}/setPage`, payload: page };
     dispatch(pageAction);
   };
 
@@ -64,7 +64,7 @@ function useStore(storeName) {
   const handleFilters = debounce(({ target }) => {
     const { name, value } = target;
     const filterAction = {
-      type: `${storeName}/setFilters`,
+      type: `${store_name}/setFilters`,
       payload: { name, value },
     };
     dispatch(filterAction);
@@ -72,14 +72,14 @@ function useStore(storeName) {
 
   const deleteFilterKeys = (keyName) => () => {
     const filterAction = {
-      type: `${storeName}/deleteFilterKeys`,
+      type: `${store_name}/deleteFilterKeys`,
       payload: { keyName },
     };
     dispatch(filterAction);
   };
   const clearFilterKeys = (keyName) => () => {
     const filterAction = {
-      type: `${storeName}/setFilters`,
+      type: `${store_name}/setFilters`,
       payload: { name: keyName, value: null },
     };
     dispatch(filterAction);
@@ -87,7 +87,7 @@ function useStore(storeName) {
 
   const allReset = () => {
     const filterAction = {
-      type: `${storeName}/allReset`,
+      type: `${store_name}/allReset`,
       payload: {},
     };
     dispatch(filterAction);
@@ -96,7 +96,7 @@ function useStore(storeName) {
   const handleEditFormData = (data) => {
     console.log("handleEditFormData---------------", data);
     const formDataAction = {
-      type: `${storeName}/setEditFormData`,
+      type: `${store_name}/setEditFormData`,
       payload: data,
     };
     dispatch(formDataAction);
@@ -105,7 +105,7 @@ function useStore(storeName) {
   const setFormData = ({ target }) => {
     const { name, value } = target;
     const formAction = {
-      type: `${storeName}/setFormData`,
+      type: `${store_name}/setFormData`,
       payload: { name, value },
     };
     dispatch(formAction);
@@ -113,7 +113,7 @@ function useStore(storeName) {
 
   const setShowModal = (val) => {
     const filterAction = {
-      type: `${storeName}/setShowModal`,
+      type: `${store_name}/setShowModal`,
       payload: val,
     };
     dispatch(filterAction);
@@ -121,7 +121,7 @@ function useStore(storeName) {
 
   const setFormDataNull = () => {
     const filterAction = {
-      type: `${storeName}/setFormDataNull`,
+      type: `${store_name}/setFormDataNull`,
       payload: {},
     };
     dispatch(filterAction);
@@ -163,7 +163,7 @@ function useStore(storeName) {
 
 export default useStore;
 export const storeName = {
-  posts: "posts",
   users: "users",
+  posts: "posts",
   roles: "roles",
 };
