@@ -36,7 +36,9 @@ import ProfileMenu from './ProfileMenu';
 import PropTypes from 'prop-types';
 
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import { Container, Fab, Fade, useScrollTrigger } from '@mui/material';
+import { Fab, Fade, useScrollTrigger } from '@mui/material';
+import { red } from '@mui/material/colors';
+import HomeIcon from '@mui/icons-material/Home';
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -155,11 +157,7 @@ export default function BackendLayout() {
             path: '/',
             icon: <AccountCircle />
         },
-        {
-            name: 'Dashboard',
-            path: '/dashboard',
-            icon: <RssFeedIcon />
-        },
+
         {
             name: 'Posts',
             path: '/dashboard/posts',
@@ -371,37 +369,31 @@ export default function BackendLayout() {
             {renderMenu}
             <Drawer variant="permanent" open={open} onMouseEnter={() => setOpen(true)} >
                 <DrawerHeader>
-                    Admin
+                    <List
+                        sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
+                        component="nav"
+                        aria-labelledby="nested-list-subheader"
+                    >
+                        <ListItemButton sx={{
+                            px: '2.5'
+                        }} onClick={() => navigate('/dashboard')}>
+                            <ListItemIcon sx={{
+                                minWidth: 0,
+                                mr: open ? 3 : 'auto',
+                                justifyContent: 'center',
+                            }} >
+                                <HomeIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="Dashboard" />
+                        </ListItemButton>
+                    </List>
                     <IconButton onClick={handleDrawerClose}>
                         {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
                     </IconButton>
                 </DrawerHeader>
                 <Divider />
-                <List>
-                    {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                        <ListItem key={text} disablePadding sx={{ display: 'block' }} >
-                            <ListItemButton
-                                sx={{
-                                    minHeight: 48,
-                                    justifyContent: open ? 'initial' : 'center',
-                                    px: 2.5,
-                                }}
-                            >
-                                <ListItemIcon
-                                    sx={{
-                                        minWidth: 0,
-                                        mr: open ? 3 : 'auto',
-                                        justifyContent: 'center',
-                                    }}
-                                >
-                                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                                </ListItemIcon>
-                                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-                            </ListItemButton>
-                        </ListItem>
-                    ))}
-                </List>
-                <Divider />
+
+                {/* <Divider /> */}
                 <List>
                     {navItemsData.map((text, index) => (
                         <ListItem key={index} disablePadding sx={{ display: 'block' }} onClick={() => handleNavigate(text.path)}>
