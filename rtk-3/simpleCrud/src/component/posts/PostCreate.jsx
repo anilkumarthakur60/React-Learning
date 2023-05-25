@@ -38,7 +38,6 @@ const PostCreate = () => {
         createPost(formData)
             .unwrap()
             .then((response) => {
-                console.log("Post created:", response);
                 setShowModal(false)
             })
             .catch((error) => {

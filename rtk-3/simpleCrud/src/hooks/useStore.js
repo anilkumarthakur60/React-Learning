@@ -48,7 +48,6 @@ function useStore(store_name) {
   };
 
   const handleRowSelected = ({ selectedRows }) => {
-    console.log("---------data logging--------", selectedRows);
   };
 
   const customStyles = {
@@ -94,7 +93,6 @@ function useStore(store_name) {
   };
 
   const handleEditFormData = (data) => {
-    console.log("handleEditFormData---------------", data);
     const formDataAction = {
       type: `${store_name}/setEditFormData`,
       payload: data,

@@ -160,7 +160,6 @@ export default function BackendLayout() {
                 navigate('/login')
             }
         },1000)
-        console.log('layout page',data)
     },[data])
 
 

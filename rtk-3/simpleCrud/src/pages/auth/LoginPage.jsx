@@ -41,7 +41,6 @@ function LoginPage() {
     const [login, { error }] = useLoginMutation()
 
 
-    console.log(`page re render`);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -50,7 +49,6 @@ function LoginPage() {
         //     email: data.get('email'),
         //     password: data.get('password'),
         // });
-        console.log(formData);
         login(formData)
             .unwrap()
             .then(({ data }) => {
