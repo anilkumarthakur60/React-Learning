@@ -7,12 +7,17 @@ import store from "./store/store.js";
 import 'antd/dist/reset.css'
 
 import { StyledEngineProvider } from '@mui/material/styles';
+import { ThemeProvider } from 'styled-components';
+import { theme } from './theme.js';
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
         <Provider store={store}>
 
             <StyledEngineProvider injectFirst>
-                <App />
+
+                <ThemeProvider theme={theme}>
+                    <App />
+                </ThemeProvider>
             </StyledEngineProvider>
         </Provider>
     </React.StrictMode>,

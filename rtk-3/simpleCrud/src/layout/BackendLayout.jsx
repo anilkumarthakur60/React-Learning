@@ -31,6 +31,12 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import RssFeedIcon from '@mui/icons-material/RssFeed';
 import SignpostIcon from '@mui/icons-material/Signpost';
 import DynamicFeedIcon from '@mui/icons-material/DynamicFeed';
+import ProfileMenu from './ProfileMenu';
+
+import PropTypes from 'prop-types';
+
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import { Container, Fab, Fade, useScrollTrigger } from '@mui/material';
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -207,24 +213,27 @@ export default function BackendLayout() {
 
     const menuId = 'primary-search-account-menu';
     const renderMenu = (
-        <Menu
-            anchorEl={anchorEl}
-            anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-            }}
-            id={menuId}
-            keepMounted
-            transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-            }}
-            open={isMenuOpen}
-            onClose={handleMenuClose}
-        >
-            <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-            <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-        </Menu>
+        <>
+            <Menu
+                anchorEl={anchorEl}
+                anchorOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right',
+                }}
+                id={menuId}
+                keepMounted
+                transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right',
+                }}
+                open={isMenuOpen}
+                onClose={handleMenuClose}
+            >
+                <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+                <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+            </Menu>
+        </>
+
     );
 
     const mobileMenuId = 'primary-search-account-menu-mobile';
@@ -255,10 +264,10 @@ export default function BackendLayout() {
             <MenuItem>
                 <IconButton
                     size="large"
-                    aria-label="show 17 new notifications"
+                    aria-label="show 59 new notifications"
                     color="inherit"
                 >
-                    <Badge badgeContent={17} color="error">
+                    <Badge badgeContent={59} color="error">
                         <NotificationsIcon />
                     </Badge>
                 </IconButton>
@@ -282,7 +291,7 @@ export default function BackendLayout() {
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <AppBar position="fixed" open={open}>
+            <AppBar position="fixed" open={open}  >
                 <Toolbar>
                     <IconButton
 
@@ -321,10 +330,10 @@ export default function BackendLayout() {
                         </IconButton>
                         <IconButton
                             size="large"
-                            aria-label="show 17 new notifications"
+                            aria-label="show 97 new notifications"
                             color="inherit"
                         >
-                            <Badge badgeContent={17} color="error">
+                            <Badge badgeContent={97} color="error">
                                 <NotificationsIcon />
                             </Badge>
                         </IconButton>
@@ -339,6 +348,7 @@ export default function BackendLayout() {
                         >
                             <AccountCircle />
                         </IconButton>
+                        <ProfileMenu />
                     </Box>
                     <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
@@ -359,7 +369,7 @@ export default function BackendLayout() {
 
             {renderMobileMenu}
             {renderMenu}
-            <Drawer variant="permanent" open={open}  onMouseEnter={() => setOpen(true)} >
+            <Drawer variant="permanent" open={open} onMouseEnter={() => setOpen(true)} >
                 <DrawerHeader>
                     Admin
                     <IconButton onClick={handleDrawerClose}>
@@ -419,9 +429,56 @@ export default function BackendLayout() {
                 </List>
             </Drawer>
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-                <DrawerHeader />
+                <DrawerHeader id="back-to-top-anchor" />
+
                 <Outlet />
+
+                <ScrollTop >
+                    <Fab size="small" aria-label="scroll back to top">
+                        <KeyboardArrowUpIcon />
+                    </Fab>
+                </ScrollTop>
+
             </Box>
         </Box >
     );
 }
+
+
+function ScrollTop(props) {
+    const { children, window } = props;
+    const trigger = useScrollTrigger({
+        target: window ? window() : undefined,
+        disableHysteresis: true,
+        threshold: 100,
+    });
+
+    const handleClick = (event) => {
+        const anchor = (event.target.ownerDocument || document).querySelector(
+            '#back-to-top-anchor',
+        );
+
+        if (anchor) {
+            anchor.scrollIntoView({
+                block: 'center',
+            });
+        }
+    };
+
+    return (
+        <Fade in={trigger}>
+            <Box
+                onClick={handleClick}
+                role="presentation"
+                sx={{ position: 'fixed', bottom: 16, right: 16 }}
+            >
+                {children}
+            </Box>
+        </Fade>
+    );
+}
+
+ScrollTop.propTypes = {
+    children: PropTypes.element.isRequired,
+    window: PropTypes.func,
+};
