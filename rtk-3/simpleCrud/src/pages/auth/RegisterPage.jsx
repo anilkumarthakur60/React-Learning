@@ -12,9 +12,9 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Link as RouterLink } from 'react-router-dom'
 
 import loginPageImage from '../../assets/loginPageImage.png'
+import { useNavigate } from 'react-router-dom';
 
 function Copyright(props) {
     return (
@@ -42,6 +42,9 @@ function RegisterPage() {
             password: data.get('password'),
         });
     };
+
+    const navigate = useNavigate();
+
 
     return (<ThemeProvider theme={defaultTheme}>
         <Grid container component="main" sx={{ height: '100vh' }}>
@@ -117,13 +120,11 @@ function RegisterPage() {
                                 </Link>
                             </Grid>
                             <Grid item>
-                                <RouterLink to={'/register'}>
 
+                                <Link variant="body2" onClick={() => navigate('/login')}>
                                     {"Don't have an account? Sign Up"}
-
-                                </RouterLink>
-                                <Link href="#" variant="body2">
                                 </Link>
+
                             </Grid>
                         </Grid>
                         <Copyright sx={{ mt: 5 }} />
