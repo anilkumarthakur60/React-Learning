@@ -119,13 +119,13 @@ function useStore(storeName) {
     dispatch(filterAction);
   };
 
-  const  setFormDataNull = () => {
+  const setFormDataNull = () => {
     const filterAction = {
       type: `${storeName}/setFormDataNull`,
       payload: {},
     };
     dispatch(filterAction);
-  }
+  };
 
   return {
     //state variables
@@ -157,7 +157,7 @@ function useStore(storeName) {
     handleEditFormData,
     setFormData,
     setShowModal,
-    setFormDataNull
+    setFormDataNull,
   };
 }
 

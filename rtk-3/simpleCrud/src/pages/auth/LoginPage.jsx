@@ -15,6 +15,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom'
 
 import loginPageImage from '../../assets/loginPageImage.png'
+import useStore, { storeName } from '../../hooks/useStore';
 
 function Copyright(props) {
     return (
@@ -43,6 +44,8 @@ function LoginPage() {
         });
     };
     const navigate = useNavigate();
+
+    const { formData } = useStore(storeName.posts)
 
 
 
@@ -81,6 +84,9 @@ function LoginPage() {
                         Sign in
                     </Typography>
                     <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
+                        <pre>
+                            {JSON.stringify(formData, null, 2)}
+                        </pre>
                         <TextField
                             margin="normal"
                             required
