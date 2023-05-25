@@ -430,7 +430,6 @@ export default function BackendLayout() {
             </Drawer>
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
                 <DrawerHeader id="back-to-top-anchor" />
-
                 <Outlet />
 
                 <ScrollTop >

@@ -12,12 +12,12 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import {NavLink, Outlet} from "react-router-dom";
-import {ListItem} from "@mui/material";
+import { NavLink, Outlet } from "react-router-dom";
+import { ListItem } from "@mui/material";
 
 
 function FrontendNavbar(props) {
-    const {window} = props;
+    const { window } = props;
 
     const drawerWidth = 240;
     const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -46,17 +46,17 @@ function FrontendNavbar(props) {
     };
 
     const drawer = (
-        <Box onClick={handleDrawerToggle} sx={{textAlign: 'center'}}>
-            <Typography variant="h6" sx={{my: 2}}>
+        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+            <Typography variant="h6" sx={{ my: 2 }}>
                 MUI
             </Typography>
-            <Divider/>
+            <Divider />
             <List>
 
                 <NavLink to={'/'}   >
                     <ListItem disablePadding >
-                        <ListItemButton sx={{textAlign: 'center'}}>
-                            <ListItemText primary={'Home'}/>
+                        <ListItemButton sx={{ textAlign: 'center' }}>
+                            <ListItemText primary={'Home'} />
                         </ListItemButton>
                     </ListItem>
                 </NavLink>
@@ -67,8 +67,8 @@ function FrontendNavbar(props) {
 
     return (
         <>
-            <Box sx={{display: 'flex'}}>
-                <CssBaseline/>
+            <Box sx={{ display: 'flex' }}>
+                <CssBaseline />
                 <AppBar component="nav">
                     <Toolbar>
                         <IconButton
@@ -76,14 +76,14 @@ function FrontendNavbar(props) {
                             aria-label="open drawer"
                             edge="start"
                             onClick={handleDrawerToggle}
-                            sx={{mr: 2, display: {sm: 'none'}}}
+                            sx={{ mr: 2, display: { sm: 'none' } }}
                         >
-                            <MenuIcon/>
+                            <MenuIcon />
                         </IconButton>
                         <Typography
                             variant="h6"
                             component="div"
-                            sx={{flexGrow: 1, display: {xs: 'none', sm: 'block'}}}
+                            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
                         >
                             MUI
                         </Typography>
@@ -91,8 +91,8 @@ function FrontendNavbar(props) {
                         {navItemsData.map((item, index) => {
                             return (
                                 <NavLink key={index} to={item.path}>
-                                    <Box sx={{display: {xs: 'none', sm: 'block'}}}>
-                                        <Button sx={{color: '#fff'}}>
+                                    <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+                                        <Button sx={{ color: '#fff' }}>
                                             {item.name}
                                         </Button>
                                     </Box>
@@ -111,17 +111,17 @@ function FrontendNavbar(props) {
                             keepMounted: true, // Better open performance on mobile.
                         }}
                         sx={{
-                            display: {xs: 'block', sm: 'none'},
-                            '& .MuiDrawer-paper': {boxSizing: 'border-box', width: drawerWidth},
+                            display: { xs: 'block', sm: 'none' },
+                            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
                         }}
                     >
                         {drawer}
                     </Drawer>
                 </Box>
-                <Box component="main" sx={{p: 3}}>
-                    <Toolbar/>
 
-                <Outlet/>
+                <Box component="main" sx={{ flexGrow: 1, p: 1 }}>
+                    <Toolbar />
+                    <Outlet />
                 </Box>
             </Box>
 
