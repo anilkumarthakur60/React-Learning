@@ -38,8 +38,9 @@ import { Fab, Fade, useScrollTrigger } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
 import { useProfileDetailQuery } from "../redux/user/userApi.js";
 import { useEffect } from "react";
-import {useSelector} from "react-redux";
+import { useSelector } from "react-redux";
 import axios from "axios";
+import ErrorComponent from '../component/error/ErrorComponent';
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -152,27 +153,29 @@ export default function BackendLayout() {
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
     const navigate = useNavigate();
+    const [ds, setDs] = React.useState(false)
+
 
     const fetchProfileDetail = async () => {
-
-        const response=await  axios.get(import.meta.env.VITE_API_URL + '/auth/detail', {
+        await axios.get(import.meta.env.VITE_API_URL + '/auth/detail', {
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem("access_token")
             }
-        }).then((response) => {
-            console.log(response.data);
-        }).catch((error) => {
-            console.log(error);
+        }).then(() => {
+            setDs(true)
+
+        }).catch(() => {
+
+            setDs(true)
             localStorage.removeItem("access_token");
             navigate('/login', { replace: true })
         });
     }
 
-    useEffect(()=>{
+
+    useEffect(() => {
         fetchProfileDetail();
-    },[
-        // fetchProfileDetail
-    ])
+    }, [])
 
 
     const navItemsData = [
@@ -309,7 +312,12 @@ export default function BackendLayout() {
         </Menu>
     );
 
-    const {userDetail}=useSelector(state=>state.users)
+    const { userDetail } = useSelector(state => state.users)
+
+    // if (!ds) {
+    //     return <ErrorComponent />
+    // }
+
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />

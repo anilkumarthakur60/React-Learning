@@ -17,8 +17,8 @@ import { useNavigate } from 'react-router-dom'
 import loginPageImage from '../../assets/loginPageImage.png'
 import useStore, { storeName } from '../../hooks/useStore';
 import { useLoginMutation } from '../../redux/user/userApi';
-import {useDispatch} from "react-redux";
-import {setUserDetail} from "../../redux/user/userSlice.js";
+import { useDispatch } from "react-redux";
+import { setUserDetail } from "../../redux/user/userSlice.js";
 
 function Copyright(props) {
     return (
@@ -41,53 +41,34 @@ function LoginPage() {
 
     const navigate = useNavigate();
     const [login, { error }] = useLoginMutation()
-    const  dispatch = useDispatch()
+    const dispatch = useDispatch()
 
 
-    //
-    // const handleSubmit = (event) => {
+
+    // const handleSubmits = (event) => {
     //     event.preventDefault();
     //     // const data = new FormData(event.currentTarget);
     //     // console.log({
     //     //     email: data.get('email'),
     //     //     password: data.get('password'),
     //     // });
-    //     login(formData)
-    //         .unwrap()
-    //         .then(({ data }) => {
-    //             console.log('---------data logging--------data.data',data.data);
-    //             dispatch(setUserDetail(data.data))
-    //             const { access_token } = data
-    //             localStorage.setItem('access_token', access_token)
-    //             setTimeout(() => {
-    //                 navigate('/dashboard')
-    //             },1000)
-    //         })
-    //         .catch((error) => {
-    //             console.error("Error creating post:", error);
-    //         });
-    //
     // };
 
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-            login(formData)
-                .unwrap()
-                .then(({ data }) => {
-                    dispatch(setUserDetail(data.data))
-                    const { access_token } = data
-                    localStorage.removeItem('access_token');
-                    localStorage.setItem('access_token', access_token);
-                    console.log('---------data logging-access_token-------',access_token);
-                    // window.location.href = '/dashboard'
-                    navigate('/dashboard')
-                })
-                .catch((error) => {
-                    localStorage.removeItem('access_token');
-                    // window.location.href = '/login'
-                    // navigate('/login')
-                });
+        login(formData)
+            .unwrap()
+            .then(({ data }) => {
+                dispatch(setUserDetail(data.data))
+                const { access_token } = data
+                localStorage.removeItem('access_token');
+                localStorage.setItem('access_token', access_token);
+                navigate('/dashboard')
+            })
+            .catch(() => {
+                localStorage.removeItem('access_token');
+            });
 
 
     };

@@ -1,42 +1,42 @@
-import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider} from "react-router-dom";
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
 import FrontendLayout from "./layout/FrontendLayout.jsx";
 import BackendLayout from "./layout/BackendLayout.jsx";
-import {NotFound} from "./pages/NotFound.jsx";
-import {Index} from "./pages/Index.jsx";
+import { NotFound } from "./pages/NotFound.jsx";
+import { Index } from "./pages/Index.jsx";
 import LoginPage from "./pages/auth/LoginPage.jsx";
 import RegisterPage from "./pages/auth/RegisterPage.jsx";
-import {Dashboard} from "./pages/Dashboard.jsx";
+import { Dashboard } from "./pages/Dashboard.jsx";
 import PostPage from "./pages/post/PostPage.jsx";
 import BlogPage from "./pages/blog/BlogPage.jsx";
-import axios from "axios";
-import {useDispatch} from "react-redux";
-import {setUserDetail} from "./redux/user/userSlice.js";
+
 
 function App() {
-    const dispatch = useDispatch()
+
 
     let router = createBrowserRouter(
         createRoutesFromElements(
             <>
-                <Route path="/" element={<FrontendLayout/>}>
-                    <Route index element={<Index/>}/>
-                    <Route path="login" element={<LoginPage/>}/>
-                    <Route path="register" element={<RegisterPage/>}/>
+                <Route path="/" element={<FrontendLayout />}>
+                    <Route index element={<Index />} />
+                    <Route path="login" element={<LoginPage />} />
+                    <Route path="register" element={<RegisterPage />} />
                 </Route>
+
+
                 <Route
                     path="/dashboard"
-                    element={<BackendLayout/>}
+                    element={<BackendLayout />}
                 >
-                    <Route index element={<Dashboard/>}/>
-                    <Route path="posts" element={<PostPage/>}/>
+                    <Route index element={<Dashboard />} />
+                    <Route path="posts" element={<PostPage />} />
 
-                    <Route path="blogs" element={<BlogPage/>}/>
+                    <Route path="blogs" element={<BlogPage />} />
                 </Route>
-                <Route path="*" element={<NotFound/>}/>
+                <Route path="*" element={<NotFound />} />
             </>
         ));
 
-    return <RouterProvider router={router}/>
+    return <RouterProvider router={router} />
 }
 
 export default App
