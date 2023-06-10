@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
@@ -11,20 +10,27 @@ import PersonAdd from '@mui/icons-material/PersonAdd';
 import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
 import {useNavigate} from "react-router-dom";
+import {useLogoutMutation} from "../redux/user/userApi.js";
 
 function ProfileMenu() {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
-const handleClick = (event) => {
+    const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
     const handleClose = () => {
         setAnchorEl(null);
     };
     const navigate = useNavigate();
-    const logout = () => {
-        localStorage.removeItem('access_token')
-        window.location.href = '/login'
+
+    const [logout]=useLogoutMutation();
+    const logouts = () => {
+        logout()
+            .unwrap()
+            .finally(() => {
+                localStorage.removeItem('access_token')
+                navigate('/login')
+            })
     }
 
     return (
@@ -34,12 +40,12 @@ const handleClick = (event) => {
                 <IconButton
                     onClick={handleClick}
                     size="small"
-                    sx={{ ml: 2 }}
+                    sx={{ml: 2}}
                     aria-controls={open ? 'account-menu' : undefined}
                     aria-haspopup="true"
                     aria-expanded={open ? 'true' : undefined}
                 >
-                    <Avatar sx={{ width: 32, height: 32 }}>M</Avatar>
+                    <Avatar sx={{width: 32, height: 32}}>M</Avatar>
                 </IconButton>
             </Tooltip>
 
@@ -75,34 +81,34 @@ const handleClick = (event) => {
                         },
                     },
                 }}
-                transformOrigin={{ horizontal: 'right', vertical: 'top' }}
-                anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+                transformOrigin={{horizontal: 'right', vertical: 'top'}}
+                anchorOrigin={{horizontal: 'right', vertical: 'bottom'}}
             >
                 <MenuItem onClick={handleClose}>
-                    <Avatar /> Profile
+                    <Avatar/> Profile
                 </MenuItem>
                 <MenuItem onClick={handleClose}>
-                    <Avatar /> My account
+                    <Avatar/> My account
                 </MenuItem>
-                <Divider />
+                <Divider/>
                 <MenuItem onClick={handleClose}>
                     <ListItemIcon>
-                        <PersonAdd fontSize="small" />
+                        <PersonAdd fontSize="small"/>
                     </ListItemIcon>
                     Add another account
                 </MenuItem>
                 <MenuItem onClick={handleClose}>
                     <ListItemIcon>
-                        <Settings fontSize="small" />
+                        <Settings fontSize="small"/>
                     </ListItemIcon>
                     Settings
                 </MenuItem>
-                <MenuItem onClick={()=>{
+                <MenuItem onClick={() => {
                     handleClose();
-                    logout()
+                    logouts()
                 }}>
                     <ListItemIcon>
-                        <Logout fontSize="small" />
+                        <Logout fontSize="small"/>
                     </ListItemIcon>
                     Logout
                 </MenuItem>
