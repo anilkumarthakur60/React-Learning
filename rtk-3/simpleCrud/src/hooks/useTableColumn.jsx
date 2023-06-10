@@ -80,12 +80,12 @@ export function useTableColumn({ ...rest }) {
 
                         <Grid item container direction='row' alignItems="flex-end" spacing={1} justify="flex-end">
                             <Grid item>
-                                <Fab size='small' color="primary" aria-label="add" onClick={refetch}>
+                                <Fab size='small' color="primary" aria-label="add" onClick={allReset}>
                                     <FilterAltOffIcon />
                                 </Fab>
                             </Grid>
                             <Grid item>
-                                <Fab size='small' color="secondary" aria-label="edit" onClick={allReset}>
+                                <Fab size='small' color="secondary" aria-label="edit" onClick={refetch}>
                                     <RefreshIcon />
                                 </Fab>
                             </Grid>

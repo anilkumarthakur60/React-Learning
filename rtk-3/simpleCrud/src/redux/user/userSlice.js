@@ -1,73 +1,78 @@
-import { createSlice } from "@reduxjs/toolkit";
+import {createSlice} from "@reduxjs/toolkit";
 import {
-  initialCommonState,
-  setCommonPage,
-  setCommonRowsPerPage,
-  setCommonSortBy,
-  setCommonDescending,
-  setCommonFilters,
-  setCommonFormData,
-  clearCommonError,
-  setCommonProgress,
-  deleteFilterKeys,
-  allReset,
-  setCommonData,
-  setCommonShowModalFalse,
-  setCommonShowModalTrue,
-  setCommonShowModal,
-  setCommonEditFormData,
-  setCommonFilterNull,
-  setCommonFormDataNull,
+    allReset,
+    clearCommonError,
+    deleteFilterKeys,
+    initialCommonState,
+    setCommonData,
+    setCommonDescending,
+    setCommonEditFormData,
+    setCommonFilterNull,
+    setCommonFilters,
+    setCommonFormData,
+    setCommonFormDataNull,
+    setCommonPage,
+    setCommonProgress,
+    setCommonRowsPerPage,
+    setCommonShowModal,
+    setCommonShowModalFalse,
+    setCommonShowModalTrue,
+    setCommonSortBy,
 } from "../common/commonSliceHook.js";
 
 const userSlice = createSlice({
-  name: "users",
-  initialState: {
-    ...initialCommonState,
-    formData: {
-      email: "admin@gmail.com",
-        password: "password",
+    name: "users",
+    initialState: {
+        ...initialCommonState,
+        formData: {
+            email: "admin@gmail.com",
+            password: "password",
+        },
+      userDetail:{}
     },
-  },
-  reducers: {
-    setPage: setCommonPage,
-    setRowsPerPage: setCommonRowsPerPage,
-    setSortBy: setCommonSortBy,
-    setDescending: setCommonDescending,
-    setFilters: setCommonFilters,
-    setFormData: setCommonFormData,
-    clearError: clearCommonError,
-    setProgress: setCommonProgress,
-    deleteFilterKeys: deleteFilterKeys,
-    allReset: allReset,
-    setData: setCommonData,
-    setModalFalse: setCommonShowModalFalse,
-    setModalTrue: setCommonShowModalTrue,
-    setShowModal: setCommonShowModal,
-    setEditFormData: setCommonEditFormData,
-    setFormDataNull: setCommonFormDataNull,
-    setFilterNull: setCommonFilterNull,
-  },
+    reducers: {
+        setPage: setCommonPage,
+        setRowsPerPage: setCommonRowsPerPage,
+        setSortBy: setCommonSortBy,
+        setDescending: setCommonDescending,
+        setFilters: setCommonFilters,
+        setFormData: setCommonFormData,
+        clearError: clearCommonError,
+        setProgress: setCommonProgress,
+        deleteFilterKeys: deleteFilterKeys,
+        allReset: allReset,
+        setData: setCommonData,
+        setModalFalse: setCommonShowModalFalse,
+        setModalTrue: setCommonShowModalTrue,
+        setShowModal: setCommonShowModal,
+        setEditFormData: setCommonEditFormData,
+        setFormDataNull: setCommonFormDataNull,
+        setFilterNull: setCommonFilterNull,
+        setUserDetail: (state, action) => {
+            state.userDetail = action.payload;
+        }
+    },
 });
 
 const userReducer = userSlice.reducer;
 
 export default userReducer;
 export const {
-  setPage,
-  setRowsPerPage,
-  setSortBy,
-  setDescending,
-  setFilters,
-  setFormData,
-  clearError,
-  setProgress,
-  setData,
-  setModalFalse,
-  setModalTrue,
-  setShowModal,
-  setEditFormData,
-  setFormDataNull,
+    setPage,
+    setRowsPerPage,
+    setSortBy,
+    setDescending,
+    setFilters,
+    setFormData,
+    clearError,
+    setProgress,
+    setData,
+    setModalFalse,
+    setModalTrue,
+    setShowModal,
+    setEditFormData,
+    setFormDataNull,
+    setUserDetail
 } = userSlice.actions;
 
 export const selectUserFormData = (state) => state.users.formData;
@@ -84,4 +89,4 @@ export const selectUserTotal = (state) => state.users.total;
 export const selectUserPostStore = (state) => state.posts;
 export const selectUserProgress = (state) => state.users.progress;
 export const selectUserRowsPerPageOptions = (state) =>
-  state.users.rowsPerPageOptions;
+    state.users.rowsPerPageOptions;

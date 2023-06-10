@@ -2,7 +2,8 @@
 export function Dashboard() {
 	return (
 		<>
-			Dashbaord
+			Dashboard
+
 			<div className="div" style={{
 				height: "4000px"
 			}}></div>

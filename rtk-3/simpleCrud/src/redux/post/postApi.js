@@ -5,14 +5,15 @@ export const postApi = createApi({
   reducerPath: "postApi",
   baseQuery: fetchBaseQuery({
     baseUrl: `${apiBaseUrl}/posts`,
-    prepareHeaders: (header) => {
-      const token = localStorage.getItem("token");
+    prepareHeaders: (headers, { getState, endpoint }) => {
+      const token = localStorage.getItem("access_token");
+
       if (token) {
-        header.set("Authorization", `Bearer ${token}`);
+        headers.set("Authorization", `Bearer ${token}`);
       }
-      header.set("Content-Type", "application/json")
-      header.set("Accept", "application/json")
-      return header;
+      headers.set("Content-Type", "application/json");
+      headers.set("Accept", "application/json");
+      return headers;
     },
   }),
   endpoints: (builder) => ({

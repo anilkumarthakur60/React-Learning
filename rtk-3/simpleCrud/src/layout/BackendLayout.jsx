@@ -17,7 +17,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import MailIcon from '@mui/icons-material/Mail';
-import {Navigate, Outlet, useNavigate} from 'react-router-dom';
+import { Navigate, Outlet, useNavigate } from 'react-router-dom';
 
 import MoreIcon from '@mui/icons-material/MoreVert';
 import SearchIcon from '@mui/icons-material/Search';
@@ -36,8 +36,10 @@ import PropTypes from 'prop-types';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { Fab, Fade, useScrollTrigger } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
-import {useProfileDetailQuery} from "../redux/user/userApi.js";
-import {useEffect} from "react";
+import { useProfileDetailQuery } from "../redux/user/userApi.js";
+import { useEffect } from "react";
+import {useSelector} from "react-redux";
+import axios from "axios";
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -149,19 +151,28 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 export default function BackendLayout() {
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
-
-
     const navigate = useNavigate();
-    const {data}=useProfileDetailQuery();
+
+    const fetchProfileDetail = async () => {
+
+        const response=await  axios.get(import.meta.env.VITE_API_URL + '/auth/detail', {
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("access_token")
+            }
+        }).then((response) => {
+            console.log(response.data);
+        }).catch((error) => {
+            console.log(error);
+            localStorage.removeItem("access_token");
+            navigate('/login', { replace: true })
+        });
+    }
 
     useEffect(()=>{
-        setTimeout(()=>{
-            if(!data?.data?.id){
-                navigate('/login')
-            }
-        },1000)
-    },[data])
-
+        fetchProfileDetail();
+    },[
+        // fetchProfileDetail
+    ])
 
 
     const navItemsData = [
@@ -298,9 +309,7 @@ export default function BackendLayout() {
         </Menu>
     );
 
-
-
-
+    const {userDetail}=useSelector(state=>state.users)
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
@@ -437,14 +446,8 @@ export default function BackendLayout() {
             </Drawer>
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
                 <DrawerHeader id="back-to-top-anchor" />
-
                 <Outlet />
 
-                {
-                    data?.data?.id? <Outlet /> : (
-                        <Navigate to="/login" replace={true} />
-                    )
-                }
                 <ScrollTop >
                     <Fab size="small" aria-label="scroll back to top">
                         <KeyboardArrowUpIcon />

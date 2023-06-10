@@ -10,16 +10,23 @@ import Tooltip from '@mui/material/Tooltip';
 import PersonAdd from '@mui/icons-material/PersonAdd';
 import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
+import {useNavigate} from "react-router-dom";
 
 function ProfileMenu() {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
-    const handleClick = (event) => {
+const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
     const handleClose = () => {
         setAnchorEl(null);
     };
+    const navigate = useNavigate();
+    const logout = () => {
+        localStorage.removeItem('access_token')
+        window.location.href = '/login'
+    }
+
     return (
         <>
 
@@ -90,7 +97,10 @@ function ProfileMenu() {
                     </ListItemIcon>
                     Settings
                 </MenuItem>
-                <MenuItem onClick={handleClose}>
+                <MenuItem onClick={()=>{
+                    handleClose();
+                    logout()
+                }}>
                     <ListItemIcon>
                         <Logout fontSize="small" />
                     </ListItemIcon>

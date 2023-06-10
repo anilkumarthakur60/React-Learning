@@ -1,4 +1,4 @@
-import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider, useNavigate} from "react-router-dom";
+import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider} from "react-router-dom";
 import FrontendLayout from "./layout/FrontendLayout.jsx";
 import BackendLayout from "./layout/BackendLayout.jsx";
 import {NotFound} from "./pages/NotFound.jsx";
@@ -8,32 +8,12 @@ import RegisterPage from "./pages/auth/RegisterPage.jsx";
 import {Dashboard} from "./pages/Dashboard.jsx";
 import PostPage from "./pages/post/PostPage.jsx";
 import BlogPage from "./pages/blog/BlogPage.jsx";
-import {useProfileDetailQuery} from "./redux/user/userApi.js";
+import axios from "axios";
+import {useDispatch} from "react-redux";
+import {setUserDetail} from "./redux/user/userSlice.js";
 
 function App() {
-
-
-
-
-    // const fetchProfileInfo = () => {
-    //
-    //     const {data} = useProfileDetailQuery()
-    //
-    //
-    //     if (!data) {
-    //
-    //         setTimeout(()=>{
-    //
-    //             localStorage.removeItem("access_token")
-    //             const navigate=useNavigate()
-    //             navigate("/login")
-    //             return false;
-    //         },200)
-    //     }
-    //
-    //     return false;
-    // }
-
+    const dispatch = useDispatch()
 
     let router = createBrowserRouter(
         createRoutesFromElements(
