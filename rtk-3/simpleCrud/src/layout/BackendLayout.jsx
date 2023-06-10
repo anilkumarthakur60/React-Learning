@@ -314,9 +314,9 @@ export default function BackendLayout() {
 
     const { userDetail } = useSelector(state => state.users)
 
-    // if (!ds) {
-    //     return <ErrorComponent />
-    // }
+    if (!ds) {
+    return <ErrorComponent />
+    }
 
     return (
         <Box sx={{ display: 'flex' }}>
