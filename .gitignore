@@ -25,3 +25,5 @@ yarn-error.log*
 .idea/sonarlint
 
 **/node_modules/
+yarn.lock
+package-lock.json
